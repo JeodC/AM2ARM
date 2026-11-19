@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"create_log_trigger",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"create_log_trigger",
+  "parent":{
+    "name":"Wanderer",
+    "path":"folders/Scripts/Wanderer.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

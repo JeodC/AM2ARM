@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"refill_heath_ammo",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"refill_heath_ammo",
+  "parent":{
+    "name":"o",
+    "path":"folders/Scripts/i/o.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

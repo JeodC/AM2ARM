@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"reset_map",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"reset_map",
+  "parent":{
+    "name":"Map",
+    "path":"folders/Scripts/Map.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

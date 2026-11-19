@@ -1,0 +1,1225 @@
+{
+  "schema": 1,
+  "release": "1.6.1",
+  "source_verification": "Debian Sources.xz SHA-256 verified against InRelease with valid Debian12,13 and stable release signatures.",
+  "included_debian_sources": [
+    {
+      "package": "xdelta3",
+      "version": "3.0.11-dfsg-1.2",
+      "directory": "pool/main/x/xdelta3",
+      "binaries": [
+        "xdelta3"
+      ],
+      "source_browser": "https://sources.debian.org/src/xdelta3/3.0.11-dfsg-1.2/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/x/xdelta3/xdelta3_3.0.11-dfsg-1.2.dsc",
+      "files": [
+        {
+          "name": "debian/xdelta3/xdelta3_3.0.11-dfsg-1.2.dsc",
+          "size": 1954,
+          "sha256": "5aae397299ef57052c4b305c2123468b65fcf37837a3e543c0048bb3eb99ce8c",
+          "url": "https://deb.debian.org/debian/pool/main/x/xdelta3/xdelta3_3.0.11-dfsg-1.2.dsc"
+        },
+        {
+          "name": "debian/xdelta3/xdelta3_3.0.11-dfsg.orig.tar.xz",
+          "size": 435124,
+          "sha256": "c730bf7a526eea39c1a371632c1abc980e7281bf5d1fead79d663de303498f5f",
+          "url": "https://deb.debian.org/debian/pool/main/x/xdelta3/xdelta3_3.0.11-dfsg.orig.tar.xz"
+        },
+        {
+          "name": "debian/xdelta3/xdelta3_3.0.11-dfsg-1.2.debian.tar.xz",
+          "size": 8324,
+          "sha256": "85b536ff38fd5a4ef9be28e74c96e310e2f3a9a58bc55738f57efe119e6a4f5a",
+          "url": "https://deb.debian.org/debian/pool/main/x/xdelta3/xdelta3_3.0.11-dfsg-1.2.debian.tar.xz"
+        }
+      ],
+      "verification": "SHA-256 from Debian bookworm Sources index, authenticated by InRelease signature"
+    },
+    {
+      "package": "db5.3",
+      "version": "5.3.28+dfsg2-1",
+      "directory": "pool/main/d/db5.3",
+      "binaries": [
+        "libdb5.3"
+      ],
+      "source_browser": "https://sources.debian.org/src/db5.3/5.3.28%2Bdfsg2-1/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/d/db5.3/db5.3_5.3.28+dfsg2-1.dsc",
+      "files": [
+        {
+          "name": "debian/db5.3/db5.3_5.3.28+dfsg2-1.dsc",
+          "size": 2887,
+          "sha256": "fe84d3cd7cde381f1c5a18f223377cf84ea7627ced8063ef33ef8fd93f6e09f4",
+          "url": "https://deb.debian.org/debian/pool/main/d/db5.3/db5.3_5.3.28+dfsg2-1.dsc"
+        },
+        {
+          "name": "debian/db5.3/db5.3_5.3.28+dfsg2.orig.tar.xz",
+          "size": 21287688,
+          "sha256": "ad41b507415dec8316e828b2230242af2251d2c86eefa3c7aa9ef47c5239ef33",
+          "url": "https://deb.debian.org/debian/pool/main/d/db5.3/db5.3_5.3.28+dfsg2.orig.tar.xz"
+        },
+        {
+          "name": "debian/db5.3/db5.3_5.3.28+dfsg2-1.debian.tar.xz",
+          "size": 34660,
+          "sha256": "52cb792fe53138c79a0328ffd1d771e3112791f546fd00e0dcd4b0e3efc5d916",
+          "url": "https://deb.debian.org/debian/pool/main/d/db5.3/db5.3_5.3.28+dfsg2-1.debian.tar.xz"
+        }
+      ],
+      "verification": "SHA-256 from Debian bookworm Sources index, authenticated by InRelease signature"
+    },
+    {
+      "package": "gdbm",
+      "version": "1.23-3",
+      "directory": "pool/main/g/gdbm",
+      "binaries": [
+        "libgdbm-compat4",
+        "libgdbm6"
+      ],
+      "source_browser": "https://sources.debian.org/src/gdbm/1.23-3/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/g/gdbm/gdbm_1.23-3.dsc",
+      "files": [
+        {
+          "name": "debian/gdbm/gdbm_1.23-3.dsc",
+          "size": 2583,
+          "sha256": "3e4a52655a1b65c51d33e032913edda3423dcae8cc282c16a455a0afd2d2738d",
+          "url": "https://deb.debian.org/debian/pool/main/g/gdbm/gdbm_1.23-3.dsc"
+        },
+        {
+          "name": "debian/gdbm/gdbm_1.23.orig.tar.gz",
+          "size": 1115854,
+          "sha256": "74b1081d21fff13ae4bd7c16e5d6e504a4c26f7cde1dca0d963a484174bbcacd",
+          "url": "https://deb.debian.org/debian/pool/main/g/gdbm/gdbm_1.23.orig.tar.gz"
+        },
+        {
+          "name": "debian/gdbm/gdbm_1.23.orig.tar.gz.asc",
+          "size": 181,
+          "sha256": "64ebb68cc68e8915d62cb20ea40323c00b56051f844589ee0a52169fff34cecb",
+          "url": "https://deb.debian.org/debian/pool/main/g/gdbm/gdbm_1.23.orig.tar.gz.asc"
+        },
+        {
+          "name": "debian/gdbm/gdbm_1.23-3.debian.tar.xz",
+          "size": 18552,
+          "sha256": "a0ff17befcbd7c4b361cfe0d821a7a71334102a9c423537bd57f60f18f6802ea",
+          "url": "https://deb.debian.org/debian/pool/main/g/gdbm/gdbm_1.23-3.debian.tar.xz"
+        }
+      ],
+      "verification": "SHA-256 from Debian bookworm Sources index, authenticated by InRelease signature"
+    },
+    {
+      "package": "keyutils",
+      "version": "1.6.3-2",
+      "directory": "pool/main/k/keyutils",
+      "binaries": [
+        "libkeyutils1"
+      ],
+      "source_browser": "https://sources.debian.org/src/keyutils/1.6.3-2/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/k/keyutils/keyutils_1.6.3-2.dsc",
+      "files": [
+        {
+          "name": "debian/keyutils/keyutils_1.6.3-2.dsc",
+          "size": 2079,
+          "sha256": "77e6f0e5018f0f6cfb5a3689d7f185a014b2437d0a097609ffda32bfd3a64f28",
+          "url": "https://deb.debian.org/debian/pool/main/k/keyutils/keyutils_1.6.3-2.dsc"
+        },
+        {
+          "name": "debian/keyutils/keyutils_1.6.3.orig.tar.gz",
+          "size": 137022,
+          "sha256": "a61d5706136ae4c05bd48f86186bcfdbd88dd8bd5107e3e195c924cfc1b39bb4",
+          "url": "https://deb.debian.org/debian/pool/main/k/keyutils/keyutils_1.6.3.orig.tar.gz"
+        },
+        {
+          "name": "debian/keyutils/keyutils_1.6.3-2.debian.tar.xz",
+          "size": 13196,
+          "sha256": "9b9b40729465d4895860838e82e13d2ee4ffc44a97c9acd1d47a51bd33ade899",
+          "url": "https://deb.debian.org/debian/pool/main/k/keyutils/keyutils_1.6.3-2.debian.tar.xz"
+        }
+      ],
+      "verification": "SHA-256 from Debian bookworm Sources index, authenticated by InRelease signature"
+    },
+    {
+      "package": "libnsl",
+      "version": "1.3.0-2",
+      "directory": "pool/main/libn/libnsl",
+      "binaries": [
+        "libnsl2"
+      ],
+      "source_browser": "https://sources.debian.org/src/libnsl/1.3.0-2/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/libn/libnsl/libnsl_1.3.0-2.dsc",
+      "files": [
+        {
+          "name": "debian/libnsl/libnsl_1.3.0-2.dsc",
+          "size": 1955,
+          "sha256": "1da570eed6693c774cce51f3c33f989d1aa4bf1dcb8660818d8a834a1a3728ef",
+          "url": "https://deb.debian.org/debian/pool/main/libn/libnsl/libnsl_1.3.0-2.dsc"
+        },
+        {
+          "name": "debian/libnsl/libnsl_1.3.0.orig.tar.xz",
+          "size": 321488,
+          "sha256": "eac3062957fa302c62eff4aed718a07bacbf9ceb0a058289f12a19bfdda3c8e2",
+          "url": "https://deb.debian.org/debian/pool/main/libn/libnsl/libnsl_1.3.0.orig.tar.xz"
+        },
+        {
+          "name": "debian/libnsl/libnsl_1.3.0-2.debian.tar.xz",
+          "size": 4692,
+          "sha256": "7f8dccc706931b9e206448ffb475487a4a0abaded27cf611d418f4a34415dca7",
+          "url": "https://deb.debian.org/debian/pool/main/libn/libnsl/libnsl_1.3.0-2.debian.tar.xz"
+        }
+      ],
+      "verification": "SHA-256 from Debian bookworm Sources index, authenticated by InRelease signature"
+    },
+    {
+      "package": "libxcrypt",
+      "version": "1:4.4.33-2",
+      "directory": "pool/main/libx/libxcrypt",
+      "binaries": [
+        "libcrypt1"
+      ],
+      "source_browser": "https://sources.debian.org/src/libxcrypt/1%3A4.4.33-2/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/libx/libxcrypt/libxcrypt_4.4.33-2.dsc",
+      "files": [
+        {
+          "name": "debian/libxcrypt/libxcrypt_4.4.33-2.dsc",
+          "size": 1591,
+          "sha256": "910ae411c9462f07667e46540af3dbb30f46413ddd90f1f176781666042dbb38",
+          "url": "https://deb.debian.org/debian/pool/main/libx/libxcrypt/libxcrypt_4.4.33-2.dsc"
+        },
+        {
+          "name": "debian/libxcrypt/libxcrypt_4.4.33.orig.tar.xz",
+          "size": 393372,
+          "sha256": "5e2da5cb5f263e9ac4c4b3f49c75e3b8523889210f45c60bb7e97b229c75a10b",
+          "url": "https://deb.debian.org/debian/pool/main/libx/libxcrypt/libxcrypt_4.4.33.orig.tar.xz"
+        },
+        {
+          "name": "debian/libxcrypt/libxcrypt_4.4.33-2.debian.tar.xz",
+          "size": 8196,
+          "sha256": "23194c9b0642533fb27fe8c33391d3fa838a55e17e5a88a419ed31548b0721c9",
+          "url": "https://deb.debian.org/debian/pool/main/libx/libxcrypt/libxcrypt_4.4.33-2.debian.tar.xz"
+        }
+      ],
+      "verification": "SHA-256 from Debian bookworm Sources index, authenticated by InRelease signature"
+    },
+    {
+      "package": "python3-stdlib-extensions",
+      "version": "3.11.2-3",
+      "directory": "pool/main/p/python3-stdlib-extensions",
+      "binaries": [
+        "python3-tk"
+      ],
+      "source_browser": "https://sources.debian.org/src/python3-stdlib-extensions/3.11.2-3/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.11.2-3.dsc",
+      "files": [
+        {
+          "name": "debian/python3-stdlib-extensions/python3-stdlib-extensions_3.11.2-3.dsc",
+          "size": 2485,
+          "sha256": "a6ea0ffffff105c3d34fa2986961826e04bc20efb2ff5af3a04460a528994fbd",
+          "url": "https://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.11.2-3.dsc"
+        },
+        {
+          "name": "debian/python3-stdlib-extensions/python3-stdlib-extensions_3.11.2.orig.tar.xz",
+          "size": 1120876,
+          "sha256": "bd96f9aedb530633ead00fbbeb5223c9dd85ba492c78e506ca329f3df5841f3e",
+          "url": "https://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.11.2.orig.tar.xz"
+        },
+        {
+          "name": "debian/python3-stdlib-extensions/python3-stdlib-extensions_3.11.2-3.debian.tar.xz",
+          "size": 25964,
+          "sha256": "d1824aed18f046336b96dced598ae33cd67886f22823bf1d155e793ee6296f6e",
+          "url": "https://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.11.2-3.debian.tar.xz"
+        }
+      ],
+      "verification": "SHA-256 from Debian bookworm Sources index, authenticated by InRelease signature"
+    },
+    {
+      "package": "python3.11",
+      "version": "3.11.2-6+deb12u8",
+      "directory": "pool/main/p/python3.11",
+      "binaries": [
+        "libpython3.11-minimal",
+        "libpython3.11-stdlib",
+        "python3.11-minimal"
+      ],
+      "source_browser": "https://sources.debian.org/src/python3.11/3.11.2-6%2Bdeb12u8/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/p/python3.11/python3.11_3.11.2-6+deb12u8.dsc",
+      "files": [
+        {
+          "name": "debian/python3.11/python3.11_3.11.2-6+deb12u8.dsc",
+          "size": 3805,
+          "sha256": "197fa19ab45f41c820f40f6d9ead671c2ea29ddc53ba9424b36f1bf58458a10e",
+          "url": "https://deb.debian.org/debian/pool/main/p/python3.11/python3.11_3.11.2-6+deb12u8.dsc"
+        },
+        {
+          "name": "debian/python3.11/python3.11_3.11.2.orig.tar.gz",
+          "size": 26437858,
+          "sha256": "2411c74bda5bbcfcddaf4531f66d1adc73f247f529aee981b029513aefdbf849",
+          "url": "https://deb.debian.org/debian/pool/main/p/python3.11/python3.11_3.11.2.orig.tar.gz"
+        },
+        {
+          "name": "debian/python3.11/python3.11_3.11.2-6+deb12u8.debian.tar.xz",
+          "size": 279556,
+          "sha256": "ece2d63c70ac0b7a401fbe6b51b0103be997c294a01a3865549be1862794ba97",
+          "url": "https://deb.debian.org/debian/pool/main/p/python3.11/python3.11_3.11.2-6+deb12u8.debian.tar.xz"
+        }
+      ],
+      "verification": "SHA-256 from Debian bookworm Sources index, authenticated by InRelease signature"
+    },
+    {
+      "package": "readline",
+      "version": "8.2-1.3",
+      "directory": "pool/main/r/readline",
+      "binaries": [
+        "libreadline8"
+      ],
+      "source_browser": "https://sources.debian.org/src/readline/8.2-1.3/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/r/readline/readline_8.2-1.3.dsc",
+      "files": [
+        {
+          "name": "debian/readline/readline_8.2-1.3.dsc",
+          "size": 2553,
+          "sha256": "05497ea99bef3f14b8d502cbe3f84fe7bbc0bce1c4f139ca32f0fd60dcac977e",
+          "url": "https://deb.debian.org/debian/pool/main/r/readline/readline_8.2-1.3.dsc"
+        },
+        {
+          "name": "debian/readline/readline_8.2.orig.tar.gz",
+          "size": 3043952,
+          "sha256": "3feb7171f16a84ee82ca18a36d7b9be109a52c04f492a053331d7d1095007c35",
+          "url": "https://deb.debian.org/debian/pool/main/r/readline/readline_8.2.orig.tar.gz"
+        },
+        {
+          "name": "debian/readline/readline_8.2-1.3.debian.tar.xz",
+          "size": 30016,
+          "sha256": "8cd3c02d6c07b4cf57da607de168a9e347ee05c31857f0f6236fe3df4fc207d9",
+          "url": "https://deb.debian.org/debian/pool/main/r/readline/readline_8.2-1.3.debian.tar.xz"
+        }
+      ],
+      "verification": "SHA-256 from Debian bookworm Sources index, authenticated by InRelease signature"
+    }
+  ],
+  "binary_packages": [
+    {
+      "Package": "blt",
+      "Version": "2.5.3+dfsg-4.1",
+      "Filename": "pool/main/b/blt/blt_2.5.3+dfsg-4.1_arm64.deb",
+      "Size": "14896",
+      "SHA256": "7f9e2dafea56677f3c4da11dc52da9bb6bf0e0cb9d299f1a639b8eda69c1e192",
+      "source_package": "blt",
+      "source_version": "2.5.3+dfsg-4.1"
+    },
+    {
+      "Package": "libbrotli1",
+      "Version": "1.0.9-2+b6",
+      "Filename": "pool/main/b/brotli/libbrotli1_1.0.9-2+b6_arm64.deb",
+      "Size": "269124",
+      "SHA256": "3137de7f71952e710ee9f0df05026b3c6f463be9369a502d57c7696732f1ed22",
+      "source_package": "brotli",
+      "source_version": "1.0.9-2"
+    },
+    {
+      "Package": "libbsd0",
+      "Version": "0.11.7-2",
+      "Filename": "pool/main/libb/libbsd/libbsd0_0.11.7-2_arm64.deb",
+      "Size": "115116",
+      "SHA256": "ef00f132ddd268ee67d756998723ee18543db27ab34930c0a9f1cff75cf55382",
+      "source_package": "libbsd",
+      "source_version": "0.11.7-2"
+    },
+    {
+      "Package": "libbz2-1.0",
+      "Version": "1.0.8-5+b1",
+      "Filename": "pool/main/b/bzip2/libbz2-1.0_1.0.8-5+b1_arm64.deb",
+      "Size": "47452",
+      "SHA256": "d3a96ece03326498b39ff093a76800dfcbcb1d4049d6ae6e9f6fa1aa7a590ad6",
+      "source_package": "bzip2",
+      "source_version": "1.0.8-5"
+    },
+    {
+      "Package": "libcom-err2",
+      "Version": "1.47.0-2+b2",
+      "Filename": "pool/main/e/e2fsprogs/libcom-err2_1.47.0-2+b2_arm64.deb",
+      "Size": "19928",
+      "SHA256": "36c15f933a965b50f4c9558d792d9556934c84e532703935d8ae7e69dd3fa863",
+      "source_package": "e2fsprogs",
+      "source_version": "1.47.0-2"
+    },
+    {
+      "Package": "libcrypt1",
+      "Version": "1:4.4.33-2",
+      "Filename": "pool/main/libx/libxcrypt/libcrypt1_4.4.33-2_arm64.deb",
+      "Size": "90044",
+      "SHA256": "eea0ad76ea5eb507127fea0c291622ea4ecdbb71c4b9a8ed9c76ae33fc1a0127",
+      "source_package": "libxcrypt",
+      "source_version": "1:4.4.33-2"
+    },
+    {
+      "Package": "libdb5.3",
+      "Version": "5.3.28+dfsg2-1",
+      "Filename": "pool/main/d/db5.3/libdb5.3_5.3.28+dfsg2-1_arm64.deb",
+      "Size": "625748",
+      "SHA256": "344367608d622298a3d916f4cee3dc3173286f3b21f8f497ab21e7178ba930f9",
+      "source_package": "db5.3",
+      "source_version": "5.3.28+dfsg2-1"
+    },
+    {
+      "Package": "libexpat1",
+      "Version": "2.5.0-1+deb12u2",
+      "Filename": "pool/main/e/expat/libexpat1_2.5.0-1+deb12u2_arm64.deb",
+      "Size": "86280",
+      "SHA256": "8dc1976735acf825e3a922d82f171e20feec7394da2b8c616091983e38706275",
+      "source_package": "expat",
+      "source_version": "2.5.0-1+deb12u2"
+    },
+    {
+      "Package": "libffi8",
+      "Version": "3.4.4-1",
+      "Filename": "pool/main/libf/libffi/libffi8_3.4.4-1_arm64.deb",
+      "Size": "20492",
+      "SHA256": "80b5c36177dc0e29d531c7eddbed3cc7355cb490e49f8cfa5959572d161f27b3",
+      "source_package": "libffi",
+      "source_version": "3.4.4-1"
+    },
+    {
+      "Package": "libfontconfig1",
+      "Version": "2.14.1-4",
+      "Filename": "pool/main/f/fontconfig/libfontconfig1_2.14.1-4_arm64.deb",
+      "Size": "381416",
+      "SHA256": "4836d9deca824883f0de33d4f8f3718ba776c6e7c80cd7c418b5a0f86c009b9e",
+      "source_package": "fontconfig",
+      "source_version": "2.14.1-4"
+    },
+    {
+      "Package": "libfontenc1",
+      "Version": "1:1.1.4-1",
+      "Filename": "pool/main/libf/libfontenc/libfontenc1_1.1.4-1_arm64.deb",
+      "Size": "23564",
+      "SHA256": "0ec21487b4e9b23043353fe51be8576d70a8860aef40104ca52df14bf1dc476c",
+      "source_package": "libfontenc",
+      "source_version": "1:1.1.4-1"
+    },
+    {
+      "Package": "libfreetype6",
+      "Version": "2.12.1+dfsg-5+deb12u4",
+      "Filename": "pool/main/f/freetype/libfreetype6_2.12.1+dfsg-5+deb12u4_arm64.deb",
+      "Size": "367860",
+      "SHA256": "b8d32e54ebc9020637f8fa16b6afa64a5731e40845a6e01880d38d6f632237c9",
+      "source_package": "freetype",
+      "source_version": "2.12.1+dfsg-5+deb12u4"
+    },
+    {
+      "Package": "libgdbm-compat4",
+      "Version": "1.23-3",
+      "Filename": "pool/main/g/gdbm/libgdbm-compat4_1.23-3_arm64.deb",
+      "Size": "47996",
+      "SHA256": "acc13a12acbf3b17dbacc77e3c22c6c273a552150cd50fdc9bd70cdb5169af73",
+      "source_package": "gdbm",
+      "source_version": "1.23-3"
+    },
+    {
+      "Package": "libgdbm6",
+      "Version": "1.23-3",
+      "Filename": "pool/main/g/gdbm/libgdbm6_1.23-3_arm64.deb",
+      "Size": "70948",
+      "SHA256": "3c704feaf89c5f2709a76b84126ac8affe4ddff69dc0b91af0ca9910c7e75714",
+      "source_package": "gdbm",
+      "source_version": "1.23-3"
+    },
+    {
+      "Package": "libgssapi-krb5-2",
+      "Version": "1.20.1-2+deb12u5",
+      "Filename": "pool/main/k/krb5/libgssapi-krb5-2_1.20.1-2+deb12u5_arm64.deb",
+      "Size": "124152",
+      "SHA256": "a00678963f692a929312968f19b77a61a8fc0011690d7dc909a8a2c4810fc7b3",
+      "source_package": "krb5",
+      "source_version": "1.20.1-2+deb12u5"
+    },
+    {
+      "Package": "libk5crypto3",
+      "Version": "1.20.1-2+deb12u5",
+      "Filename": "pool/main/k/krb5/libk5crypto3_1.20.1-2+deb12u5_arm64.deb",
+      "Size": "79880",
+      "SHA256": "8ae2c31cde0b3e6f80c573a495b0f90bf6d9efb4455d900728278bb54d9092e5",
+      "source_package": "krb5",
+      "source_version": "1.20.1-2+deb12u5"
+    },
+    {
+      "Package": "libkeyutils1",
+      "Version": "1.6.3-2",
+      "Filename": "pool/main/k/keyutils/libkeyutils1_1.6.3-2_arm64.deb",
+      "Size": "8844",
+      "SHA256": "aac46cb6faec4e737502b3c2290b7b02f8ba04e8accd5af7fd07934df0c867b1",
+      "source_package": "keyutils",
+      "source_version": "1.6.3-2"
+    },
+    {
+      "Package": "libkrb5-3",
+      "Version": "1.20.1-2+deb12u5",
+      "Filename": "pool/main/k/krb5/libkrb5-3_1.20.1-2+deb12u5_arm64.deb",
+      "Size": "315528",
+      "SHA256": "c3c7227f5db903a7a8b8936d47d1d79643edcda36365c4c992e1a96bcc2d4c7e",
+      "source_package": "krb5",
+      "source_version": "1.20.1-2+deb12u5"
+    },
+    {
+      "Package": "libkrb5support0",
+      "Version": "1.20.1-2+deb12u5",
+      "Filename": "pool/main/k/krb5/libkrb5support0_1.20.1-2+deb12u5_arm64.deb",
+      "Size": "32592",
+      "SHA256": "3043fd4a54b945a1b503170749527f825dcfc7add2f8bf5abb4a329deeb48f4a",
+      "source_package": "krb5",
+      "source_version": "1.20.1-2+deb12u5"
+    },
+    {
+      "Package": "liblzma5",
+      "Version": "5.4.1-1+deb12u1",
+      "Filename": "pool/main/x/xz-utils/liblzma5_5.4.1-1+deb12u1_arm64.deb",
+      "Size": "199508",
+      "SHA256": "647ce9d81e41c30071ce6ac0d3324579216a33aaa1d28971d6952315f6a95a75",
+      "source_package": "xz-utils",
+      "source_version": "5.4.1-1+deb12u1"
+    },
+    {
+      "Package": "libmd0",
+      "Version": "1.0.4-2",
+      "Filename": "pool/main/libm/libmd/libmd0_1.0.4-2_arm64.deb",
+      "Size": "29400",
+      "SHA256": "99a8c7dd591fae9fb37d8bf8dfdffa850e207fa405b3198c5b24711a5f972381",
+      "source_package": "libmd",
+      "source_version": "1.0.4-2"
+    },
+    {
+      "Package": "libncursesw6",
+      "Version": "6.4-4",
+      "Filename": "pool/main/n/ncurses/libncursesw6_6.4-4_arm64.deb",
+      "Size": "121688",
+      "SHA256": "cf32cb6751718872c6def448b82211eec494f688e2f1a3e6c71bfdaf6b0722c5",
+      "source_package": "ncurses",
+      "source_version": "6.4-4"
+    },
+    {
+      "Package": "libnsl2",
+      "Version": "1.3.0-2",
+      "Filename": "pool/main/libn/libnsl/libnsl2_1.3.0-2_arm64.deb",
+      "Size": "36908",
+      "SHA256": "8f9ba58b219779b43c4ccc78c79b0a23f721fc96323c202abb31e02f942104b3",
+      "source_package": "libnsl",
+      "source_version": "1.3.0-2"
+    },
+    {
+      "Package": "libpixman-1-0",
+      "Version": "0.42.2-1",
+      "Filename": "pool/main/p/pixman/libpixman-1-0_0.42.2-1_arm64.deb",
+      "Size": "470200",
+      "SHA256": "a18db1a3bdbad168c7168b528bbb07b47316ff9fe977206a780dcc21b376e501",
+      "source_package": "pixman",
+      "source_version": "0.42.2-1"
+    },
+    {
+      "Package": "libpng16-16",
+      "Version": "1.6.39-2+deb12u5",
+      "Filename": "pool/main/libp/libpng1.6/libpng16-16_1.6.39-2+deb12u5_arm64.deb",
+      "Size": "270448",
+      "SHA256": "69aba3963ddfb11b98e5bf4b0d022f76b797436568884b10f2da32e0f4b8c2dd",
+      "source_package": "libpng1.6",
+      "source_version": "1.6.39-2+deb12u5"
+    },
+    {
+      "Package": "libpython3.11-minimal",
+      "Version": "3.11.2-6+deb12u8",
+      "Filename": "pool/main/p/python3.11/libpython3.11-minimal_3.11.2-6+deb12u8_arm64.deb",
+      "Size": "810796",
+      "SHA256": "c48bac178c0fc43a2bf8ace784c762b5ee83e2b981894a991dc3ccfd3ec7cd4b",
+      "source_package": "python3.11",
+      "source_version": "3.11.2-6+deb12u8"
+    },
+    {
+      "Package": "libpython3.11-stdlib",
+      "Version": "3.11.2-6+deb12u8",
+      "Filename": "pool/main/p/python3.11/libpython3.11-stdlib_3.11.2-6+deb12u8_arm64.deb",
+      "Size": "1749796",
+      "SHA256": "e79876de55c6c2dca10d044b2fa69ccd863950ea01714220c1982d16008105f9",
+      "source_package": "python3.11",
+      "source_version": "3.11.2-6+deb12u8"
+    },
+    {
+      "Package": "libreadline8",
+      "Version": "8.2-1.3",
+      "Filename": "pool/main/r/readline/libreadline8_8.2-1.3_arm64.deb",
+      "Size": "154776",
+      "SHA256": "f3b162b7c1e05430607e792ebdbfc417cbd1f1d32cf83664133ae63d811a72d2",
+      "source_package": "readline",
+      "source_version": "8.2-1.3"
+    },
+    {
+      "Package": "libsqlite3-0",
+      "Version": "3.40.1-2+deb12u2",
+      "Filename": "pool/main/s/sqlite3/libsqlite3-0_3.40.1-2+deb12u2_arm64.deb",
+      "Size": "785596",
+      "SHA256": "a690f7f2aa6435bd1fd7cbbd2216acb9acbb8c48c9721f2c195766375439eb13",
+      "source_package": "sqlite3",
+      "source_version": "3.40.1-2+deb12u2"
+    },
+    {
+      "Package": "libssl3",
+      "Version": "3.0.20-1~deb12u2",
+      "Filename": "pool/main/o/openssl/libssl3_3.0.20-1~deb12u2_arm64.deb",
+      "Size": "1823624",
+      "SHA256": "a256e03cc3abd7243ac5c6ee91a9deb56478221ef0d3c2b0748551e13140c0bf",
+      "source_package": "openssl",
+      "source_version": "3.0.20-1~deb12u2"
+    },
+    {
+      "Package": "libtcl8.6",
+      "Version": "8.6.13+dfsg-2",
+      "Filename": "pool/main/t/tcl8.6/libtcl8.6_8.6.13+dfsg-2_arm64.deb",
+      "Size": "973380",
+      "SHA256": "b5244c01bb23472464eb9264e440a99c438358f39ccd014f8f56694bf638a22c",
+      "source_package": "tcl8.6",
+      "source_version": "8.6.13+dfsg-2"
+    },
+    {
+      "Package": "libtinfo6",
+      "Version": "6.4-4",
+      "Filename": "pool/main/n/ncurses/libtinfo6_6.4-4_arm64.deb",
+      "Size": "324548",
+      "SHA256": "baef0f6776f84c7eed4f1146d6e5774689567dad43216894d41da02e6608e4b3",
+      "source_package": "ncurses",
+      "source_version": "6.4-4"
+    },
+    {
+      "Package": "libtirpc3",
+      "Version": "1.3.3+ds-1",
+      "Filename": "pool/main/libt/libtirpc/libtirpc3_1.3.3+ds-1_arm64.deb",
+      "Size": "80940",
+      "SHA256": "deaf9ea54f74cab6690b4bc0b427f05cbe62cc073580d84f5f18a8d9e2ece401",
+      "source_package": "libtirpc",
+      "source_version": "1.3.3+ds-1"
+    },
+    {
+      "Package": "libtk8.6",
+      "Version": "8.6.13-2",
+      "Filename": "pool/main/t/tk8.6/libtk8.6_8.6.13-2_arm64.deb",
+      "Size": "728760",
+      "SHA256": "84554b6f96a3157c262999012e1e1f6f6d4dec157f14e3ca240f5032c5c0e190",
+      "source_package": "tk8.6",
+      "source_version": "8.6.13-2"
+    },
+    {
+      "Package": "libuuid1",
+      "Version": "2.38.1-5+deb12u3",
+      "Filename": "pool/main/u/util-linux/libuuid1_2.38.1-5+deb12u3_arm64.deb",
+      "Size": "28532",
+      "SHA256": "3b2d19df0f3190108cf54228c4cfc822226c06d8f3615a5ab16a7dffb1f58aed",
+      "source_package": "util-linux",
+      "source_version": "2.38.1-5+deb12u3"
+    },
+    {
+      "Package": "libx11-6",
+      "Version": "2:1.8.4-2+deb12u2",
+      "Filename": "pool/main/libx/libx11/libx11-6_1.8.4-2+deb12u2_arm64.deb",
+      "Size": "735284",
+      "SHA256": "d1d533e983582282a9ea82c87ac5ce715a9b67bd6d1acbd2439a11c63c36549b",
+      "source_package": "libx11",
+      "source_version": "2:1.8.4-2+deb12u2"
+    },
+    {
+      "Package": "libxau6",
+      "Version": "1:1.0.9-1",
+      "Filename": "pool/main/libx/libxau/libxau6_1.0.9-1_arm64.deb",
+      "Size": "19696",
+      "SHA256": "36c2bf400641a80521093771dc2562c903df4065f9eb03add50d90564337ea6c",
+      "source_package": "libxau",
+      "source_version": "1:1.0.9-1"
+    },
+    {
+      "Package": "libxcb1",
+      "Version": "1.15-1",
+      "Filename": "pool/main/libx/libxcb/libxcb1_1.15-1_arm64.deb",
+      "Size": "142664",
+      "SHA256": "041d9a68415c3ccf3ce8f4f8b88e4bbfb5dc1f0d97013c6ef8423e620ea50f84",
+      "source_package": "libxcb",
+      "source_version": "1.15-1"
+    },
+    {
+      "Package": "libxcvt0",
+      "Version": "0.1.2-1",
+      "Filename": "pool/main/libx/libxcvt/libxcvt0_0.1.2-1_arm64.deb",
+      "Size": "5396",
+      "SHA256": "ad8724b48a1fa79ede417aa33197d1f779d59fcbc1fc232f603531b59988a280",
+      "source_package": "libxcvt",
+      "source_version": "0.1.2-1"
+    },
+    {
+      "Package": "libxdmcp6",
+      "Version": "1:1.1.2-3",
+      "Filename": "pool/main/libx/libxdmcp/libxdmcp6_1.1.2-3_arm64.deb",
+      "Size": "25358",
+      "SHA256": "e92569ac33247261aa09adfadc34ced3994ac301cf8b58de415a2d5dbf15ccfc",
+      "source_package": "libxdmcp",
+      "source_version": "1:1.1.2-3"
+    },
+    {
+      "Package": "libxext6",
+      "Version": "2:1.3.4-1+b1",
+      "Filename": "pool/main/libx/libxext/libxext6_1.3.4-1+b1_arm64.deb",
+      "Size": "51744",
+      "SHA256": "5e9c0ad606eb4674c645fe8e0e64330c47d2729f7a59ed569848610efd5d5b62",
+      "source_package": "libxext",
+      "source_version": "2:1.3.4-1"
+    },
+    {
+      "Package": "libxfixes3",
+      "Version": "1:6.0.0-2",
+      "Filename": "pool/main/libx/libxfixes/libxfixes3_6.0.0-2_arm64.deb",
+      "Size": "22880",
+      "SHA256": "d47bda8fed01b19b41d503e2df05d9166c58e30e2376f2f8784ceb7a834befe6",
+      "source_package": "libxfixes",
+      "source_version": "1:6.0.0-2"
+    },
+    {
+      "Package": "libxfont2",
+      "Version": "1:2.0.6-1",
+      "Filename": "pool/main/libx/libxfont/libxfont2_2.0.6-1_arm64.deb",
+      "Size": "127680",
+      "SHA256": "9721780b98ccdd0a15262095e94e6cb1ca1ef60ec2778d36bd23afe888aa463a",
+      "source_package": "libxfont",
+      "source_version": "1:2.0.6-1"
+    },
+    {
+      "Package": "libxft2",
+      "Version": "2.3.6-1",
+      "Filename": "pool/main/x/xft/libxft2_2.3.6-1_arm64.deb",
+      "Size": "58668",
+      "SHA256": "a8622d658df471aa298ab2565442072bd5d9e43d67136f46ec7eda7289a61b01",
+      "source_package": "xft",
+      "source_version": "2.3.6-1"
+    },
+    {
+      "Package": "libxkbfile1",
+      "Version": "1:1.1.0-1",
+      "Filename": "pool/main/libx/libxkbfile/libxkbfile1_1.1.0-1_arm64.deb",
+      "Size": "71492",
+      "SHA256": "d5fa175e392561675075232697a52030eedbf18a2e910fae87d5a2095fa7fc99",
+      "source_package": "libxkbfile",
+      "source_version": "1:1.1.0-1"
+    },
+    {
+      "Package": "libxrandr2",
+      "Version": "2:1.5.2-2+b1",
+      "Filename": "pool/main/libx/libxrandr/libxrandr2_1.5.2-2+b1_arm64.deb",
+      "Size": "38364",
+      "SHA256": "f0bc7f79fee182caae176652fdb1bf349d13b9591b10ad4dc1c896521da8e49f",
+      "source_package": "libxrandr",
+      "source_version": "2:1.5.2-2"
+    },
+    {
+      "Package": "libxrender1",
+      "Version": "1:0.9.10-1.1",
+      "Filename": "pool/main/libx/libxrender/libxrender1_0.9.10-1.1_arm64.deb",
+      "Size": "32004",
+      "SHA256": "f260193deb4eaf0b410a1c61e1f84804366ee3372b8bad9f38005f7dbcd89aae",
+      "source_package": "libxrender",
+      "source_version": "1:0.9.10-1.1"
+    },
+    {
+      "Package": "libxshmfence1",
+      "Version": "1.3-1",
+      "Filename": "pool/main/libx/libxshmfence/libxshmfence1_1.3-1_arm64.deb",
+      "Size": "8712",
+      "SHA256": "fa2edaae6902681ecd02534dcdf8389ac48714d3385d572cc17747160957acc8",
+      "source_package": "libxshmfence",
+      "source_version": "1.3-1"
+    },
+    {
+      "Package": "libxss1",
+      "Version": "1:1.2.3-1",
+      "Filename": "pool/main/libx/libxss/libxss1_1.2.3-1_arm64.deb",
+      "Size": "17764",
+      "SHA256": "e0ff80e309eacda5face68b9a3bd56718fed2750af429324c35d7c9491c335f4",
+      "source_package": "libxss",
+      "source_version": "1:1.2.3-1"
+    },
+    {
+      "Package": "libxxf86vm1",
+      "Version": "1:1.1.4-1+b2",
+      "Filename": "pool/main/libx/libxxf86vm/libxxf86vm1_1.1.4-1+b2_arm64.deb",
+      "Size": "20062",
+      "SHA256": "8a4826772ac480804d6b8d776a4130d95260c036b9b218de4c8a0f07eb9c5bba",
+      "source_package": "libxxf86vm",
+      "source_version": "1:1.1.4-1"
+    },
+    {
+      "Package": "python3-tk",
+      "Version": "3.11.2-3",
+      "Filename": "pool/main/p/python3-stdlib-extensions/python3-tk_3.11.2-3_arm64.deb",
+      "Size": "97688",
+      "SHA256": "107dd4c9f24e2e1da9d92c147101d4e30dd9eba22dae407f1c9dff0d4f1a39bb",
+      "source_package": "python3-stdlib-extensions",
+      "source_version": "3.11.2-3"
+    },
+    {
+      "Package": "python3.11-minimal",
+      "Version": "3.11.2-6+deb12u8",
+      "Filename": "pool/main/p/python3.11/python3.11-minimal_3.11.2-6+deb12u8_arm64.deb",
+      "Size": "1861304",
+      "SHA256": "6a07dd571f1a15af2f855d64571766fe44b73a57cc3b5ca79502bc89156a5e12",
+      "source_package": "python3.11",
+      "source_version": "3.11.2-6+deb12u8"
+    },
+    {
+      "Package": "tk8.6-blt2.5",
+      "Version": "2.5.3+dfsg-4.1",
+      "Filename": "pool/main/b/blt/tk8.6-blt2.5_2.5.3+dfsg-4.1_arm64.deb",
+      "Size": "539636",
+      "SHA256": "f3940a6e13e43418c5ec7c071777a9d1f91bdcece2a48e93cad42a90092607a0",
+      "source_package": "blt",
+      "source_version": "2.5.3+dfsg-4.1"
+    },
+    {
+      "Package": "x11-xkb-utils",
+      "Version": "7.7+7",
+      "Filename": "pool/main/x/x11-xkb-utils/x11-xkb-utils_7.7+7_arm64.deb",
+      "Size": "154496",
+      "SHA256": "0eb537d8d9087b4763b8adce541991e7f7fb7e225c4b574dcb17476410393055",
+      "source_package": "x11-xkb-utils",
+      "source_version": "7.7+7"
+    },
+    {
+      "Package": "xdelta3",
+      "Version": "3.0.11-dfsg-1.2",
+      "Filename": "pool/main/x/xdelta3/xdelta3_3.0.11-dfsg-1.2_arm64.deb",
+      "Size": "66032",
+      "SHA256": "15d8433b80e85cdee6324cc3a0e6ce8019cf29494e9827381879181470970aef",
+      "source_package": "xdelta3",
+      "source_version": "3.0.11-dfsg-1.2"
+    },
+    {
+      "Package": "xkb-data",
+      "Version": "2.35.1-1",
+      "Filename": "pool/main/x/xkeyboard-config/xkb-data_2.35.1-1_all.deb",
+      "Size": "763516",
+      "SHA256": "28a79c61b785f403da93af58c39aed13c022032935e3e54362c6707169cfe982",
+      "source_package": "xkeyboard-config",
+      "source_version": "2.35.1-1"
+    },
+    {
+      "Package": "zlib1g",
+      "Version": "1:1.2.13.dfsg-1",
+      "Filename": "pool/main/z/zlib/zlib1g_1.2.13.dfsg-1_arm64.deb",
+      "Size": "82744",
+      "SHA256": "52b8b8a145bbe1956bba82034f77022cbef0c3d0885c9e32d9817a7932fe1913",
+      "source_package": "zlib",
+      "source_version": "1:1.2.13.dfsg-1"
+    }
+  ],
+  "unmodified_permissive_source_references": [
+    {
+      "package": "blt",
+      "version": "2.5.3+dfsg-4.1",
+      "directory": "pool/main/b/blt",
+      "binaries": [
+        "blt",
+        "tk8.6-blt2.5"
+      ],
+      "source_browser": "https://sources.debian.org/src/blt/2.5.3%2Bdfsg-4.1/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/b/blt/blt_2.5.3+dfsg-4.1.dsc"
+    },
+    {
+      "package": "brotli",
+      "version": "1.0.9-2",
+      "directory": "pool/main/b/brotli",
+      "binaries": [
+        "libbrotli1"
+      ],
+      "source_browser": "https://sources.debian.org/src/brotli/1.0.9-2/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/b/brotli/brotli_1.0.9-2.dsc"
+    },
+    {
+      "package": "libbsd",
+      "version": "0.11.7-2",
+      "directory": "pool/main/libb/libbsd",
+      "binaries": [
+        "libbsd0"
+      ],
+      "source_browser": "https://sources.debian.org/src/libbsd/0.11.7-2/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.11.7-2.dsc"
+    },
+    {
+      "package": "bzip2",
+      "version": "1.0.8-5",
+      "directory": "pool/main/b/bzip2",
+      "binaries": [
+        "libbz2-1.0"
+      ],
+      "source_browser": "https://sources.debian.org/src/bzip2/1.0.8-5/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/b/bzip2/bzip2_1.0.8-5.dsc"
+    },
+    {
+      "package": "e2fsprogs",
+      "version": "1.47.0-2",
+      "directory": "pool/main/e/e2fsprogs",
+      "binaries": [
+        "libcom-err2"
+      ],
+      "source_browser": "https://sources.debian.org/src/e2fsprogs/1.47.0-2/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.47.0-2.dsc"
+    },
+    {
+      "package": "expat",
+      "version": "2.5.0-1+deb12u2",
+      "directory": "pool/main/e/expat",
+      "binaries": [
+        "libexpat1"
+      ],
+      "source_browser": "https://sources.debian.org/src/expat/2.5.0-1%2Bdeb12u2/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/e/expat/expat_2.5.0-1+deb12u2.dsc"
+    },
+    {
+      "package": "libffi",
+      "version": "3.4.4-1",
+      "directory": "pool/main/libf/libffi",
+      "binaries": [
+        "libffi8"
+      ],
+      "source_browser": "https://sources.debian.org/src/libffi/3.4.4-1/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/libf/libffi/libffi_3.4.4-1.dsc"
+    },
+    {
+      "package": "fontconfig",
+      "version": "2.14.1-4",
+      "directory": "pool/main/f/fontconfig",
+      "binaries": [
+        "libfontconfig1"
+      ],
+      "source_browser": "https://sources.debian.org/src/fontconfig/2.14.1-4/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/f/fontconfig/fontconfig_2.14.1-4.dsc"
+    },
+    {
+      "package": "libfontenc",
+      "version": "1:1.1.4-1",
+      "directory": "pool/main/libf/libfontenc",
+      "binaries": [
+        "libfontenc1"
+      ],
+      "source_browser": "https://sources.debian.org/src/libfontenc/1%3A1.1.4-1/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/libf/libfontenc/libfontenc_1.1.4-1.dsc"
+    },
+    {
+      "package": "freetype",
+      "version": "2.12.1+dfsg-5+deb12u4",
+      "directory": "pool/main/f/freetype",
+      "binaries": [
+        "libfreetype6"
+      ],
+      "source_browser": "https://sources.debian.org/src/freetype/2.12.1%2Bdfsg-5%2Bdeb12u4/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/f/freetype/freetype_2.12.1+dfsg-5+deb12u4.dsc"
+    },
+    {
+      "package": "krb5",
+      "version": "1.20.1-2+deb12u5",
+      "directory": "pool/main/k/krb5",
+      "binaries": [
+        "libgssapi-krb5-2",
+        "libk5crypto3",
+        "libkrb5-3",
+        "libkrb5support0"
+      ],
+      "source_browser": "https://sources.debian.org/src/krb5/1.20.1-2%2Bdeb12u5/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/k/krb5/krb5_1.20.1-2+deb12u5.dsc"
+    },
+    {
+      "package": "xz-utils",
+      "version": "5.4.1-1+deb12u1",
+      "directory": "pool/main/x/xz-utils",
+      "binaries": [
+        "liblzma5"
+      ],
+      "source_browser": "https://sources.debian.org/src/xz-utils/5.4.1-1%2Bdeb12u1/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/x/xz-utils/xz-utils_5.4.1-1+deb12u1.dsc"
+    },
+    {
+      "package": "libmd",
+      "version": "1.0.4-2",
+      "directory": "pool/main/libm/libmd",
+      "binaries": [
+        "libmd0"
+      ],
+      "source_browser": "https://sources.debian.org/src/libmd/1.0.4-2/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/libm/libmd/libmd_1.0.4-2.dsc"
+    },
+    {
+      "package": "ncurses",
+      "version": "6.4-4",
+      "directory": "pool/main/n/ncurses",
+      "binaries": [
+        "libncursesw6",
+        "libtinfo6"
+      ],
+      "source_browser": "https://sources.debian.org/src/ncurses/6.4-4/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.4-4.dsc"
+    },
+    {
+      "package": "pixman",
+      "version": "0.42.2-1",
+      "directory": "pool/main/p/pixman",
+      "binaries": [
+        "libpixman-1-0"
+      ],
+      "source_browser": "https://sources.debian.org/src/pixman/0.42.2-1/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/p/pixman/pixman_0.42.2-1.dsc"
+    },
+    {
+      "package": "libpng1.6",
+      "version": "1.6.39-2+deb12u5",
+      "directory": "pool/main/libp/libpng1.6",
+      "binaries": [
+        "libpng16-16"
+      ],
+      "source_browser": "https://sources.debian.org/src/libpng1.6/1.6.39-2%2Bdeb12u5/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/libp/libpng1.6/libpng1.6_1.6.39-2+deb12u5.dsc"
+    },
+    {
+      "package": "sqlite3",
+      "version": "3.40.1-2+deb12u2",
+      "directory": "pool/main/s/sqlite3",
+      "binaries": [
+        "libsqlite3-0"
+      ],
+      "source_browser": "https://sources.debian.org/src/sqlite3/3.40.1-2%2Bdeb12u2/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.40.1-2+deb12u2.dsc"
+    },
+    {
+      "package": "openssl",
+      "version": "3.0.20-1~deb12u2",
+      "directory": "pool/main/o/openssl",
+      "binaries": [
+        "libssl3"
+      ],
+      "source_browser": "https://sources.debian.org/src/openssl/3.0.20-1~deb12u2/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/o/openssl/openssl_3.0.20-1~deb12u2.dsc"
+    },
+    {
+      "package": "tcl8.6",
+      "version": "8.6.13+dfsg-2",
+      "directory": "pool/main/t/tcl8.6",
+      "binaries": [
+        "libtcl8.6"
+      ],
+      "source_browser": "https://sources.debian.org/src/tcl8.6/8.6.13%2Bdfsg-2/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/t/tcl8.6/tcl8.6_8.6.13+dfsg-2.dsc"
+    },
+    {
+      "package": "libtirpc",
+      "version": "1.3.3+ds-1",
+      "directory": "pool/main/libt/libtirpc",
+      "binaries": [
+        "libtirpc3"
+      ],
+      "source_browser": "https://sources.debian.org/src/libtirpc/1.3.3%2Bds-1/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/libt/libtirpc/libtirpc_1.3.3+ds-1.dsc"
+    },
+    {
+      "package": "tk8.6",
+      "version": "8.6.13-2",
+      "directory": "pool/main/t/tk8.6",
+      "binaries": [
+        "libtk8.6"
+      ],
+      "source_browser": "https://sources.debian.org/src/tk8.6/8.6.13-2/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/t/tk8.6/tk8.6_8.6.13-2.dsc"
+    },
+    {
+      "package": "util-linux",
+      "version": "2.38.1-5+deb12u3",
+      "directory": "pool/main/u/util-linux",
+      "binaries": [
+        "libuuid1"
+      ],
+      "source_browser": "https://sources.debian.org/src/util-linux/2.38.1-5%2Bdeb12u3/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/u/util-linux/util-linux_2.38.1-5+deb12u3.dsc"
+    },
+    {
+      "package": "libx11",
+      "version": "2:1.8.4-2+deb12u2",
+      "directory": "pool/main/libx/libx11",
+      "binaries": [
+        "libx11-6"
+      ],
+      "source_browser": "https://sources.debian.org/src/libx11/2%3A1.8.4-2%2Bdeb12u2/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/libx/libx11/libx11_1.8.4-2+deb12u2.dsc"
+    },
+    {
+      "package": "libxau",
+      "version": "1:1.0.9-1",
+      "directory": "pool/main/libx/libxau",
+      "binaries": [
+        "libxau6"
+      ],
+      "source_browser": "https://sources.debian.org/src/libxau/1%3A1.0.9-1/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/libx/libxau/libxau_1.0.9-1.dsc"
+    },
+    {
+      "package": "libxcb",
+      "version": "1.15-1",
+      "directory": "pool/main/libx/libxcb",
+      "binaries": [
+        "libxcb1"
+      ],
+      "source_browser": "https://sources.debian.org/src/libxcb/1.15-1/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/libx/libxcb/libxcb_1.15-1.dsc"
+    },
+    {
+      "package": "libxcvt",
+      "version": "0.1.2-1",
+      "directory": "pool/main/libx/libxcvt",
+      "binaries": [
+        "libxcvt0"
+      ],
+      "source_browser": "https://sources.debian.org/src/libxcvt/0.1.2-1/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/libx/libxcvt/libxcvt_0.1.2-1.dsc"
+    },
+    {
+      "package": "libxdmcp",
+      "version": "1:1.1.2-3",
+      "directory": "pool/main/libx/libxdmcp",
+      "binaries": [
+        "libxdmcp6"
+      ],
+      "source_browser": "https://sources.debian.org/src/libxdmcp/1%3A1.1.2-3/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/libx/libxdmcp/libxdmcp_1.1.2-3.dsc"
+    },
+    {
+      "package": "libxext",
+      "version": "2:1.3.4-1",
+      "directory": "pool/main/libx/libxext",
+      "binaries": [
+        "libxext6"
+      ],
+      "source_browser": "https://sources.debian.org/src/libxext/2%3A1.3.4-1/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/libx/libxext/libxext_1.3.4-1.dsc"
+    },
+    {
+      "package": "libxfixes",
+      "version": "1:6.0.0-2",
+      "directory": "pool/main/libx/libxfixes",
+      "binaries": [
+        "libxfixes3"
+      ],
+      "source_browser": "https://sources.debian.org/src/libxfixes/1%3A6.0.0-2/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/libx/libxfixes/libxfixes_6.0.0-2.dsc"
+    },
+    {
+      "package": "libxfont",
+      "version": "1:2.0.6-1",
+      "directory": "pool/main/libx/libxfont",
+      "binaries": [
+        "libxfont2"
+      ],
+      "source_browser": "https://sources.debian.org/src/libxfont/1%3A2.0.6-1/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/libx/libxfont/libxfont_2.0.6-1.dsc"
+    },
+    {
+      "package": "xft",
+      "version": "2.3.6-1",
+      "directory": "pool/main/x/xft",
+      "binaries": [
+        "libxft2"
+      ],
+      "source_browser": "https://sources.debian.org/src/xft/2.3.6-1/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/x/xft/xft_2.3.6-1.dsc"
+    },
+    {
+      "package": "libxkbfile",
+      "version": "1:1.1.0-1",
+      "directory": "pool/main/libx/libxkbfile",
+      "binaries": [
+        "libxkbfile1"
+      ],
+      "source_browser": "https://sources.debian.org/src/libxkbfile/1%3A1.1.0-1/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/libx/libxkbfile/libxkbfile_1.1.0-1.dsc"
+    },
+    {
+      "package": "libxrandr",
+      "version": "2:1.5.2-2",
+      "directory": "pool/main/libx/libxrandr",
+      "binaries": [
+        "libxrandr2"
+      ],
+      "source_browser": "https://sources.debian.org/src/libxrandr/2%3A1.5.2-2/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/libx/libxrandr/libxrandr_1.5.2-2.dsc"
+    },
+    {
+      "package": "libxrender",
+      "version": "1:0.9.10-1.1",
+      "directory": "pool/main/libx/libxrender",
+      "binaries": [
+        "libxrender1"
+      ],
+      "source_browser": "https://sources.debian.org/src/libxrender/1%3A0.9.10-1.1/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/libx/libxrender/libxrender_0.9.10-1.1.dsc"
+    },
+    {
+      "package": "libxshmfence",
+      "version": "1.3-1",
+      "directory": "pool/main/libx/libxshmfence",
+      "binaries": [
+        "libxshmfence1"
+      ],
+      "source_browser": "https://sources.debian.org/src/libxshmfence/1.3-1/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/libx/libxshmfence/libxshmfence_1.3-1.dsc"
+    },
+    {
+      "package": "libxss",
+      "version": "1:1.2.3-1",
+      "directory": "pool/main/libx/libxss",
+      "binaries": [
+        "libxss1"
+      ],
+      "source_browser": "https://sources.debian.org/src/libxss/1%3A1.2.3-1/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/libx/libxss/libxss_1.2.3-1.dsc"
+    },
+    {
+      "package": "libxxf86vm",
+      "version": "1:1.1.4-1",
+      "directory": "pool/main/libx/libxxf86vm",
+      "binaries": [
+        "libxxf86vm1"
+      ],
+      "source_browser": "https://sources.debian.org/src/libxxf86vm/1%3A1.1.4-1/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/libx/libxxf86vm/libxxf86vm_1.1.4-1.dsc"
+    },
+    {
+      "package": "x11-xkb-utils",
+      "version": "7.7+7",
+      "directory": "pool/main/x/x11-xkb-utils",
+      "binaries": [
+        "x11-xkb-utils"
+      ],
+      "source_browser": "https://sources.debian.org/src/x11-xkb-utils/7.7%2B7/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/x/x11-xkb-utils/x11-xkb-utils_7.7+7.dsc"
+    },
+    {
+      "package": "xkeyboard-config",
+      "version": "2.35.1-1",
+      "directory": "pool/main/x/xkeyboard-config",
+      "binaries": [
+        "xkb-data"
+      ],
+      "source_browser": "https://sources.debian.org/src/xkeyboard-config/2.35.1-1/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/x/xkeyboard-config/xkeyboard-config_2.35.1-1.dsc"
+    },
+    {
+      "package": "zlib",
+      "version": "1:1.2.13.dfsg-1",
+      "directory": "pool/main/z/zlib",
+      "binaries": [
+        "zlib1g"
+      ],
+      "source_browser": "https://sources.debian.org/src/zlib/1%3A1.2.13.dfsg-1/",
+      "dsc_url": "https://deb.debian.org/debian/pool/main/z/zlib/zlib_1.2.13.dfsg-1.dsc"
+    }
+  ],
+  "native_integration": {
+    "gl4es_revision": "bc4314d8369f169d3fa81c5ed1b46b3dba4e74a5",
+    "gl4es_source": "native/linux/gl4es",
+    "changes": "native/linux/display/gl4es-wayland.patch",
+    "display_source": "native/linux/display/linux-display.c",
+    "xwayland_version": "22.1.9",
+    "xwayland_source_url": "https://www.x.org/releases/individual/xserver/xwayland-22.1.9.tar.xz"
+  }
+}

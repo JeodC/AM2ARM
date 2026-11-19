@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"load_timeofday_bgs",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"load_timeofday_bgs",
+  "parent":{
+    "name":"BG",
+    "path":"folders/Scripts/BG.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

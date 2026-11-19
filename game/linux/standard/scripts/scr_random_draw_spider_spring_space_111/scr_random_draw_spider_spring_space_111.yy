@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_random_draw_spider_spring_space_111",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_random_draw_spider_spring_space_111",
+  "parent":{
+    "name":"Randomizer",
+    "path":"folders/Scripts/Gatordile/Randomizer.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

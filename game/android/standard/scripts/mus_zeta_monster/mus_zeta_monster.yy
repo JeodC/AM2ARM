@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"mus_zeta_monster",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"mus_zeta_monster",
+  "parent":{
+    "name":"Music",
+    "path":"folders/Scripts/Music.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

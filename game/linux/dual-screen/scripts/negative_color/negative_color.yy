@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"negative_color",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"negative_color",
+  "parent":{
+    "name":"Visual",
+    "path":"folders/Scripts/Visual.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

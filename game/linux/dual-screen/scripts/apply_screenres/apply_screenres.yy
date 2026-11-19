@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"apply_screenres",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"apply_screenres",
+  "parent":{
+    "name":"Options?",
+    "path":"folders/Scripts/Options?.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

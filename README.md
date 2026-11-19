@@ -1,51 +1,33 @@
 # AM2ARM — Autopatcher
 
-Turns **your own original AM2R 1.1 Windows ZIP** into Standard or Dual Screen
-for **ARM64 Android and Linux**. Android and the Ports-based Linux package offer both
-editions; the TrimUI package offers Standard. Nothing playable is hosted here: the patcher rebuilds the game from
-your files and verifies it before installation.
+Rebuild AM2R for **ARM64 Android or Linux** from your own original Windows
+**AM2R 1.1 ZIP**. Standard plays on one screen. Dual Screen puts gameplay above
+the interactive map on supported two-screen devices.
 
-AM2ARM is based on **AM2R Community Updates 1.5.5**. **1.6.1 is this port's
-release number**, not a new Community Updates version. It brings the Android
-port and native ARM64 Linux edition together. The games retain the original
-AM2R logo and show **V1.6.1** in the title-screen corner.
+AM2ARM is based on **AM2R Community Updates 1.5.5**. The title screen displays
+the port version **V1.6.2**.
 
 ## Downloads
 
-Download from [AM2ARM 1.6.1](https://github.com/PatchDev-AM2ARM/AM2ARM/releases/tag/v1.6.1):
-
-| Your device's operating system | Download |
+| Platform | Download |
 | --- | --- |
-| Android | **AM2ARM-Autopatcher-1.6.1.apk** |
-| ARM64 Linux with a supported Ports menu | **AM2ARM-Autopatcher-1.6.1-linux-arm64.zip** |
-| TrimUI Brick or original Smart Pro / NextUI or stock menu | **AM2ARM-Autopatcher-1.6.1-trimui-arm64.zip** (Standard) |
+| ARM64 Android | [AM2ARM-Autopatcher-1.6.2.apk](https://github.com/PatchDev-AM2ARM/AM2ARM/releases/download/v1.6.2/AM2ARM-Autopatcher-1.6.2.apk) |
+| Supported ARM64 Linux handhelds | [AM2ARM-Autopatcher-1.6.2-linux-arm64.zip](https://github.com/PatchDev-AM2ARM/AM2ARM/releases/download/v1.6.2/AM2ARM-Autopatcher-1.6.2-linux-arm64.zip) |
 
-All require the original **2016 AM2R_11.zip**. Keep it zipped; modded copies
-and Community Updates packages are not accepted. The Linux installer and
-Standard work without a touchscreen or Wi-Fi. Dual Screen's map requires touch.
-GitHub's automatic **Source code** download is for development, not installation.
+Keep your original 2016 **AM2R_11.zip** zipped. Each Autopatcher reconstructs
+and verifies the selected edition locally. The Linux installer works offline
+with physical buttons. A touchscreen is needed for the Dual Screen map.
 
-## What's new in 1.6.1
+## What's new in 1.6.2
 
-**1.6.1 — Native ARM64 Linux support and redesigned Autopatchers.**
-
-Standard and Dual Screen now run natively on supported ARM64 Linux handhelds.
-The Linux Autopatcher works offline with physical controls, and the game includes
-controller-operated **Backup / Restore** for transfers with Android and PC
-Community Updates 1.5.5. TrimUI has a shared package for Brick and original Smart Pro on NextUI
-or the stock Apps menu, with automatic model and resolution selection.
-Smart Pro hardware confirmation is still pending.
-
-Both Autopatchers use a vertical title-style menu with the planet background
-and AM2ARM banner. The game title screen shows V1.6.1 and the repository address.
-
-X parasite and Core-X transformations use a new pixelation shader to reduce
-slowdown while preserving the effect and its timing. Linux includes Nano
-rendering improvements, smoother room transitions and vibration support on
-compatible devices. Standard supports **4:3 / 16:9 / 3:2** without stretching.
-
-Includes the touch-control adjustments, Retroid Dual Screen Add-on support,
-translations and earlier fixes from **1.5.5.14**.
+- One Linux download covers supported Ports, stock TrimUI, NextUI and spruceOS
+  setups. The firmware menu starts the same installer and patch data.
+- Miyoo Flip V2 (RK3566 / MY355) has a working Standard display path. TrimUI
+  Smart Pro S (TG5050) has its own 1280 × 720 profile for its firmware's SDL2
+  and Mali graphics libraries. An on-device check is pending for Smart Pro S.
+- The GameMaker source for both editions and platforms is now in the repository
+  alongside the Autopatcher and native display code. The development guide
+  explains how to restore the omitted assets.
 
 ## Install on Android
 
@@ -74,34 +56,33 @@ uninstalling deletes its private saves. Package IDs and signing are preserved.
 
 ## Install on Linux
 
-Check [compatibility](#compatibility) first and leave **at least 3 GB free** on
-the data card. Use the package for your firmware. **TrimUI users follow the
-separate instructions below.** Installation on a supported handheld works
-offline; no terminal or system package installation is needed.
+Check [compatibility](#compatibility) and leave **at least 3 GB free** on the
+game card after copying. The same Linux ZIP serves every setup in this table.
 
-1. Download and extract **AM2ARM-Autopatcher-1.6.1-linux-arm64.zip** on your computer.
-2. Choose how to access the game-data card:
-   - **2A — Card reader:** power off the handheld, remove its card and connect
-     it to the computer. Do not format it if Windows cannot read the Linux
-     partition; use a computer that can.
-   - **2B — USB transfer:** leave the card inside the handheld and use its
-     firmware's file-transfer mode or USB networking. See [USB transfer](#usb-transfer-without-removing-the-card)
-     below. Keep the game and installer closed while copying.
-3. Open the existing **Ports** folder on the game-data partition. With a card
-   reader, ROCKNIX's system card uses `STORAGE/games-internal/roms/ports` and a
-   separate games card normally uses `roms/ports`. Over a network share, open
-   `games-roms/ports`. Keep existing capitalization; the boot partition is not
-   the game folder. Copy **AM2ARM Autopatcher.sh** and the **AM2ARM Autopatcher**
-   folder together into Ports, without an extra enclosing download folder.
-4. Put your original ZIP in **AM2ARM Autopatcher/input/**. Wait for copying to
-   finish. For a card reader, safely eject, reinsert and boot. For USB, finish
-   the transfer and leave file-transfer mode before opening the installer.
-5. Open **Ports → AM2ARM Autopatcher**. Use the D-pad and Confirm/Back to select
-   an edition, choose the ZIP and select **INSTALL**. **FOLDER → [USE THIS
-   FOLDER]** chooses another destination. Do not power off during installation.
-6. At **INSTALLATION COMPLETE**, close the message and exit. Launch **AM2ARM
-   Standard** or **AM2ARM Dual Screen** from Ports. If an entry is missing,
-   refresh the list; on ROCKNIX use **Start → Game Settings → Update Gamelists**.
+1. Extract **AM2ARM-Autopatcher-1.6.2-linux-arm64.zip** on your computer.
+2. **A. Card reader** — power off the handheld and open its game-data card on
+   the computer. **B. USB transfer** — if the firmware offers file transfer,
+   leave the card in the handheld and copy through its data port. Close the
+   installer and game while copying. [USB transfer options](#usb-transfer-without-removing-the-card)
+3. Copy the files to the location for your firmware.
+
+   | Handheld menu | What to copy |
+   | --- | --- |
+   | **Ports** on RG DS or G350 ROCKNIX | Open the existing Ports directory. Put the extracted **AM2ARM/** folder and **ports/AM2ARM Autopatcher.sh** beside each other inside it. ROCKNIX commonly uses `games-internal/roms/ports` on its system card or `roms/ports` on a games card. |
+   | **Apps** on stock TrimUI | Merge **AM2ARM/** and **Apps/** into the game-card root. |
+   | **Tools** on NextUI | Merge **AM2ARM/** and **Tools/** into the game-card root. |
+   | **Apps** on spruceOS | Merge **AM2ARM/** and **App/** (singular) into the game-card root. |
+   | **Ports** on Miyoo Flip V2 / MY355 | Copy **AM2ARM/** to the game-card root. Copy the included **Roms/ports/** launcher into the existing Ports directory, keeping the card's capitalization. For a Tools frontend use the included **Tools/my355/** entry. |
+
+4. Put your own **AM2R_11.zip** in **AM2ARM/patcher/input/**. Safely eject the
+   card or leave USB transfer mode before starting.
+5. Open **AM2ARM Autopatcher** in the menu above. Choose your ZIP and select
+   **INSTALL**. Use the D-pad, Confirm and Back. Keep the default installation
+   folder on a fresh install. **FOLDER → [USE THIS FOLDER]** selects a different
+   destination. Direct-display handhelds offer Standard.
+6. Exit after **INSTALLATION COMPLETE**, then open **AM2ARM Standard** or
+   **AM2ARM Dual Screen** in the same menu. If the game is missing on ROCKNIX,
+   open **Start → Game Settings → Update Gamelists**.
 
 ### USB transfer without removing the card
 
@@ -124,60 +105,20 @@ port; copying uses the same folders as a card reader.
   an external USB drive through OTG and has a file manager, copying from that
   drive to the card is another route. Otherwise use a card reader.
 
-On the **G350**, USB networking was verified with **ROCKNIX**. A working PC
-transfer route was not established on the tested stock BATLEXPOS image, so
-use a card reader for that setup. This is separate from game compatibility:
-the Ports download below does not support stock BATLEXPOS.
-
-### TrimUI / NextUI and stock menu
-
-Use **AM2ARM-Autopatcher-1.6.1-trimui-arm64.zip**, not the Ports package.
-
-1. Back up your saves and extract the package on the computer.
-2. Copy **AM2ARM/**, **Tools/** and **Apps/** to the SD-card root, preserving
-   their paths. Use a card reader (2A), NextUI Dashboard (2B), or the stock
-   USB Storage function. Keep the game and installer closed during transfer;
-   safely eject USB Storage before opening either app.
-3. Copy your original `AM2R_11.zip` into **AM2ARM/patcher/input/**.
-4. Open **Tools → AM2ARM Autopatcher** on NextUI, or **Apps → AM2ARM
-   Autopatcher** on stock. Use the D-pad, **A** to select and **B** to go back.
-   Choose the ZIP, keep the preset destination, and select **INSTALL**.
-5. At **INSTALLATION COMPLETE**, exit the installer and open **AM2ARM
-   Standard** from the same menu. Leave and reopen that menu if the new
-   entry is missing. You do not need to patch it again.
-
-The launcher automatically selects **1024x768 on Brick** or **1280x720
-on Smart Pro**. New installations default to 4:3 or 16:9 respectively,
-without stretching; existing display settings are preserved.
-
-For this launcher-only update, back up your card, close the game and
-installer, then merge the extracted AM2ARM, Tools and Apps folders with
-their existing folders. Keep the installed game and saved data. An
-existing 1.6.1 Standard game does not need to be patched again.
-
-Both launchers use the same Standard game data. Firmware and clocks remain
-unchanged. NextUI saves stay in its hidden
-`.userdata/tg5040/.config/AM2RStandardLinux/` folder. Stock saves are in
-`AM2ARM/games/AM2ARM Standard/state/config/AM2RStandardLinux/` with the preset
-destination. Preserve these folders when backing up. The in-game Data picker
-has not yet had a separate physical check on the Brick.
-
-Logs are in **AM2ARM/logs/**. Download that folder through Dashboard or copy
-it over USB Storage or with a card reader, then compress it into a ZIP.
-Send the logs and your firmware/version, not your original ZIP or rebuilt game.
+On the **G350**, USB networking was verified with **ROCKNIX**.
 
 ### Updates and startup problems
 
-Each game needs both its folder and matching `.sh` launcher. The original ZIP
-is left unchanged. The patcher refuses to overwrite an existing game directory.
-For updates, export your saves through **Options → Data**, close the game and
-keep a copy of its `state` folder. Install into a separate empty destination,
-then use the new game's Restore menu. Keep the old copy until progress loads.
+Before updating a game, export your progress through **Options → Data → Back
+Up Saves**. Close the game and back up its state. On Ports, install into an
+empty destination that your menu can see. Keep its matching launcher with the
+game folder and restore your backup if needed. On TrimUI, merge the new **AM2ARM/**
+and menu folders and rebuild Standard. An existing installation is preserved.
 
-If the patcher returns to Ports, read **AM2ARM Autopatcher/compatibility.txt**
-on the card. Report the exact device, firmware/version and startup message.
-A missing Wayland session or incompatible system library needs firmware support;
-repeatedly installing the same download will not fix it.
+For startup problems, copy **AM2ARM/logs/compatibility.txt** from the card.
+On Ports the installer also writes **AM2ARM/patcher/compatibility.txt** and
+logs under **AM2ARM/patcher/state/**. Include your model, firmware and the
+last screen you saw. Keep your original ZIP, full game and saves private.
 
 ## Compatibility
 
@@ -190,34 +131,27 @@ repeatedly installing the same download will not fix it.
 | Linux | Original RG DS, stock Linux 1.1-261008 | Fresh installation, Standard and Dual Screen, controls, sound, touch and Standard vibration |
 | Linux | RG DS, ROCKNIX 20261101 | Installer and Standard; Dual Screen on this firmware unverified |
 | Linux | BATLEXP G350, ROCKNIX | Installer, Standard, save transfer and aspect-ratio checks |
-| Linux / TrimUI package | TrimUI Brick, NextUI 20261013-0 | Installer, Standard startup/gameplay, full-screen display, music output and printed A/B/X/Y mapping |
-| Linux / TrimUI package | TrimUI Brick, stock menu 1.0.6 | Fresh-card installation, fullscreen gameplay, music, controls and damage vibration |
+| Linux | TrimUI Brick, NextUI 20261013-0 | Installer, Standard startup/gameplay, full-screen display, music output and printed A/B/X/Y mapping |
+| Linux | TrimUI Brick, stock menu 1.0.6 | Fresh-card installation, fullscreen gameplay, music, controls and damage vibration |
+| Linux | Miyoo Flip V2, RK3566 / MY355, BaseOS 1.3.0 | Standard confirmed by a community tester |
 
-**Original Smart Pro: provisional support.** Model detection, 1280x720
-installer navigation, controller mapping and settings preservation pass
-software checks. Installation, actual gameplay, audio and vibration still
-need physical confirmation. Smart Pro S and Brick Pro are not enabled.
+**TrimUI Smart Pro S** uses a separate TG5050 profile. Its 1280 × 720 installer
+layout and the graphics libraries in TrimUI firmware 1.0.1 have been checked.
+A physical launch on the tester's spruceOS installation is pending. The
+**original Smart Pro** has a separate TG5040 profile and also awaits hardware
+confirmation. Brick Pro and the 32-bit Miyoo Mini Flip use different hardware.
 
-The stock-menu check used a fresh card on a Brick retaining an internal
-CrossMix 1.3.9 marker; a completely unmodified factory image was not checked.
-The new Brick vibration path was verified on stock and is also included for
-NextUI; its physical NextUI recheck remains outstanding.
+The stock Brick check used the stock menu on a Brick with a CrossMix 1.3.9
+marker. Damage vibration was verified there. A physical NextUI vibration check
+is still pending. Previous RG DS, G350 and Brick checks are listed above for
+their tested firmware and features.
 
-The Ports package requires compatible **ARM64 userspace and a Wayland display
-session**. The separate TrimUI package uses its firmware display backend.
-The package uses the firmware's graphics/audio drivers and bundled app-local
-support libraries; it does not change drivers, firmware or clock settings.
-G350 stock **BATLEXPOS is not supported by this download**.
-
-R36S, other TrimUI models/firmware, RG DS Plus and newer ARM64 RG35XX variants need their
-own firmware checks. The **original Cortex-A9 RG35XX is ARMv7 and cannot run
-this package**. This is not an x86 desktop build or a general PortMaster package.
-A compatible processor alone does not establish firmware support.
-
-The final packages are checked by reconstructing both editions from the original
-1.1 ZIP and comparing them with the matching builds. This verifies the packages;
-it does not replace gameplay testing on each device. Android 16 KB-page devices
-and hardware combinations beyond those listed still need physical checks.
+The Ports route uses the firmware's existing Wayland session. The supported
+direct-display profiles use the handheld's own graphics libraries. Keep the
+device's graphics drivers and firmware in place. Stock G350 BATLEXPOS is
+outside the supported setups in this release. R36S, RG DS Plus and newer
+ARM64 RG35XX variants still need their own firmware checks. The original
+Cortex-A9 RG35XX runs 32-bit ARM and cannot run this ARM64 package.
 
 ## Controls and display
 
@@ -255,9 +189,14 @@ one. Restore validates files and keeps replaced progress in `pre-restore-backup`
 
 Keep the filenames `save1`, `save2`, `save3`, `data.sav` and `extras.sav`.
 **Do not copy portable exports directly over raw Linux saves**; use Restore.
-Linux's internal state is in `state/config/AM2RStandardLinux/` or
-`state/config/AM2RDualLinux/` inside the installed game folder. Close the game
-before copying raw state. Keep `config.ini` settings separate across platforms.
+Ports keeps raw saves in `state/config/AM2RStandardLinux/` or
+`state/config/AM2RDualLinux/` inside the installed game. Stock TrimUI uses the
+game's state directory and keeps its previous save location on an update.
+NextUI uses the firmware's home directory, usually
+`.userdata/tg5040/.config/AM2RStandardLinux/` on Brick. On spruceOS and
+direct-display Ports the preset location is
+`AM2ARM/state/home/.config/AM2RStandardLinux/`. Close the game before copying
+raw state and keep `config.ini` separate between platforms.
 
 ### Android folder synchronization
 
@@ -275,15 +214,11 @@ The desktop game does not read these sync ZIPs; use portable backups with it.
 
 ## Development
 
-The repository contains **autopatcher/android/**, **autopatcher/linux/** and
-**autopatcher/trimui-brick/**, build definitions, tests and documentation. GameMaker projects, native Linux
-integration, Source Restore and corresponding dependency sources are separate
-release assets. See [the development guide](docs/README.md) for downloads,
-asset restoration, the pinned toolchain and contribution instructions.
-
-Game source exports omit original artwork, audio, fonts, complete games and
-signing material. Restore missing media locally using your own original 1.1 ZIP
-and the matching Source Restore bundle. Do not upload the restored project.
+The repository contains the Standard and Dual Screen GameMaker projects for
+Android and Linux, the Autopatcher source, and the native Linux integration.
+Original media and signing material are omitted. Use your own original AM2R
+1.1 ZIP to restore the missing inputs locally. The development guide lists
+the matching restore files, toolchain and build steps. [Development guide](docs/README.md)
 
 ## Support and credits
 

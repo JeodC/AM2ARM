@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"am2r_string_split",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"am2r_string_split",
+  "parent":{
+    "name":"Visual",
+    "path":"folders/Scripts/Visual.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -174,7 +174,7 @@ def main(archive_path, ref_path, out_dir):
                              "length": len(chunk), "sha256": sha256_bytes(chunk)})
 
     # Keep hotfix suffixes and both editions aligned with the central release.
-    version = "1.6.1"
+    version = "1.6.2"
     # Store the selected ZIP's size and hashes alongside the ordered reconstruction plan.
     manifest = {
         "version": version,

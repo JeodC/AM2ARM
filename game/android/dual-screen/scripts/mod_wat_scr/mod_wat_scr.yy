@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"mod_wat_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"mod_wat_scr",
+  "parent":{
+    "name":"Gatordile",
+    "path":"folders/Scripts/Gatordile.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

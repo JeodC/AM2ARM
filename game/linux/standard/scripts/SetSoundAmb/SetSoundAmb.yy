@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SetSoundAmb",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SetSoundAmb",
+  "parent":{
+    "name":"Audio",
+    "path":"folders/Scripts/Audio.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

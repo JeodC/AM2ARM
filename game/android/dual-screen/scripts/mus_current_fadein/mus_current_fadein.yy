@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"mus_current_fadein",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"mus_current_fadein",
+  "parent":{
+    "name":"Music",
+    "path":"folders/Scripts/Music.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

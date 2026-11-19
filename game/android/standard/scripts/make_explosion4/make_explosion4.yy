@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"make_explosion4",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"make_explosion4",
+  "parent":{
+    "name":"Explosions",
+    "path":"folders/Scripts/Explosions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

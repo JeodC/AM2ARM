@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_randomizer_junk",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_randomizer_junk",
+  "parent":{
+    "name":"Gatordile",
+    "path":"folders/Scripts/Gatordile.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_SubScrTop_swap",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_SubScrTop_swap",
+  "parent":{
+    "name":"Gatordile",
+    "path":"folders/Scripts/Gatordile.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"randomize_zeta_heads",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"randomize_zeta_heads",
+  "parent":{
+    "name":"Wanderer",
+    "path":"folders/Scripts/Wanderer.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

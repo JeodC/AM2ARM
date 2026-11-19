@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"unlock_set",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"unlock_set",
+  "parent":{
+    "name":"o",
+    "path":"folders/Scripts/i/o.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

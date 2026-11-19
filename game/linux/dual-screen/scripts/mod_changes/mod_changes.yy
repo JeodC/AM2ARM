@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"mod_changes",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"mod_changes",
+  "parent":{
+    "name":"Gatordile",
+    "path":"folders/Scripts/Gatordile.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"linux_keys",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"linux_keys",
+  "parent":{
+    "name":"Lojical",
+    "path":"folders/Scripts/Lojical.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

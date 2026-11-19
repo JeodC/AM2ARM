@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"save_gameoptions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"save_gameoptions",
+  "parent":{
+    "name":"Options?",
+    "path":"folders/Scripts/Options?.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

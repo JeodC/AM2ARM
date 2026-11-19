@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_dslist_transcode",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_dslist_transcode",
+  "parent":{
+    "name":"o",
+    "path":"folders/Scripts/i/o.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

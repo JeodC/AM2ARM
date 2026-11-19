@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"to_string_lz",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"to_string_lz",
+  "parent":{
+    "name":"Visual",
+    "path":"folders/Scripts/Visual.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

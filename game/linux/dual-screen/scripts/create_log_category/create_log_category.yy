@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"create_log_category",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"create_log_category",
+  "parent":{
+    "name":"Log",
+    "path":"folders/Scripts/Log.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

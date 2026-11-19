@@ -150,7 +150,7 @@ public final class PatcherActivity extends Activity implements PatchJob.Listener
         menu.setOrientation(LinearLayout.VERTICAL);
         menu.setPadding(0, dp(4), 0, dp(4));
         body.addView(menu, new LinearLayout.LayoutParams(-1, -2));
-        TextView version = label("AUTOPATCHER  1.6.1", 12, PALE);
+        TextView version = label("AUTOPATCHER  1.6.2", 12, PALE);
         version.setGravity(Gravity.CENTER);
         version.setPadding(0, 0, 0, dp(8));
         menu.addView(version);

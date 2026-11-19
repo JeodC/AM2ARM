@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"get_xjoybtnname",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"get_xjoybtnname",
+  "parent":{
+    "name":"Controls",
+    "path":"folders/Scripts/Controls.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

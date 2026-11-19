@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ResetAmb_Enemies",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ResetAmb_Enemies",
+  "parent":{
+    "name":"Audio",
+    "path":"folders/Scripts/Audio.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"goto_saveroom",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"goto_saveroom",
+  "parent":{
+    "name":"Options?",
+    "path":"folders/Scripts/Options?.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

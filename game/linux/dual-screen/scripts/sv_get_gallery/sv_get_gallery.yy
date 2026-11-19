@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sv_get_gallery",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sv_get_gallery",
+  "parent":{
+    "name":"o",
+    "path":"folders/Scripts/i/o.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

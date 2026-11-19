@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"map_draw_13",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"map_draw_13",
+  "parent":{
+    "name":"Map",
+    "path":"folders/Scripts/Map.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"is_breakable_block",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"is_breakable_block",
+  "parent":{
+    "name":"Septoggs",
+    "path":"folders/Scripts/Wanderer/Septoggs.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

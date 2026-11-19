@@ -4,6 +4,7 @@ import tkinter as tk
 import time
 import tempfile
 import unittest
+from unittest.mock import patch
 
 from handheld_gui import HandheldWindow
 
@@ -68,6 +69,12 @@ class HandheldGuiTests(unittest.TestCase):
         self.assertEqual(picker.frame.winfo_height(), 720)
         self.assertLessEqual(picker.items.winfo_y() + picker.items.winfo_height(), 720)
 
+    def test_original_zip_picker_starts_in_shared_input_folder(self):
+        with tempfile.TemporaryDirectory(prefix='Shared input ') as directory, \
+             patch.dict(os.environ, AM2ARM_INPUT_DIR=directory):
+            self.window.browse(False)
+            self.assertEqual(self.window.picker.path, Path(directory))
+
     def test_selecting_zip_after_fade_keeps_menu_usable(self):
         self.root.after_cancel(self.window.intro_id)
         self.window.intro_start = time.monotonic() - 1.75
@@ -115,6 +122,32 @@ class HandheldGuiTests(unittest.TestCase):
         self.window.action('back')
         self.assertFalse(self.window.closed)
         self.assertFalse(self.window.busy)
+
+    def test_custom_installer_opens_its_game_from_the_firmware_menu(self):
+        self.window.close()
+        self.root = tk.Tk()
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            source_file = output / 'original.zip'
+            source_file.write_bytes(b'original')
+
+            def install(source, destination, edition, progress):
+                game = destination / 'AM2ARM'
+                game.mkdir()
+                (game / edition).write_bytes(source.read_bytes())
+                return game, 'checked'
+
+            self.window = HandheldWindow(self.root, output, install_func=install, menu_name='Tools')
+            self.window.finish_intro()
+            self.window.picked(source_file, False)
+            self.window.begin()
+            deadline = time.monotonic() + 3
+            while self.window.busy and time.monotonic() < deadline:
+                self.root.update()
+                time.sleep(.01)
+            self.assertEqual((output / 'AM2ARM/standard').read_bytes(), b'original')
+            self.assertIn('Tools', self.window.status.get())
+            self.assertNotIn('Ports', self.window.status.get())
 
     def test_square_screen_keeps_button_text_inside_each_button(self):
         self.root.geometry('720x720')

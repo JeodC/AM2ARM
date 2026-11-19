@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"choose_axis",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"choose_axis",
+  "parent":{
+    "name":"Controls",
+    "path":"folders/Scripts/Controls.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

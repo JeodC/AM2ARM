@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"get_ground_tile",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"get_ground_tile",
+  "parent":{
+    "name":"Septoggs",
+    "path":"folders/Scripts/Wanderer/Septoggs.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

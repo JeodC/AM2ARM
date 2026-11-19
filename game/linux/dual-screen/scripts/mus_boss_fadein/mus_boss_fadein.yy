@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"mus_boss_fadein",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"mus_boss_fadein",
+  "parent":{
+    "name":"Wanderer",
+    "path":"folders/Scripts/Wanderer.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

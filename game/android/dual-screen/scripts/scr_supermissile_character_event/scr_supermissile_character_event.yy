@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_supermissile_character_event",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_supermissile_character_event",
+  "parent":{
+    "name":"Items",
+    "path":"folders/Scripts/Gatordile/Items.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

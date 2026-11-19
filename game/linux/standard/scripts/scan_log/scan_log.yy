@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scan_log",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scan_log",
+  "parent":{
+    "name":"Log",
+    "path":"folders/Scripts/Log.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"crypt",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"crypt",
+  "parent":{
+    "name":"o",
+    "path":"folders/Scripts/i/o.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

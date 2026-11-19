@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"save_stats2",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"save_stats2",
+  "parent":{
+    "name":"Gatordile",
+    "path":"folders/Scripts/Gatordile.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

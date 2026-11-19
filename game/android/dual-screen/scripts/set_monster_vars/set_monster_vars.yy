@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"set_monster_vars",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"set_monster_vars",
+  "parent":{
+    "name":"M?",
+    "path":"folders/Scripts/M?.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

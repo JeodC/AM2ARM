@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"saveslot_flash",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"saveslot_flash",
+  "parent":{
+    "name":"o",
+    "path":"folders/Scripts/i/o.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

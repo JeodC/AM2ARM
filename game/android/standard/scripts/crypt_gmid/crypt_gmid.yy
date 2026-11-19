@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"crypt_gmid",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"crypt_gmid",
+  "parent":{
+    "name":"o",
+    "path":"folders/Scripts/i/o.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

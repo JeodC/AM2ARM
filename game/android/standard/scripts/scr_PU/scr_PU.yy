@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_PU",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_PU",
+  "parent":{
+    "name":"Randomizer",
+    "path":"folders/Scripts/Gatordile/Randomizer.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

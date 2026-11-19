@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"play_septogg_sound",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"play_septogg_sound",
+  "parent":{
+    "name":"Septoggs",
+    "path":"folders/Scripts/Wanderer/Septoggs.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

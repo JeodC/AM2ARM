@@ -6,7 +6,7 @@ It does not turn the game into a native x86/x86-64 desktop release.
 
 Use Python 3.11 or newer, Tk and an xdelta3 decoder built for the host processor.
 Restore the matching UI assets and supply both generated edition patch bundles
-as described in this source archive's README. Then run:
+as described in README.txt. Then run:
 
   python3 linux_patcher.py
 

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SetSpinJumpSound",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SetSpinJumpSound",
+  "parent":{
+    "name":"Audio",
+    "path":"folders/Scripts/Audio.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

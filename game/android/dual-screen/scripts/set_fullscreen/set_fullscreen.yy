@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"set_fullscreen",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"set_fullscreen",
+  "parent":{
+    "name":"Options?",
+    "path":"folders/Scripts/Options?.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

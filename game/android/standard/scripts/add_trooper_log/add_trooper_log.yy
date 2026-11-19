@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"add_trooper_log",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"add_trooper_log",
+  "parent":{
+    "name":"Wanderer",
+    "path":"folders/Scripts/Wanderer.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

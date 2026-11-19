@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"draw_cool_text",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"draw_cool_text",
+  "parent":{
+    "name":"Visual",
+    "path":"folders/Scripts/Visual.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

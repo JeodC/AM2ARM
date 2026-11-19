@@ -1,0 +1,3 @@
+
+// Attach terrain art to this breakable block.
+link_tile(tlRock1AN, 16, 384);

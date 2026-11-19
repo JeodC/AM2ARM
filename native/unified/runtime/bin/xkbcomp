@@ -1,0 +1,7 @@
+#!/bin/sh
+set -eu
+rt=$(CDPATH='' cd -- "$(dirname -- "$0")/.." && pwd)
+if [ "${AM2ARM_DISPLAY_PATH:-direct}" = ports ]; then
+    exec /lib/ld-linux-aarch64.so.1 --library-path "$rt/lib" "$rt/bin/xkbcomp.bin" "$@"
+fi
+exec "$rt/core/ld-linux-aarch64.so.1" --library-path "$rt/core:$rt/lib" "$rt/bin/xkbcomp.bin" "$@"

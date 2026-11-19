@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"monster_spawn_powerups",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"monster_spawn_powerups",
+  "parent":{
+    "name":"M?",
+    "path":"folders/Scripts/M?.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

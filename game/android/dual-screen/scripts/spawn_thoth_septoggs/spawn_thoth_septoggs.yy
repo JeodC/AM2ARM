@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"spawn_thoth_septoggs",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"spawn_thoth_septoggs",
+  "parent":{
+    "name":"Septoggs",
+    "path":"folders/Scripts/Wanderer/Septoggs.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

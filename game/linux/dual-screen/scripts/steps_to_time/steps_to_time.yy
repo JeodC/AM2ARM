@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"steps_to_time",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"steps_to_time",
+  "parent":{
+    "name":"Visual",
+    "path":"folders/Scripts/Visual.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

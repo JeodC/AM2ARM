@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ResetAmb_Monsters",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ResetAmb_Monsters",
+  "parent":{
+    "name":"Audio",
+    "path":"folders/Scripts/Audio.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

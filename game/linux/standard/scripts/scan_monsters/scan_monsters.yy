@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scan_monsters",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scan_monsters",
+  "parent":{
+    "name":"M?",
+    "path":"folders/Scripts/M?.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

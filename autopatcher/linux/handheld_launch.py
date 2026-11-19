@@ -31,7 +31,7 @@ def run():
     env = wayland_environment(os.environ)
     output = sway_output(env)
     env['AM2R_PATCHER_FULLSCREEN'] = '1'
-    runtime = ROOT / 'runtime'
+    runtime = Path(env.get('AM2ARM_RUNTIME_DIR') or ROOT / 'runtime').resolve()
     bundled = ['/lib/ld-linux-aarch64.so.1', '--library-path', str(runtime / 'lib')]
     children = []
     touch = Path('/sys/class/anbernic_misc/tpctrl')

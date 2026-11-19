@@ -12,7 +12,7 @@ body:
     id: version
     attributes:
       label: AM2ARM version and downloaded filename
-      placeholder: AM2ARM 1.6.1
+      placeholder: AM2ARM 1.6.2
     validations:
       required: true
   - type: dropdown

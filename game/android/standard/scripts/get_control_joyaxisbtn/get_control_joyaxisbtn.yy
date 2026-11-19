@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"get_control_joyaxisbtn",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"get_control_joyaxisbtn",
+  "parent":{
+    "name":"Controls",
+    "path":"folders/Scripts/Controls.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

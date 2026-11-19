@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_missile_create",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_missile_create",
+  "parent":{
+    "name":"Items",
+    "path":"folders/Scripts/Gatordile/Items.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

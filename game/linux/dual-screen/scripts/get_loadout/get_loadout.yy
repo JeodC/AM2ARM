@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"get_loadout",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"get_loadout",
+  "parent":{
+    "name":"M?",
+    "path":"folders/Scripts/M?.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"set_start_location",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"set_start_location",
+  "parent":{
+    "name":"o",
+    "path":"folders/Scripts/i/o.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

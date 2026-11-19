@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"save_modifiers",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"save_modifiers",
+  "parent":{
+    "name":"Lojical",
+    "path":"folders/Scripts/Lojical.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

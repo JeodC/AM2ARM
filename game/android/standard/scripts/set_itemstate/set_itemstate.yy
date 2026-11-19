@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"set_itemstate",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"set_itemstate",
+  "parent":{
+    "name":"State",
+    "path":"folders/Scripts/State.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

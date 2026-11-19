@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SoundFX_Preset",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SoundFX_Preset",
+  "parent":{
+    "name":"Audio",
+    "path":"folders/Scripts/Audio.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,10 +1,10 @@
 # AM2ARM Android Autopatcher source
 
-Android interface and reconstruction tools for AM2ARM 1.6.1, with Standard
+Android interface and reconstruction tools for AM2ARM 1.6.2, with Standard
 and Dual Screen payloads. Installation and supported-device information are
 in the [main repository README](https://github.com/PatchDev-AM2ARM/AM2ARM).
 The [development guide](https://github.com/PatchDev-AM2ARM/AM2ARM/tree/main/docs)
-explains game-source downloads and asset restoration.
+explains how to restore the game sources in this repository.
 
 ## Build
 
@@ -14,10 +14,18 @@ From `app-android`, run `gradle assembleDebug` for an independent build.
 Use your own package IDs and signing identity when distributing your changes.
 Release signing keys are not included.
 
-Restore interface images/fonts with **AM2ARM-Source-Restore-1.6.1.zip** and
-your original AM2R 1.1 ZIP. The source package's README and `asset-inputs.json`
-identify the exact inputs. Generated `patch-bundle` data is separate: build
-both games privately and regenerate each edition using `make_patch_data.py`.
+From the repository root, restore the interface images and fonts with your
+original AM2R 1.1 ZIP and the 1.6.1 restoration archive.
+
+```sh
+python3 restoration/prepare_bundle.py /path/to/AM2ARM-Source-Restore-1.6.1.zip
+python3 restoration/restore_project.py --project autopatcher/android --zip /path/to/AM2R_11.zip
+```
+
+The [development guide](../../docs/README.md) covers the complete restoration
+workflow. `asset-inputs.json` lists the required files and hashes. Build both
+games privately, then regenerate each edition's `patch-bundle` data using
+`make_patch_data.py`.
 
 For the games, use the documented GameMaker toolchain and Android ARM64 YYC.
 Apply `prepare_game_metadata.py` and `prepare_runtime_performance.py

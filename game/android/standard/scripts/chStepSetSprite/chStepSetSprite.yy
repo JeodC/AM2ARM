@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"chStepSetSprite",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"chStepSetSprite",
+  "parent":{
+    "name":"Player",
+    "path":"folders/Scripts/Player.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

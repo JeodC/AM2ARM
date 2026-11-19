@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"check_cheating",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"check_cheating",
+  "parent":{
+    "name":"M?",
+    "path":"folders/Scripts/M?.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

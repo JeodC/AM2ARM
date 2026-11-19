@@ -1,0 +1,2 @@
+// Remove this block when the randomized route meets the listed equipment conditions.
+if (oControl.mod_randomgamebool == 1 && oControl.mod_previous_room == rm_a5c32 && global.ibeam == 0 && global.item[scr_itemchange(11)] == 1) instance_destroy();

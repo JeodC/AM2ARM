@@ -1,0 +1,6 @@
+// Set world-map placement, liquid state, the default footstep material, and ambient darkness.
+global.mapoffsetx = 19;
+global.mapoffsety = 40;
+global.waterlevel = 0;
+global.floormaterial = 5;
+global.darkness = 3;

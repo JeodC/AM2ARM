@@ -7,6 +7,23 @@ import unittest
 
 
 class CompatibilityCheckTests(unittest.TestCase):
+    def test_shared_runtime_supplies_python_and_display_libraries(self):
+        with tempfile.TemporaryDirectory(prefix='AM2ARM SD ') as temp:
+            root = Path(temp)
+            app = root / 'patcher'
+            app.mkdir()
+            runtime = root / 'shared runtime'
+            runtime.mkdir()
+            shutil.copy2(Path(__file__).with_name('handheld-launch.sh'), app / 'launch.sh')
+            (app / 'compatibility-check.sh').write_text(
+                'printf "%s\\n" "$PYTHONHOME" "$TCL_LIBRARY" "$TK_LIBRARY" > paths.txt\nexit 1\n')
+            result = subprocess.run(['sh', str(app / 'launch.sh')], cwd=root,
+                                    env=dict(os.environ, AM2ARM_RUNTIME_DIR=str(runtime)))
+            self.assertEqual(result.returncode, 1)
+            self.assertEqual((app / 'paths.txt').read_text().splitlines(),
+                             [str(runtime / p) for p in ('python/usr',
+                              'python/usr/share/tcltk/tcl8.6', 'python/usr/share/tcltk/tk8.6')])
+
     def test_ports_entry_reaches_report_with_nonexecutable_inner_launcher(self):
         with tempfile.TemporaryDirectory(prefix='AM2ARM SD ') as temp:
             ports = Path(temp)

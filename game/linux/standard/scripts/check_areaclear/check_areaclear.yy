@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"check_areaclear",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"check_areaclear",
+  "parent":{
+    "name":"M?",
+    "path":"folders/Scripts/M?.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

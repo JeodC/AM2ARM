@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"set_lavalevel",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"set_lavalevel",
+  "parent":{
+    "name":"State",
+    "path":"folders/Scripts/State.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

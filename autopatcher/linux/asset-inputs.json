@@ -3,7 +3,7 @@
   "edition": "autopatcher",
   "platform": "linux",
   "project_kind": "autopatcher",
-  "snapshot": "v1.6.1",
+  "snapshot": "v1.6.2",
   "project_file": "linux_patcher.py",
   "bundle_path": "patcher-assets",
   "bundle_sha256": "3c3e532b2aa3cc755b8fcd012c24bf535dc2b232ce189725ad6d046581ceed63",
@@ -15,13 +15,13 @@
     },
     {
       "path": "README.txt",
-      "size": 2407,
-      "sha256": "8245a0bd0a612b9b80ad6357d360ade7889eea56deb2fe7f93208012a4148563"
+      "size": 1267,
+      "sha256": "c264fd1402ad9f59262c14f574aa32705f507310aa9a34239113261273f070bd"
     },
     {
       "path": "RUNNING.txt",
-      "size": 7674,
-      "sha256": "a3851916bda3493f01ad74677f79ad03c0aa52fe7eb3caaa4c66aa443b77e416"
+      "size": 756,
+      "sha256": "24a61273143cba4ee73b372886b81f60dc4d20ba8914847c81c14018f1b47df9"
     },
     {
       "path": "build_portable.py",
@@ -30,18 +30,18 @@
     },
     {
       "path": "compatibility-check.sh",
-      "size": 2634,
-      "sha256": "f26b57249054a594df11541580535567578f03b68f6156d52479a750a21d3852"
+      "size": 2675,
+      "sha256": "5d51be8406bf97dc92c5b37a2bb2f1e025bc32c0b579d3893cb326544dfde7b7"
     },
     {
       "path": "desktop-README.txt",
-      "size": 1424,
-      "sha256": "d3a84c1b2069256cdbe16213371d36531ec2b6096b9dca91cbc26fd9e1f06883"
+      "size": 1406,
+      "sha256": "0d6a4ca635cddb3c092e085b1c342ba53b526824ff98e7d62e70befa9ac5be9c"
     },
     {
       "path": "handheld-launch.sh",
-      "size": 603,
-      "sha256": "a0cc55a123cb98ca9dd6ae30023238ba51ed9c69776878388b6a7f1844ac43ed"
+      "size": 626,
+      "sha256": "83d52ef901c715c6630c597b9de428ab1d695d67e7ac4e4bff3303b5afb2f368"
     },
     {
       "path": "handheld-ports.sh",
@@ -50,8 +50,8 @@
     },
     {
       "path": "handheld_gui.py",
-      "size": 23145,
-      "sha256": "95c0ae9c943fcc0cac718688af30b5969dca5dd1b8f08be32461ea6843b7b493"
+      "size": 23398,
+      "sha256": "9c273e16f5da59ebd90fd6b7ce98bf1657ff1e32f3e03d20e20207b0b809655f"
     },
     {
       "path": "handheld_input.py",
@@ -60,8 +60,8 @@
     },
     {
       "path": "handheld_launch.py",
-      "size": 4682,
-      "sha256": "c3f9f2f054b79042e8530ef9282ea52a44ad5bb9c705f74f7db6951b39b81a82"
+      "size": 4731,
+      "sha256": "5161943bd7336bfbb7490a0502ef4c9d8040345855028eeb667ba67389721e60"
     },
     {
       "path": "handheld_platform.py",
@@ -241,12 +241,12 @@
     {
       "path": "make_patch_data.py",
       "size": 9577,
-      "sha256": "b4178c61d07938c36add8e7ef575f3a12ff9452bb78957723a4a95b44deb8a7f"
+      "sha256": "dce9aaea20768e8eb0037181f5eb1c7987816e79f636346a063cf48ba3b104a2"
     },
     {
       "path": "patch_core.py",
-      "size": 10740,
-      "sha256": "14677b7e519ea767d4a8e1fc880c26a6155e7d3fcc78b8d692efa2c45ccc7a82"
+      "size": 10815,
+      "sha256": "bff7834546ad1eda95c2bf38ec24b93815032d30177a0b0db514605c4c8fdc86"
     },
     {
       "path": "patcher_gui.py",
@@ -255,18 +255,18 @@
     },
     {
       "path": "test_compatibility_check.py",
-      "size": 3451,
-      "sha256": "a9918fed76f1f895bd7c4e660e3d2d8bebd22d29cef35e23b0bbead1dbe2827f"
+      "size": 4470,
+      "sha256": "5e4f1309f60339c4bd942539c0b7b5baea3b28517c9ed239143764b37da08e1f"
     },
     {
       "path": "test_decoder.py",
-      "size": 2457,
-      "sha256": "38b004cccc9ed9fcbd120f106be0ac0c4445a83a7323cbd50231c6af36f32d11"
+      "size": 3287,
+      "sha256": "fa6ff343b72702cc16fe50a347034c5827448e36addaae99b7e46d6534e92f3f"
     },
     {
       "path": "test_handheld_gui.py",
-      "size": 5995,
-      "sha256": "f3c74f306c0cadc013552ac712cb97234883a9870a933472539bf93d30b1a579"
+      "size": 7537,
+      "sha256": "6a67e0541f499c68c801ce20f9af81f63f4292540812ffb92c96bab8d6938deb"
     },
     {
       "path": "test_handheld_input.py",
@@ -325,37 +325,37 @@
     {
       "path": "patch-bundle/dual/assembly.json",
       "size": 783,
-      "sha256": "d099e6d209a7117350f19dab792c283d2276d4da6d8a14552bbf40bacdf65f72",
+      "sha256": "0f455e0a7a6d81eb48c0f9419dc183e76f36e72a13fac76f63f0be2209deacc0",
       "build_from": "make_patch_data.py"
     },
     {
       "path": "patch-bundle/dual/game_data.xdelta",
-      "size": 33085835,
-      "sha256": "12c85466f8ea1936e34c9dd21de34726904e36fede97684a43b5c0e5c0ea0bc2",
+      "size": 33085836,
+      "sha256": "6f858553b8e35f1742f8927df405945b61fb358f87c112a646dbc07b2bb8d99a",
       "build_from": "make_patch_data.py"
     },
     {
       "path": "patch-bundle/dual/wrapper.bin",
-      "size": 258285121,
-      "sha256": "cd8cc188d1c9f830fe477771bb6b4aa95b02ba4f9e6ef0c35a6ddeadf9ff2b4d",
+      "size": 258285122,
+      "sha256": "eab405782dea58f7963b646aec5d8a882d8df5b46be50dd1b4746b9f09492f54",
       "build_from": "make_patch_data.py"
     },
     {
       "path": "patch-bundle/standard/assembly.json",
       "size": 780,
-      "sha256": "0547ce69ae1cd423980b975f127ed3d927695f8f1e0f7389f67407f5b403cc08",
+      "sha256": "06f615e5e8555a621ffd355f106ff6c1322d3bccd377c06ce7e4ebc55011686e",
       "build_from": "make_patch_data.py"
     },
     {
       "path": "patch-bundle/standard/game_data.xdelta",
-      "size": 33061715,
-      "sha256": "17f3f47d5c06a1774b97564037dad95fa865855209b147821fd36d198acb61bb",
+      "size": 33061720,
+      "sha256": "6b062bd8fb14f67e90a0ba4f268a72e638234b5b843d3d3bbde80ba1ec23ade7",
       "build_from": "make_patch_data.py"
     },
     {
       "path": "patch-bundle/standard/wrapper.bin",
-      "size": 257946337,
-      "sha256": "1452536a7dd044d458697da62552316b2e72b479352fa42e7cd26733fe8d92e1",
+      "size": 257946338,
+      "sha256": "c66dd15c0a23ce0e2aa3807adb9b731906fa18bd638ec9f025ec945d17a20cbe",
       "build_from": "make_patch_data.py"
     }
   ],

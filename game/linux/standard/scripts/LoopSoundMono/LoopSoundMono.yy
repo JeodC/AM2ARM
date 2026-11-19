@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"LoopSoundMono",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"LoopSoundMono",
+  "parent":{
+    "name":"Audio",
+    "path":"folders/Scripts/Audio.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

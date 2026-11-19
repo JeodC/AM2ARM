@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"septogg_particle_sprite",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"septogg_particle_sprite",
+  "parent":{
+    "name":"Septoggs",
+    "path":"folders/Scripts/Wanderer/Septoggs.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

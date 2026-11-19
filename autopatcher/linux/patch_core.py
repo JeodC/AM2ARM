@@ -62,6 +62,7 @@ def sha256_file(path, chunk=1 << 20):
 def load_manifest(edition="standard", patch_root=None):
     if edition not in ("standard", "dual"):
         raise PatchError("Choose the Standard or Dual Screen edition.")
+    patch_root = patch_root or os.environ.get("AM2ARM_PATCH_ROOT") or None
     root = Path(patch_root) if patch_root else base_dir() / "patch-bundle"
     p = root / edition / "assembly.json"
     # Older single-edition downloads remain usable; never substitute them for Dual Screen.

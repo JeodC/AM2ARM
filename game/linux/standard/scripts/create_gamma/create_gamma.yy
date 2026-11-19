@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"create_gamma",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"create_gamma",
+  "parent":{
+    "name":"M?",
+    "path":"folders/Scripts/M?.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

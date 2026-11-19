@@ -2,6 +2,7 @@
 # Runs before the bundled runtime, including on unsupported 32-bit systems.
 set -u
 am2r_check_root=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd) || exit 1
+am2r_runtime=${AM2ARM_RUNTIME_DIR:-"$am2r_check_root/runtime"}
 am2r_check_report="$am2r_check_root/compatibility.txt"
 am2r_check_status=0
 {
@@ -41,7 +42,7 @@ am2r_check_status=0
            am2r_check_status=1 ;;
     esac
     if [ "$am2r_check_status" -eq 0 ]; then
-        if ! /lib/ld-linux-aarch64.so.1 --library-path "$am2r_check_root/runtime/lib" "$am2r_check_root/runtime/python/usr/bin/python3.11" -c 'import tkinter, hashlib, lzma, ctypes' 2>&1; then
+        if ! /lib/ld-linux-aarch64.so.1 --library-path "$am2r_runtime/lib" "$am2r_runtime/python/usr/bin/python3.11" -c 'import tkinter, hashlib, lzma, ctypes' 2>&1; then
             printf '%s\n' 'STOP: the bundled runtime cannot load. This may be an older C library, a missing dependency, or an SD card mounted noexec.'
             am2r_check_status=1
         fi

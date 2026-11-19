@@ -18,8 +18,10 @@ BG, PANEL, FG, ACCENT = '#000000', '#151515', '#ffffff', '#ffffff'
 
 
 class HandheldWindow:
-    def __init__(self, root, output=None, size=None):
+    def __init__(self, root, output=None, size=None, *, install_func=prepare_game, menu_name='Ports'):
         self.root, self.output = root, Path(output) if output else base_dir().parent
+        self.install_func = install_func
+        self.menu_name = menu_name
         self.source = None
         self.edition = 'standard'
         self.busy = self.closed = False
@@ -49,7 +51,7 @@ class HandheldWindow:
         self.canvas.pack(fill='both', expand=True)
         self.background = Backdrop(self.canvas, assets)
         self.labels = []
-        self.subtitle = self.text('AUTOPATCHER  1.6.1', 162, self.font)
+        self.subtitle = self.text('AUTOPATCHER  1.6.2', 162, self.font)
         self.standard = self.button('STANDARD', lambda: self.select_edition('standard'), 194)
         self.dual = self.button('DUAL SCREEN', lambda: self.select_edition('dual'), 228)
         self.help = self.text('', 266, self.font, '#bfbfbf')
@@ -137,7 +139,10 @@ class HandheldWindow:
     def browse(self, folders):
         if self.busy:
             return
-        start = self.output if folders else (self.source.parent if self.source else base_dir() / 'input')
+        start = self.output
+        if not folders:
+            start = self.source.parent if self.source else Path(
+                os.environ.get('AM2ARM_INPUT_DIR') or base_dir() / 'input')
         if not start.is_dir():
             start = self.output
         self.picker = FilePicker(self.root, start, folders, self.picked, self.beep)
@@ -230,7 +235,7 @@ class HandheldWindow:
         source, output, edition = self.source, self.output, self.edition
         def work():
             try:
-                result, digest = prepare_game(source, output, edition,
+                result, digest = self.install_func(source, output, edition,
                     lambda done, total, text: self.messages.put(('progress', done, total, text)))
                 self.messages.put(('done', result, digest))
             except Exception as error:
@@ -296,11 +301,11 @@ class HandheldWindow:
             for button in self.buttons:
                 button.configure(state='normal')
             success = message[0] == 'done'
-            self.status.set(('Ready: ' + message[1].name + '\nExit to the Ports menu to play.')
+            self.status.set((f'Ready: {message[1].name}\nExit to the {self.menu_name} menu to play.')
                             if success else 'Installation stopped.\nYour existing games are unchanged.')
-            detail = ('Open ' + message[1].name + ' from Ports.\n\n'
+            detail = (f'Open {message[1].name} from {self.menu_name}.\n\n'
                       'Close this message, then press B to exit the Autopatcher. '
-                      'Leave Ports and reopen it if the new game is not listed.\n\n'
+                      f'Leave {self.menu_name} and reopen it if the new game is not listed.\n\n'
                       'Installed in:\n' + str(message[1])) if success else message[1]
             self.notice = Notice(self.root, 'INSTALLATION COMPLETE' if success else 'INSTALLATION STOPPED',
                                  detail, self.dismiss_notice)
@@ -482,7 +487,7 @@ class FilePicker:
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--out', type=Path, help='Defaults to the folder containing this app')
+    parser.add_argument('--out', '--output', type=Path, help='Defaults to the folder containing this app')
     parser.add_argument('--size', help='Desktop preview window, for example 1280x720')
     args = parser.parse_args()
     size = None

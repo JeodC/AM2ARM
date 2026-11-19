@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"StopAmbLoops",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"StopAmbLoops",
+  "parent":{
+    "name":"Audio",
+    "path":"folders/Scripts/Audio.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

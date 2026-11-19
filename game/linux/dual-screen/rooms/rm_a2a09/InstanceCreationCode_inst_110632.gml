@@ -1,0 +1,4 @@
+
+// Define the region that fades the covering terrain when Samus enters it.
+areax = 80;
+areay = 32;

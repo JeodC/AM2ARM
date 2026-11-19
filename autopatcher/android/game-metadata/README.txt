@@ -3,7 +3,7 @@ AM2ARM game metadata and original AM2R artwork
 The shared game.json supplies both editions' Android identity. Keep the released
 package names and release signing certificate: replacing either prevents an
 ordinary update from retaining the same installed application's private saves.
-The game version code is 1005015 for this release, above the 1.5.5.14 code 1005014.
+The game version code advances from 1005016 in 1.6.1 to 1005017 in 1.6.2.
 The patcher application's own package and version are separate.
 
 Artwork files retain the supplied originals. The hero is 1920x1200 (16:10);
@@ -19,7 +19,7 @@ For a game build, with the pinned GameMaker runtime in a private copy:
   python3 prepare_game_metadata.py standard --project /path/to/standard --runtime-copy /path/to/runtime
   python3 prepare_game_metadata.py dual --project /path/to/dual --runtime-copy /path/to/other-runtime
 
-Use separate runtime copies for the two editions. Both use version name 1.6.1. The generator keeps
+Use separate runtime copies for the two editions. Both use version name 1.6.2. The generator keeps
 GameMaker's numeric project version unchanged and applies Android's version
 code/name in the runtime Gradle template. Rebuild and sign each game, then
 regenerate both patch bundles. The patcher reconstructs those signed APK bytes;

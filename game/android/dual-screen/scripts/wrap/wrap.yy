@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"wrap",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"wrap",
+  "parent":{
+    "name":"Lojical",
+    "path":"folders/Scripts/Lojical.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

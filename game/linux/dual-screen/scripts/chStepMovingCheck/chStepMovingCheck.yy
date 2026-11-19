@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"chStepMovingCheck",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"chStepMovingCheck",
+  "parent":{
+    "name":"Player",
+    "path":"folders/Scripts/Player.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

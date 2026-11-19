@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SetAmb_Weapons",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SetAmb_Weapons",
+  "parent":{
+    "name":"Audio",
+    "path":"folders/Scripts/Audio.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

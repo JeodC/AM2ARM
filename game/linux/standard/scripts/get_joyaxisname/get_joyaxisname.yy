@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"get_joyaxisname",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"get_joyaxisname",
+  "parent":{
+    "name":"Controls",
+    "path":"folders/Scripts/Controls.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

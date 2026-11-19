@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"load_bgset",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"load_bgset",
+  "parent":{
+    "name":"BG",
+    "path":"folders/Scripts/BG.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

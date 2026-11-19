@@ -3,7 +3,7 @@
   "edition": "autopatcher",
   "platform": "android",
   "project_kind": "autopatcher",
-  "snapshot": "v1.6.1",
+  "snapshot": "v1.6.2",
   "project_file": "am2r_android_patcher.py",
   "bundle_path": "patcher-assets",
   "bundle_sha256": "3c3e532b2aa3cc755b8fcd012c24bf535dc2b232ce189725ad6d046581ceed63",
@@ -20,18 +20,18 @@
     },
     {
       "path": "README.md",
-      "size": 2229,
-      "sha256": "03ffd8ab3905a9eac596bd5b5fcd5fc831256430d5c81c3686bde4fe5dfd8c21"
+      "size": 2498,
+      "sha256": "ca3c99f71253402f96263f79a166ca20b0e51e666a06906d2305611623a93197"
     },
     {
       "path": "README.txt",
-      "size": 2468,
-      "sha256": "963e7b8a92163a8cd95af07bd755f4078f8d2d28ffcd5412e4fe0d882b44ab2a"
+      "size": 1149,
+      "sha256": "cd8e71afd48244b2719f3ec7cdd31b7cf442bd0bdd35f1ddfa898caf78abf3e5"
     },
     {
       "path": "RELEASE-NOTES.txt",
-      "size": 1543,
-      "sha256": "8b0ca37a35f892f0a8457aff22aa1b3296525d9cc4d5d319b73e101d7a41b7f6"
+      "size": 826,
+      "sha256": "860c8654fcc2b3fc29b1e246f368785e1024889a2fba9d93848b2aefc04bf742"
     },
     {
       "path": "SAVE-SYNC.txt",
@@ -46,7 +46,7 @@
     {
       "path": "app-android/app/build.gradle",
       "size": 2696,
-      "sha256": "3f25b4078014c028f69cc2deb5bd0165fb2ed9ff62a70d9705de8e5df45401e8"
+      "sha256": "f7a0ebf475ee06d0c01c438fe546cc5106578b15d9ec19c3aabb4b14900bebc7"
     },
     {
       "path": "app-android/app/src/main/AndroidManifest.xml",
@@ -76,7 +76,7 @@
     {
       "path": "app-android/app/src/main/java/com/community/am2r/patcher/PatcherActivity.java",
       "size": 19534,
-      "sha256": "0883ea1354c29c84d769262b66604265273eeb58d49b77d8b341ed48e0da61c9"
+      "sha256": "d244129457294543b45211fb11f2928c3318925493f43b7023899c8a585493c5"
     },
     {
       "path": "app-android/app/src/main/java/com/community/am2r/patcher/TitleBackdrop.java",
@@ -225,13 +225,13 @@
     },
     {
       "path": "game-metadata/README.txt",
-      "size": 3853,
-      "sha256": "0a2429f10579de5fac63b0f2641c8a793b9eb53f7230b04093b02bd2fd7d9ef4"
+      "size": 3843,
+      "sha256": "474c9b9c5e3068909444e8e375f1494ef486a0ce303e0813c29165997b267744"
     },
     {
       "path": "game-metadata/game.json",
       "size": 3050,
-      "sha256": "c165b1232f8cac5ab910022b56eef3d61bc7a325fe9b40ae6cbdc403a6ab8119"
+      "sha256": "014bbf6d8e9f50503a5a6d252c5653acf13275a42402e36a35a1143a1822de7b"
     },
     {
       "path": "make_patch_data.py",
@@ -340,37 +340,37 @@
     {
       "path": "patch-bundle/dual/assembly.json",
       "size": 783,
-      "sha256": "a7cbbe6c62c089268f5936f0595f91dbb170ee2b0aed809eeb50aa5b0d936dd6",
+      "sha256": "9658bcd2cb585c7bd7f662a9960dee80505d7aca23d4ce48c48af5a2112904be",
       "build_from": "make_patch_data.py"
     },
     {
       "path": "patch-bundle/dual/droid.xdelta",
       "size": 33124788,
-      "sha256": "41680203b9d3ed6b2f9152aaefbf61f5a35d70393832351427417f21d4a21cb4",
+      "sha256": "497e7e51ad7cbd2806f1998c5baad24f635a3b88c446092b4fad3c0b6ef8c47b",
       "build_from": "make_patch_data.py"
     },
     {
       "path": "patch-bundle/dual/wrapper.bin",
       "size": 289199859,
-      "sha256": "2eb8fea0db4ff0a5fc04333652719f414a8be4e535dba5fec95e53d0fa2f13d3",
+      "sha256": "154f48267a89faf3e859255b76b7cc98ee40181297e76fd84bc7bc4aa110c56b",
       "build_from": "make_patch_data.py"
     },
     {
       "path": "patch-bundle/standard/assembly.json",
       "size": 780,
-      "sha256": "8037e836b41943f6c4f3c190de81ffc5f29a650a4b491cb88c179f4129ea6abe",
+      "sha256": "2722039565f9858e0c4be3cbee6dcd2b69b70314190ea8dcee2ce52776b85dcb",
       "build_from": "make_patch_data.py"
     },
     {
       "path": "patch-bundle/standard/droid.xdelta",
       "size": 33091802,
-      "sha256": "072e0f90146d45ee85675b3c266fc80784f128962726f0587a11d348cdc63912",
+      "sha256": "7a231240c786af50dccd853bcb0082a53454961d7826c8e96feeb990ca951446",
       "build_from": "make_patch_data.py"
     },
     {
       "path": "patch-bundle/standard/wrapper.bin",
       "size": 288339187,
-      "sha256": "5f814a2c5c21946a2a08ab7a76646a25067639ce68d23cff98f8763d0b35c5a9",
+      "sha256": "9494e725da067e8d493f14d51883d89ec013fbc56cc7e456041b31ce338770ca",
       "build_from": "make_patch_data.py"
     }
   ],

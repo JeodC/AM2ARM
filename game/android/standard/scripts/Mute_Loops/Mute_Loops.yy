@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Mute_Loops",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Mute_Loops",
+  "parent":{
+    "name":"Audio",
+    "path":"folders/Scripts/Audio.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

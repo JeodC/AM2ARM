@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"erase_save",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"erase_save",
+  "parent":{
+    "name":"o",
+    "path":"folders/Scripts/i/o.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

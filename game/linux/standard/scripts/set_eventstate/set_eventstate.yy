@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"set_eventstate",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"set_eventstate",
+  "parent":{
+    "name":"State",
+    "path":"folders/Scripts/State.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

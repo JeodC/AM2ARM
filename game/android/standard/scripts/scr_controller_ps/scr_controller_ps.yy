@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_controller_ps",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_controller_ps",
+  "parent":{
+    "name":"Controllers",
+    "path":"folders/Scripts/Gatordile/Controllers.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

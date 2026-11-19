@@ -1,0 +1,11 @@
+
+// Set the next room, Samus's entry position, and the camera transition.
+targetroom = rm_a0h17b;
+targetx = 16;
+targety = 416;
+height = 80;
+direction = 0;
+camstartx = 16;
+camstarty = 360;
+transitionx = 4;
+transitiony = 176;

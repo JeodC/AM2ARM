@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"load_resources",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"load_resources",
+  "parent":{
+    "name":"Wanderer",
+    "path":"folders/Scripts/Wanderer.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

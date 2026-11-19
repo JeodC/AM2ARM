@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"set_default_xjoypad",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"set_default_xjoypad",
+  "parent":{
+    "name":"Options?",
+    "path":"folders/Scripts/Options?.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

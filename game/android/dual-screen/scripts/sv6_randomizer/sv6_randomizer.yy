@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sv6_randomizer",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sv6_randomizer",
+  "parent":{
+    "name":"Gatordile",
+    "path":"folders/Scripts/Gatordile.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

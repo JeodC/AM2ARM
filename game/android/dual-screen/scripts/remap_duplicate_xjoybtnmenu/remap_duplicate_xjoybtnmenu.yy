@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"remap_duplicate_xjoybtnmenu",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"remap_duplicate_xjoybtnmenu",
+  "parent":{
+    "name":"Controls",
+    "path":"folders/Scripts/Controls.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

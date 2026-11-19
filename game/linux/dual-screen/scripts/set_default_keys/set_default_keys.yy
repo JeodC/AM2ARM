@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"set_default_keys",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"set_default_keys",
+  "parent":{
+    "name":"Options?",
+    "path":"folders/Scripts/Options?.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

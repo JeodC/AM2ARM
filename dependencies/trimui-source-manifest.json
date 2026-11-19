@@ -1,0 +1,50 @@
+[
+  {
+    "package": "glibc",
+    "version": "2.36-9+deb12u14",
+    "files": [
+      {
+        "filename": "glibc_2.36-9+deb12u14.dsc",
+        "size": 9765,
+        "sha256": "cfe1f0b8dc1fa211ce5a45b3725cc38b29f88667f1140ebdca6de35cf9c6f1fd",
+        "url": "https://deb.debian.org/debian/pool/main/g/glibc/glibc_2.36-9+deb12u14.dsc"
+      },
+      {
+        "filename": "glibc_2.36.orig.tar.xz",
+        "size": 19363988,
+        "sha256": "a543c02070d46ccaf866957efd13f10c924daa74c86a90a0254db09a92a708ee",
+        "url": "https://deb.debian.org/debian/pool/main/g/glibc/glibc_2.36.orig.tar.xz"
+      },
+      {
+        "filename": "glibc_2.36-9+deb12u14.debian.tar.xz",
+        "size": 918488,
+        "sha256": "cf4ac9cd98185452cae3ef34e2e4ee12753e3d93fd0c62c61396d4a47eec902f",
+        "url": "https://deb.debian.org/debian/pool/main/g/glibc/glibc_2.36-9+deb12u14.debian.tar.xz"
+      }
+    ]
+  },
+  {
+    "package": "gcc-12",
+    "version": "12.2.0-14+deb12u1",
+    "files": [
+      {
+        "filename": "gcc-12_12.2.0-14+deb12u1.dsc",
+        "size": 27330,
+        "sha256": "3aed0b189189c744dc9f4b74798a51d3e512ea85e492568db788a927c88e20ba",
+        "url": "https://deb.debian.org/debian/pool/main/g/gcc-12/gcc-12_12.2.0-14+deb12u1.dsc"
+      },
+      {
+        "filename": "gcc-12_12.2.0.orig.tar.gz",
+        "size": 87090343,
+        "sha256": "b8298be16aeeb96a889c6afed0a8e2241b47452e89cc81fe65ea849d5c740fcb",
+        "url": "https://deb.debian.org/debian/pool/main/g/gcc-12/gcc-12_12.2.0.orig.tar.gz"
+      },
+      {
+        "filename": "gcc-12_12.2.0-14+deb12u1.debian.tar.xz",
+        "size": 1675204,
+        "sha256": "59f7f7763a0c355e3f27ff9e7ac80d06382b29939361a87e7b139226bfe7402e",
+        "url": "https://deb.debian.org/debian/pool/main/g/gcc-12/gcc-12_12.2.0-14+deb12u1.debian.tar.xz"
+      }
+    ]
+  }
+]
