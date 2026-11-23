@@ -16,6 +16,20 @@ case "$backend" in
     direct)
         case "$frontend" in
             spruce|ports|tools)
+                case "${AM2ARM_DEVICE_PROFILE:-}" in
+                    g350|rg351p)
+                        # AmberELEC keeps its Pulse session in the firmware home.
+                        # Resolve it before redirecting GameMaker's saves to the card.
+                        if [ -z "${PULSE_SERVER:-}" ]; then
+                            server=$(LC_ALL=C timeout 3 pactl info 2>/dev/null | sed -n 's/^Server String: //p')
+                            if [ -n "$server" ]; then export PULSE_SERVER="$server"; fi
+                        fi
+                        cookie="${XDG_CONFIG_HOME:-${HOME:-/storage}/.config}/pulse/cookie"
+                        if [ -z "${PULSE_COOKIE:-}" ] && [ -r "$cookie" ]; then
+                            export PULSE_COOKIE="$cookie"
+                        fi
+                        ;;
+                esac
                 portable_home="$app/state/home"
                 if [ "$mode" = auto ]; then
                     portable_home="$card/AM2ARM-data/home"

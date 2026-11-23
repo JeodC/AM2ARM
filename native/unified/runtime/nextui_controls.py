@@ -46,8 +46,18 @@ def brick_mappings(device='brick'):
     return '\n'.join(dict.fromkeys(rows))
 
 
-def evdev_mapping(device, input_root=Path('/sys/class/input')):
+def evdev_mapping(device, input_root=Path('/sys/class/input'),
+                  database=Path('/usr/config/SDL-GameControllerDB/gamecontrollerdb.txt')):
     from handheld_input import capability_bits
+    if device in ('g350', 'rg351p'):
+        # AmberELEC ships the mapping for its own board-specific controller driver.
+        name = 'GO-Super Gamepad' if device == 'g350' else 'OpenSimHardware OSH PB Controller'
+        try:
+            rows = database.read_text(errors='replace').splitlines()
+        except OSError:
+            return ''
+        return '\n'.join(row for row in rows if row.split(',', 2)[1:2] == [name]
+                         and 'platform:Linux' in row.split(','))
     pad_name, x, y = {'flip': ('MIYOO Player1', 307, 308),
                       'smartpros': ('TRIMUI Player1', 308, 307)}[device]
     for entry in input_root.glob('event*'):

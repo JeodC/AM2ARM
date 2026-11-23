@@ -1,3 +1,4 @@
+import json
 import os
 from pathlib import Path
 import shutil
@@ -101,6 +102,52 @@ mv "$AM2ARM_GAME_CARD/fixture" "$AM2ARM_PORTS_DIR/AM2ARM Dual Screen"''')
             result = self.launch()
             self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual((self.card/'actions').read_text().splitlines(), [f'setup {endpoint}', f'game {endpoint}'])
+
+    def direct_audio_session(self, profile, **overrides):
+        self.simulate_backend('direct')
+        game_at(self.ports/'AM2ARM Standard', 'standard')
+        firmware_home = self.card/'firmware home'
+        config = firmware_home/'custom config'
+        cookie = config/'pulse/cookie'
+        cookie.parent.mkdir(parents=True, exist_ok=True)
+        cookie.touch()
+        for key in ('PULSE_SERVER', 'PULSE_COOKIE'):
+            self.env.pop(key, None)
+        self.env.update(HOME=str(firmware_home), XDG_CONFIG_HOME=str(config),
+                        AM2ARM_DEVICE_PROFILE=profile, **overrides)
+        self.program(self.bin/'pactl', r'''[ "$1" = info ] || exit 1
+printf '%s\n' "$HOME" "$XDG_CONFIG_HOME" >> "$TRACE.probe"
+echo 'Server String: /run/firmware/pulse/native'
+''')
+        (self.rt/'nextui_session.py').write_text(
+            'import json, os\nfrom pathlib import Path\n'
+            'keys = ("HOME", "XDG_CONFIG_HOME", "PULSE_SERVER", "PULSE_COOKIE")\n'
+            'Path(os.environ["TRACE"]).write_text(json.dumps([os.getenv(k) for k in keys]))\n'
+            'raise SystemExit(int(os.getenv("GAME_STATUS", "0")))\n')
+        result = self.launch()
+        self.assertEqual(result.returncode, int(overrides.get('GAME_STATUS', 0)), result.stderr)
+        return json.loads((self.card/'actions').read_text())
+
+    def test_amber_preserves_authenticated_audio_before_moving_save_home(self):
+        home, config, server, cookie = self.direct_audio_session('g350', GAME_STATUS='42')
+        firmware = self.card/'firmware home'
+        self.assertEqual(home, str(self.card/'AM2ARM-data/home'))
+        self.assertEqual(config, str(Path(home)/'.config'))
+        self.assertEqual(server, '/run/firmware/pulse/native')
+        self.assertEqual(cookie, str(firmware/'custom config/pulse/cookie'))
+        self.assertEqual((self.card/'actions.probe').read_text().splitlines(),
+                         [str(firmware), str(firmware/'custom config')])
+
+    def test_amber_keeps_an_explicit_audio_session(self):
+        _, _, server, cookie = self.direct_audio_session(
+            'rg351p', PULSE_SERVER='unix:/other/native', PULSE_COOKIE='/other/auth')
+        self.assertEqual((server, cookie), ('unix:/other/native', '/other/auth'))
+        self.assertFalse((self.card/'actions.probe').exists())
+
+    def test_other_direct_devices_keep_their_audio_environment(self):
+        _, _, server, cookie = self.direct_audio_session('brick')
+        self.assertEqual((server, cookie), (None, None))
+        self.assertFalse((self.card/'actions.probe').exists())
 
     def test_standalone_retries_an_installed_game_once_after_display_setup(self):
         game_at(self.ports/'AM2ARM Standard', 'standard')

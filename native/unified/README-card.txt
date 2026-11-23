@@ -1,15 +1,22 @@
 AM2ARM 1.6.3 for ARM64 Linux
 
-1. Open the game library on your computer, with a card reader or USB file
-   transfer. On ROCKNIX use games-internal/roms on the system card, roms on
-   a separate games card, or the games-roms network share. On NextUI,
-   stock TrimUI and spruceOS use the top level of the game card. Extract the
-   contents of this ZIP directly there and merge folders when prompted.
-2. Copy your original Windows AM2R_11.zip to that same location. Keep it zipped.
-   Allow 3 GB of free space after copying the files.
-3. Open AM2ARM on the handheld. Look in Tools on NextUI, Apps on TrimUI stock
-   and spruceOS, or Ports on a system with a Ports menu. The first launch
-   prepares the game and starts it. Open the same entry next time to play.
+1. Extract the Linux launcher ZIP on your computer. If extraction creates
+   a folder named AM2ARM-Autopatcher-1.6.3-linux-arm64, open it. You should
+   see am2arm-launcher, ports, Tools, Apps and App together.
+2. Using a card reader or USB file transfer, copy everything inside to the
+   destination for your firmware. Merge the folders if prompted.
+
+   On ROCKNIX, open games-internal/roms on the system card, roms on a
+   separate games card, or the games-roms network share.
+   On AmberELEC, let the handheld finish its first boot, then open GAMES.
+   On NextUI, stock TrimUI and spruceOS, open the top level of the game card.
+   On other supported Ports firmware, open the ROM library containing ports.
+
+3. Put your original Windows AM2R_11.zip beside am2arm-launcher. Keep it
+   zipped and allow 3 GB of free space after copying.
+4. Open AM2ARM in Ports on ROCKNIX and other supported Ports firmware,
+   Tools on NextUI, or Apps on stock TrimUI and spruceOS. The first launch
+   installs and starts the game. Open the same entry next time to play.
 
 Standard starts automatically on recognized single-screen devices. With two
 screens, choose Standard or Dual Screen once. AM2ARM Editions in Ports lets
@@ -33,9 +40,12 @@ displays.
 
 https://github.com/PortsMaster/PortMaster-New/releases/download/2025-07-24_0745/weston_pkg_0.2.squashfs
 
-If the entry is missing, refresh the game list. On ROCKNIX, open Start >
-Game Settings > Update Gamelists. On a case-sensitive card with a capital
-Roms directory, extract the whole ZIP inside that directory for the Ports entry.
+On ROCKNIX, check these paths from the ROM library if the entry is missing.
+  AM2R_11.zip
+  am2arm-launcher/launch.sh
+  ports/AM2ARM.sh
+Then open Start > Game Settings > Update Gamelists. On Ports firmware with a
+capital Roms directory, open Roms as the destination before copying.
 
 Already playing? A complete installation of the same version in a recognized
 location opens directly. A different version is installed alongside it. Back

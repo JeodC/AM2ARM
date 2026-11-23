@@ -7,6 +7,10 @@ SDL_NAMES = ('libSDL2-2.0.so.0', 'libSDL2.so', 'libSDL2-2.0.so')
 MALI_NAMES = ('libmali.so.1', 'libmali.so.0', 'libmali.so', 'libMali.so')
 EGL_NAMES = ('libEGL.so.1', 'libEGL.so') + MALI_NAMES
 GLES_NAMES = ('libGLESv2.so.2', 'libGLESv2.so') + MALI_NAMES
+AMBERELEC_MODELS = {'anbernic rg35': 'g350', 'batlexp g350': 'g350',
+                    'anbernic rg351p': 'rg351p'}
+AMBERELEC_PANELS = frozenset(AMBERELEC_MODELS.values())
+KMS_PANELS = AMBERELEC_PANELS | {'smartpros'}
 
 
 def read(path):
@@ -20,6 +24,11 @@ def identify(model, cpu, frontend_model, release):
     hardware = (model + '\n' + cpu).lower()
     if any(s in hardware for s in ('mini flip', 'sstar', 'tg4040')):
         raise RuntimeError('This board requires another hardware profile.')
+    if re.search(r'^NAME=(?:"AmberELEC"|AmberELEC)$', release, re.MULTILINE):
+        # The G350 device tree in the RG351MP image identifies itself as RG35.
+        profile = AMBERELEC_MODELS.get(model.strip().casefold())
+        if profile:
+            return profile
     if 'tg5050' in hardware or 'trimui smart pro s' in model.lower():
         if any(s in hardware for s in ('sun50iw10', 'tg5040', 'tg3040')):
             raise RuntimeError('Conflicting TrimUI board identifiers.')
@@ -41,7 +50,7 @@ def identify(model, cpu, frontend_model, release):
 
 
 def video_drivers(device, names):
-    if device == 'smartpros':
+    if device in KMS_PANELS:
         return [name for name in names if name and name.lower() == 'kmsdrm']
     drivers = list(dict.fromkeys(n for n in names if n and n.lower() not in
                                  ('wayland', 'x11', 'dummy', 'offscreen')))

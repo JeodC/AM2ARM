@@ -18,7 +18,8 @@ import time
 import xml.etree.ElementTree as ET
 
 from nextui_layout import installed_game, stock_save_directory
-from compat_display import EGL_NAMES, GLES_NAMES, SDL_NAMES, library_candidates, library_dirs, read, video_drivers
+from compat_display import (AMBERELEC_PANELS, EGL_NAMES, GLES_NAMES, KMS_PANELS, SDL_NAMES,
+                            library_candidates, library_dirs, read, video_drivers)
 from nextui_controls import brick_mappings, evdev_mapping
 from brick_rumble import BrickRumble
 from spruce_exit import SpruceMenuExit
@@ -31,15 +32,19 @@ CARD = Path(os.environ.get('AM2ARM_GAME_CARD') or ROOT.parent)
 CHILDREN = []
 
 
-def library_path(*extra):
-    directories = [RUNTIME/'core', RUNTIME/'lib', *extra]
-    directories += [Path(value) for value in os.environ.get('LD_LIBRARY_PATH', '').split(':') if value]
-    directories += [Path('/usr/trimui/lib'), Path('/usr/lib'), Path('/lib')]
-    return ':'.join(str(value) for value in dict.fromkeys(directories))
-
-
 def command(binary, arguments=(), extra=(), preload=None):
-    result = [str(RUNTIME/'core/ld-linux-aarch64.so.1'), '--library-path', library_path(*extra)]
+    core = RUNTIME/'core'
+    # AmberELEC's SDL requires its glibc, and its libcurl requires its OpenSSL.
+    firmware_abi = os.environ.get('AM2ARM_DEVICE_PROFILE') in AMBERELEC_PANELS
+    loader = (Path('/usr/lib') if firmware_abi else core)/'ld-linux-aarch64.so.1'
+    providers = list(map(Path, extra))
+    bundled = RUNTIME/'lib'
+    directories = providers + [bundled] if firmware_abi else [core, bundled, *providers]
+    directories.extend(Path(value) for value in os.environ.get('LD_LIBRARY_PATH', '').split(':')
+                       if value and (not firmware_abi or Path(value) != core))
+    directories.extend([Path('/usr/trimui/lib'), Path('/usr/lib'), Path('/lib')])
+    path = ':'.join(map(str, dict.fromkeys(directories)))
+    result = [str(loader), '--library-path', path]
     if preload:
         result += ['--preload', str(preload)]
     return result+[str(binary)]+list(map(str, arguments))
@@ -78,6 +83,40 @@ def wait_ready(process, predicate, description, timeout=20):
         time.sleep(.05)
 
 
+def prepare_amber_audio(env, work, log):
+    def default_sink():
+        try:
+            result = subprocess.run(['pactl', 'get-default-sink'], text=True, stdout=subprocess.PIPE,
+                                    stderr=subprocess.DEVNULL, timeout=2,
+                                    env=dict(env, LD_LIBRARY_PATH='/usr/lib/pulseaudio'))
+        except subprocess.TimeoutExpired:
+            return ''
+        return result.stdout.strip() if result.returncode == 0 else ''
+
+    if env.get('PULSE_SERVER') and default_sink() not in ('', 'auto_null'):
+        print('Audio output: firmware PulseAudio', flush=True)
+        return
+
+    # AmberELEC normally stops PulseAudio and leaves ALSA's default PCM available.
+    # GameMaker needs a working PulseAudio device through its final shutdown.
+    runtime, state = work/'pulse-run', work/'pulse-state'
+    socket, cookie = work/'audio', work/'pulse-cookie'
+    runtime.mkdir(mode=0o700)
+    state.mkdir(mode=0o700)
+    cookie.touch(mode=0o600, exist_ok=False)
+    cookie.write_bytes(os.urandom(256))
+    env.update(PULSE_RUNTIME_PATH=str(runtime), PULSE_STATE_PATH=str(state), PULSE_COOKIE=str(cookie),
+               PULSE_SERVER='unix:' + str(socket), PULSE_SINK='am2arm')
+    server_env = dict(env, HOME=str(work), XDG_CONFIG_HOME=str(work), LD_LIBRARY_PATH='/usr/lib/pulseaudio')
+    audio = start(['pulseaudio', '-n', '--daemonize=no', '--use-pid-file=no', '--exit-idle-time=-1',
+                   '--disable-shm=yes', '--fail=yes', '--log-target=stderr',
+                   '-L', f'module-native-protocol-unix socket={socket} auth-cookie={cookie}',
+                   '-L', 'module-alsa-sink sink_name=am2arm device=default rate=44100 channels=2 tsched=0'],
+                  server_env, log)
+    wait_ready(audio, lambda: socket.is_socket() and default_sink() == 'am2arm', 'ALSA audio output', timeout=8)
+    print('Audio output: private PulseAudio on AmberELEC ALSA', flush=True)
+
+
 def check(env, *args):
     try:
         providers = [Path(args[1]).parent]
@@ -111,7 +150,7 @@ def display_options(device, env, needs_gles):
             for egl in egls:
                 for gl in sorted(gles, key=lambda p: p.parent != egl.parent):
                     trial = dict(env, SDL_VIDEO_EGL_DRIVER=str(egl), SDL_VIDEO_GL_DRIVER=str(gl))
-                    if device in ('flip', 'smartpros') and driver.lower() == 'kmsdrm':
+                    if (device in KMS_PANELS or device == 'flip') and driver.lower() == 'kmsdrm':
                         trial['EGL_PLATFORM'] = 'gbm'
                     print('Testing GLES:', driver, sdl, egl, gl, flush=True)
                     if check(trial, 'gles', sdl, driver, *display_size(device)):
@@ -213,7 +252,8 @@ def run(mode, device):
     logs = ROOT/'logs'
     if mode == 'game':
         game = Path(os.environ['AM2ARM_PLAY_DIR']) if os.environ.get('AM2ARM_PLAY_DIR') else installed_game(CARD)
-    with tempfile.TemporaryDirectory(prefix='am2arm-nextui-') as temporary, ExitStack() as resources:
+    temp_root = '/tmp' if device in AMBERELEC_PANELS else None
+    with tempfile.TemporaryDirectory(prefix='am2arm-nextui-', dir=temp_root) as temporary, ExitStack() as resources:
         work = Path(temporary)
         rumble = None
         menu_exit = None
@@ -258,7 +298,7 @@ def run(mode, device):
                        AM2ARM_PRESENT_READY=str(work/'visible'))
             for index, (sdl, driver, _, _) in enumerate(candidates):
                 env.update(AM2ARM_FIRMWARE_SDL=str(sdl), AM2ARM_PRESENT_DRIVER=driver)
-                if device == 'smartpros':
+                if device in KMS_PANELS:
                     env['EGL_PLATFORM'] = 'gbm'
                 logfile = logs/(stamp+f'-presentation-{index}.log')
                 view = start(python(RUNTIME/'nextui_present.py', extra=library_dirs(CARD, device)), env, logfile)
@@ -281,6 +321,9 @@ def run(mode, device):
                 raise RuntimeError('No firmware driver could present a GLES2 frame.')
             sdl, driver, egl, gles = candidate
             options, metadata = game_options(game, device)
+            if device in AMBERELEC_PANELS:
+                resources.callback(cleanup)
+                prepare_amber_audio(env, work, logs/(stamp+'-audio.log'))
             if device in ('smartpro', 'brick') and prepare_rumble(game):
                 mapping = brick_mappings(device).partition(',')[0]
                 if len(mapping) == 32:
@@ -306,13 +349,13 @@ def run(mode, device):
                        ALSOFT_DRIVERS='alsa', AM2ARM_SAVE_DIR=str(options), AM2ARM_BROWSE_DIR=str(CARD))
             env.pop('WAYLAND_DISPLAY', None)
             env.update(SDL_VIDEO_EGL_DRIVER=str(egl), SDL_VIDEO_GL_DRIVER=str(gles))
-            if device in ('flip', 'smartpros') and driver.lower() == 'kmsdrm':
+            if (device in KMS_PANELS or device == 'flip') and driver.lower() == 'kmsdrm':
                 env.update(EGL_PLATFORM='gbm')
             else:
                 env.pop('EGL_PLATFORM', None)
             # The runner uses its own SDL for input. Only the display adapter
             # receives the firmware SDL implementation.
-            use_kms = driver.lower() == 'kmsdrm' and (device == 'smartpros' or
+            use_kms = driver.lower() == 'kmsdrm' and (device in KMS_PANELS or
                       (device == 'flip' and egl == Path('/usr/lib/libEGL.so.1').resolve()))
             if use_kms:
                 graphics, preload = RUNTIME/'kms', None
@@ -320,7 +363,7 @@ def run(mode, device):
                     env.pop(key, None)
                 env.update(AM2ARM_STOCK_DISPLAY='1', LIBGL_FB='3', LIBGL_EGL=str(egl),
                            SDL_VIDEODRIVER='x11')
-                if device == 'smartpros':
+                if device in KMS_PANELS:
                     # Keep the Mali driver's C++ allocations and frees on the runner's allocator.
                     env.update(AM2ARM_FIRMWARE_SDL=str(sdl), AM2ARM_KMS_SIZE=f'{width}x{height}',
                                LIBGL_DEEPBIND='0')

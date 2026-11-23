@@ -5,7 +5,8 @@ from pathlib import Path
 
 from compat_display import identify, read
 
-DISPLAY_SIZES = {'brick': (1024, 768), 'smartpro': (1280, 720), 'smartpros': (1280, 720), 'flip': (640, 480)}
+DISPLAY_SIZES = {'brick': (1024, 768), 'smartpro': (1280, 720), 'smartpros': (1280, 720),
+                 'flip': (640, 480), 'g350': (640, 480), 'rg351p': (480, 320)}
 
 
 def display_size(device=None):

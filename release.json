@@ -25,10 +25,12 @@
   },
   "linux": {
     "download": "AM2ARM-Autopatcher-1.6.3-linux-arm64.zip",
+    "portmaster_download": "am2arm.zip",
     "verified_platforms": [
       "Original RG DS stock Linux 1.1-261008",
       "RG DS ROCKNIX Standard",
       "G350 ROCKNIX Standard",
+      "G350 AmberELEC RG351MP prerelease 20261019_1835 Standard (1.6.3 standalone)",
       "TrimUI Brick NextUI 20261013-0 Standard",
       "TrimUI Brick stock menu 1.0.6 Standard (internal CrossMix 1.3.9 marker)",
       "Miyoo Flip V2 RK3566 / MY355 BaseOS 1.3.0 Standard (community confirmation)"
@@ -41,6 +43,20 @@
       "standard"
     ],
     "direct_display_profiles": {
+      "g350": {
+        "size": [
+          640,
+          480
+        ],
+        "status": "Standard tested on AmberELEC RG351MP prerelease 20261019_1835"
+      },
+      "rg351p": {
+        "size": [
+          480,
+          320
+        ],
+        "status": "AmberELEC firmware libraries checked. Physical confirmation pending."
+      },
       "brick": {
         "size": [
           1024,
@@ -76,7 +92,7 @@
     "compatibility": "README.md#compatibility",
     "version": "1.6.3",
     "title_version": "V1.6.3",
-    "hardware_evidence_version": "1.6.2 and earlier"
+    "hardware_evidence_version": "1.6.3 on G350 AmberELEC, 1.6.2 and earlier for the other verified platforms"
   },
   "original_input": "Original Windows AM2R 1.1 ZIP",
   "complete_game_in_download": false
