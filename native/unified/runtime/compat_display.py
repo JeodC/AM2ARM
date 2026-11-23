@@ -3,6 +3,11 @@ from pathlib import Path
 import os
 import re
 
+SDL_NAMES = ('libSDL2-2.0.so.0', 'libSDL2.so', 'libSDL2-2.0.so')
+MALI_NAMES = ('libmali.so.1', 'libmali.so.0', 'libmali.so', 'libMali.so')
+EGL_NAMES = ('libEGL.so.1', 'libEGL.so') + MALI_NAMES
+GLES_NAMES = ('libGLESv2.so.2', 'libGLESv2.so') + MALI_NAMES
+
 
 def read(path):
     try:
@@ -51,8 +56,10 @@ def library_dirs(card, device):
                   card/'spruce/brick/sdl2', Path('/usr/trimui/lib')]
     elif device == 'flip':
         vendor = [card/'spruce/flip/lib', card/'.system/my355/lib', Path('/usr/miyoo/lib')]
-    else:
+    elif device in ('brick', 'smartpro'):
         vendor = [Path('/usr/trimui/lib'), card/'.system/tg5040/lib']
+    else:
+        vendor = []
     system = [Path(p) for p in ('/usr/lib/aarch64-linux-gnu', '/lib/aarch64-linux-gnu',
               '/usr/lib64', '/lib64', '/usr/lib', '/lib', '/usr/lib/egl', '/usr/lib/mali')]
     provided = [Path(p) for p in os.environ.get('LD_LIBRARY_PATH', '').split(':')
@@ -75,3 +82,16 @@ def library_candidates(folders, names):
             except (OSError, RuntimeError):
                 continue
     return found
+
+
+def display_inventory(drm, folders):
+    """Report hints for an unknown firmware without taking over its screen."""
+    connected = {}
+    for status in sorted(drm.glob('card*-*/status')):
+        if read(status) == 'connected':
+            modes = read(status.with_name('modes')).splitlines()
+            connected[status.parent.name] = modes[0] if modes else None
+    libraries = {}
+    for label, names in [('SDL2', SDL_NAMES), ('EGL', EGL_NAMES), ('GLES2', GLES_NAMES)]:
+        libraries[label] = list(dict.fromkeys(p.name for p in library_candidates(folders, names)))
+    return {'connected_drm': connected, 'arm64_libraries': libraries}

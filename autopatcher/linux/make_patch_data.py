@@ -22,6 +22,7 @@ patch data is never emitted unverified.
 
 import hashlib
 import json
+import re
 import struct
 import subprocess
 import sys
@@ -46,6 +47,25 @@ def sha256_file(path, chunk=1 << 20):
 
 def sha256_bytes(b):
     return hashlib.sha256(b).hexdigest()
+
+
+def installation_manifest(archive):
+    """Record the installed bytes before compression and read the game's own version."""
+    metadata = json.loads(archive.read("edition.json"))
+    version = metadata["version"]
+    if (metadata.get("product") != "AM2ARM" or metadata.get("architecture") != "aarch64"
+            or metadata.get("edition") not in ("standard", "dual-screen")
+            or not isinstance(version, str) or not re.fullmatch(r"[0-9]+(?:\.[0-9]+)+", version)
+            or metadata.get("display_version") != version):
+        raise ValueError("Invalid ARM64 edition metadata in the canonical game ZIP.")
+    files = {}
+    for member in archive.infolist():
+        if member.is_dir():
+            continue
+        with archive.open(member) as source:
+            checksum = hashlib.file_digest(source, "sha256").hexdigest()
+        files[member.filename] = {"size": member.file_size, "sha256": checksum}
+    return version, files
 
 
 def local_payload_range(archive_path, info):
@@ -108,6 +128,7 @@ def main(archive_path, ref_path, out_dir):
 
     cuts = []  # (start, end, descriptor)
     with zipfile.ZipFile(archive_path) as z:
+        version, installed_files = installation_manifest(z)
         game_data = z.getinfo("data/game.unx")
         if game_data.compress_type != zipfile.ZIP_STORED:
             sys.exit("ERROR: data/game.unx must be STORED in the canonical ZIP")
@@ -121,10 +142,16 @@ def main(archive_path, ref_path, out_dir):
         for info in z.infolist():
             if info.filename == "data/game.unx" or info.is_dir():
                 continue
-            if info.compress_type != zipfile.ZIP_STORED or info.compress_size == 0:
+            if info.file_size == 0:
                 continue
-            matches = ref_index.get(info.compress_size)
+            matches = ref_index.get(info.file_size)
             if not matches:
+                continue
+            if info.compress_type != zipfile.ZIP_STORED:
+                with z.open(info) as member:
+                    original_hash = hashlib.file_digest(member, "sha256").hexdigest()
+                if any(original_hash == ref_sha for ref_sha, _ in matches):
+                    raise ValueError(f"Store {info.filename} uncompressed so it is copied from the original ZIP.")
                 continue
             s, e = local_payload_range(archive_path, info)
             with open(archive_path, "rb") as f:
@@ -173,11 +200,10 @@ def main(archive_path, ref_path, out_dir):
             segments.append({"source": "wrapper", "offset": w_off,
                              "length": len(chunk), "sha256": sha256_bytes(chunk)})
 
-    # Keep hotfix suffixes and both editions aligned with the central release.
-    version = "1.6.2"
     # Store the selected ZIP's size and hashes alongside the ordered reconstruction plan.
     manifest = {
         "version": version,
+        "installed_files": installed_files,
         "archive_name": archive_path.name,
         "final_sha256": archive_sha,
         "final_size": archive_size,

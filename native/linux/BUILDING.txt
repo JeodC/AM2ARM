@@ -77,8 +77,8 @@ compatibility with this Android port. Copy save1..3/data.sav/extras.sav while
 both games are closed; do not transfer platform-specific config.ini.
 
 Current release integration
-The in-game title is V1.6.2. Linux options metadata is 1.6.2.0 and public release
-metadata is 1.6.2. Set edition.json game_label to AM2ARM or AM2ARM DS for
+The in-game title is V1.6.3. Linux options metadata is 1.6.3.0 and public release
+metadata is 1.6.3. Set edition.json game_label to AM2ARM or AM2ARM DS for
 window focus, retaining its original game_name/save identity.
 
 The matching native extension can be built with display/build-display.sh. Set

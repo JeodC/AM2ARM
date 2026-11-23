@@ -1,7 +1,7 @@
-AM2ARM 1.6.2 corresponding runtime sources
+AM2ARM 1.6.3 corresponding runtime sources
 
 These two archives on the AM2ARM v1.6.1 tag supply the unchanged Debian
-dependency sources for 1.6.2. Save them once for offline use.
+dependency sources used by the 1.6.3 Linux launcher. Save them once for offline use.
 
 General handheld runtime, Debian sources and packaging:
 AM2ARM-1.6.1-dependency-sources.zip
@@ -42,3 +42,8 @@ https://github.com/binarycounter/Westonpack
 https://github.com/binarycounter/Westonpack/wiki
 https://github.com/PortsMaster/PortMaster-New/releases/tag/2025-07-24_0745
 https://www.x.org/releases/individual/xserver/xwayland-22.1.9.tar.xz
+
+The standalone Linux installer uses the Mozilla root certificate bundle from
+certifi 2026.11.20 for HTTPS. The bundle and its license are in
+native/unified/runtime/certificates.
+https://pypi.org/project/certifi/2026.11.20/

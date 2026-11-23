@@ -1,4 +1,4 @@
-AM2ARM 1.6.2 — ARM64 Linux Dual Screen
+AM2ARM 1.6.3 — ARM64 Linux Dual Screen
 
 This GameMaker project contains the release code and resource definitions.
 asset-inputs.json lists the original artwork, music, fonts and included data

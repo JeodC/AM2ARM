@@ -18,14 +18,16 @@ import time
 import xml.etree.ElementTree as ET
 
 from nextui_layout import installed_game, stock_save_directory
-from compat_display import library_candidates, library_dirs, read, video_drivers
+from compat_display import EGL_NAMES, GLES_NAMES, SDL_NAMES, library_candidates, library_dirs, read, video_drivers
 from nextui_controls import brick_mappings, evdev_mapping
 from brick_rumble import BrickRumble
+from spruce_exit import SpruceMenuExit
 from trimui_device import current_device, display_size
+from weston_graphics import WestonpackRequired, locate_graphics
 
 RUNTIME = Path(__file__).resolve().parent
 ROOT = RUNTIME.parent
-CARD = ROOT.parent
+CARD = Path(os.environ.get('AM2ARM_GAME_CARD') or ROOT.parent)
 CHILDREN = []
 
 
@@ -94,12 +96,11 @@ def display_options(device, env, needs_gles):
     folders = library_dirs(CARD, device)
     if device == 'flip' and 'my355' in read('/etc/os-release').lower():
         folders = list(dict.fromkeys([Path('/usr/lib'), *folders]))
-    sdls = library_candidates(folders, ('libSDL2-2.0.so.0', 'libSDL2.so', 'libSDL2-2.0.so'))
+    sdls = library_candidates(folders, SDL_NAMES)
     if not sdls:
         raise RuntimeError('Could not locate a 64-bit firmware SDL2 library.')
-    mali = ('libmali.so.1', 'libmali.so.0', 'libmali.so', 'libMali.so')
-    egls = library_candidates(folders, ('libEGL.so.1', 'libEGL.so') + mali)
-    gles = library_candidates(folders, ('libGLESv2.so.2', 'libGLESv2.so') + mali)
+    egls = library_candidates(folders, EGL_NAMES)
+    gles = library_candidates(folders, GLES_NAMES)
     for sdl in sdls:
         lines = check(env, 'drivers', sdl).splitlines()
         names = next((json.loads(l[8:]) for l in lines if l.startswith('DRIVERS ')), [])
@@ -121,7 +122,7 @@ def display_options(device, env, needs_gles):
 
 
 def report(device):
-    details = {'package': 'AM2ARM 1.6.2', 'menu': os.environ.get('AM2ARM_MENU_NAME'),
+    details = {'package': 'AM2ARM 1.6.3', 'menu': os.environ.get('AM2ARM_MENU_NAME'),
                'spruce': (CARD/'spruce').is_dir(),
                'device': device, 'display': display_size(device),
                'machine': platform.machine(),
@@ -160,7 +161,10 @@ def game_options(game, device='brick'):
         module.bind_save_directory(native, options)
     options.mkdir(parents=True, exist_ok=True)
     config = options/'config.ini'
-    if not config.exists():
+    if hasattr(module, 'prepare_display_config'):
+        module.prepare_display_config(config, metadata['edition'], True)
+    elif not config.exists():
+        # Older installed games read the legacy keys directly.
         wide = int(device in ('smartpro', 'smartpros'))
         config.write_text(f'[Screen]\nFullscreen=0\nScale=2\nWidescreen={wide}\nAspectRatio={wide}\nNano=0\n')
     mappings = (game/'data/gamecontrollerdb.txt').read_text()
@@ -199,20 +203,20 @@ def prepare_rumble(game):
     return True
 
 
-def run(mode):
+def run(mode, device):
     if mode not in ('patcher', 'game'):
         raise RuntimeError('Unknown launch mode.')
-    device = current_device()
     width, height = display_size(device)
     report(device)
     print('Hardware profile:', device, 'Screen:', f'{width}x{height}', flush=True)
     stamp = time.strftime('%Y%m%d-%H%M%S')+'-'+str(os.getpid())
     logs = ROOT/'logs'
     if mode == 'game':
-        game = installed_game(CARD)
+        game = Path(os.environ['AM2ARM_PLAY_DIR']) if os.environ.get('AM2ARM_PLAY_DIR') else installed_game(CARD)
     with tempfile.TemporaryDirectory(prefix='am2arm-nextui-') as temporary, ExitStack() as resources:
         work = Path(temporary)
         rumble = None
+        menu_exit = None
         number = next((i for i in range(40, 80) if not Path(f'/tmp/.X{i}-lock').exists()
                        and not Path(f'/tmp/.X11-unix/X{i}').exists()), None)
         if number is None:
@@ -243,6 +247,12 @@ def run(mode):
             '-fp', 'built-ins', '-noreset']), env, logs/(stamp+'-display.log'), RUNTIME/'bin')
         wait_ready(xserver, lambda: Path(f'/tmp/.X11-unix/X{number}').is_socket(), 'Input display')
         if mode == 'patcher':
+            if (device in ('brick', 'smartpro') and env.get('AM2ARM_FIRST_RUN') == '1'
+                    and not env.get('AM2ARM_DISPLAY_NOTICE')):
+                try:
+                    locate_graphics(CARD, RUNTIME, os.environ)
+                except WestonpackRequired:
+                    env['AM2ARM_DISPLAY_NOTICE'] = 'westonpack'
             env.update(TCL_LIBRARY=str(RUNTIME/'python/usr/share/tcltk/tcl8.6'),
                        TK_LIBRARY=str(RUNTIME/'python/usr/share/tcltk/tk8.6'),
                        AM2ARM_PRESENT_READY=str(work/'visible'))
@@ -311,19 +321,35 @@ def run(mode):
                 env.update(AM2ARM_STOCK_DISPLAY='1', LIBGL_FB='3', LIBGL_EGL=str(egl),
                            SDL_VIDEODRIVER='x11')
                 if device == 'smartpros':
-                    env.update(AM2ARM_FIRMWARE_SDL=str(sdl), AM2ARM_KMS_SIZE=f'{width}x{height}')
+                    # Keep the Mali driver's C++ allocations and frees on the runner's allocator.
+                    env.update(AM2ARM_FIRMWARE_SDL=str(sdl), AM2ARM_KMS_SIZE=f'{width}x{height}',
+                               LIBGL_DEEPBIND='0')
                 print('Game output: native SDL KMSDRM', flush=True)
             else:
-                graphics, preload = RUNTIME/'graphics', RUNTIME/'graphics/libcrusty.so'
+                graphics = locate_graphics(CARD, RUNTIME, os.environ)
+                preload = graphics/'libcrusty.so'
                 print('Game output: Crusty with firmware SDL auto-selection', flush=True)
             app = start(command(game/'data/runner', ['-game', game/'data/game.unx'],
                 extra=(graphics, aliases, game/'runtime/lib', sdl.parent, egl.parent, gles.parent),
                 preload=preload), env, logs/(stamp+'-game.log'), game/'data')
+            if device == 'smartpros' and env.get('AM2ARM_FRONTEND') == 'spruce':
+                watch = SpruceMenuExit.open(CARD)
+                if watch is not None:
+                    menu_exit = resources.enter_context(watch)
             start(python(game/'runtime/focus-game.py', metadata['game_label']), env,
                   logs/(stamp+'-focus.log'))
         while app.poll() is None:
             if xserver.poll() is not None or (mode == 'patcher' and view.poll() is not None):
                 raise RuntimeError('The display stopped while running. Please send the logs folder.')
+            if menu_exit and menu_exit.requested():
+                # Deliver the normal window-manager close to the game on its own X server.
+                with (logs/(stamp+'-close.log')).open('a') as output:
+                    try:
+                        result = subprocess.run(python(game/'runtime/focus-game.py', metadata['game_label'], '--close'),
+                                                env=env, stdout=output, stderr=subprocess.STDOUT, timeout=6)
+                        print('Menu close request status:', result.returncode, flush=True)
+                    except (OSError, subprocess.TimeoutExpired) as error:
+                        print('Menu close request failed:', error, flush=True)
             if rumble:
                 rumble.poll()
             else:
@@ -350,7 +376,8 @@ def main():
         try:
             awake = Path('/tmp/stay_awake')
             owns_awake = False
-            if (os.environ.get('AM2ARM_FRONTEND') == 'stock' or (CARD/'spruce').is_dir()) and current_device() in ('smartpro', 'smartpros', 'brick'):
+            device = os.environ.get('AM2ARM_DEVICE_PROFILE') or current_device()
+            if (os.environ.get('AM2ARM_FRONTEND') == 'stock' or (CARD/'spruce').is_dir()) and device in ('smartpro', 'smartpros', 'brick'):
                 try:
                     with awake.open('x') as stream:
                         stream.write('1\n')
@@ -358,10 +385,13 @@ def main():
                 except FileExistsError:
                     pass
             try:
-                return run(sys.argv[1] if len(sys.argv) > 1 else 'patcher')
+                return run(sys.argv[1] if len(sys.argv) > 1 else 'patcher', device)
             finally:
                 if owns_awake:
                     awake.unlink(missing_ok=True)
+        except WestonpackRequired as error:
+            print(error, flush=True)
+            return 78
         except (RuntimeError, OSError, ValueError) as error:
             print('Could not start:', error, flush=True)
             return 1

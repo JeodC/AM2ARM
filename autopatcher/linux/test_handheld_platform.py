@@ -1,6 +1,5 @@
 import importlib.util
 from pathlib import Path
-import socket
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -29,10 +28,9 @@ class DisplaySessionTests(unittest.TestCase):
                              'Portable session detection is missing')
         from handheld_platform import wayland_environment
         with tempfile.TemporaryDirectory() as folder:
-            endpoint = socket.socket(socket.AF_UNIX)
-            self.addCleanup(endpoint.close)
-            endpoint.bind(str(Path(folder) / 'wayland-3'))
-            env = wayland_environment({'XDG_RUNTIME_DIR': folder, 'WAYLAND_DISPLAY': 'wayland-3'})
+            endpoint = Path(folder) / 'wayland-3'
+            with patch('handheld_platform.responds_to_wayland', side_effect=lambda path: path == endpoint):
+                env = wayland_environment({'XDG_RUNTIME_DIR': folder, 'WAYLAND_DISPLAY': 'wayland-3'})
             self.assertEqual(env['XDG_RUNTIME_DIR'], folder)
             self.assertEqual(env['WAYLAND_DISPLAY'], 'wayland-3')
 

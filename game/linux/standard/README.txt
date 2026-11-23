@@ -1,4 +1,4 @@
-AM2ARM 1.6.2 — ARM64 Linux Standard
+AM2ARM 1.6.3 — ARM64 Linux Standard
 
 This GameMaker project contains the release code and resource definitions.
 asset-inputs.json lists the original artwork, music, fonts and included data

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Prepare the v1.6.2 checkout catalog for Project Restore Tool 0.3.0."""
+"""Prepare this checkout's catalog for Project Restore Tool 0.3.0."""
 import argparse
 import json
 from pathlib import Path
@@ -44,7 +44,7 @@ def make_catalog(destination):
     for name, fingerprint in references['projects'].items():
         manifest_path = local_path(ROOT, name + '/asset-inputs.json')
         if not manifest_path.is_file() or digest_file(manifest_path) != fingerprint:
-            raise RestoreError('Expected the original v1.6.2 manifest in ' + name)
+            raise RestoreError('Expected the original project asset manifest in ' + name)
         entry = read_json(manifest_path)
         bundle_name = entry.get('bundle_path')
         wanted = catalog['asset_bundles'][bundle_name] if bundle_name else catalog['bundle_sha256']

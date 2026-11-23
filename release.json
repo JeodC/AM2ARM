@@ -1,11 +1,11 @@
 {
   "product": "AM2ARM",
-  "version": "1.6.2",
-  "title_version": "V1.6.2",
+  "version": "1.6.3",
+  "title_version": "V1.6.3",
   "base_game": "AM2R Community Updates 1.5.5",
   "repository": "https://github.com/PatchDev-AM2ARM/AM2ARM",
-  "release_tag": "v1.6.2",
-  "channel": "release",
+  "release_tag": "v1.6.3",
+  "channel": "prerelease",
   "platforms": [
     "android-arm64",
     "linux-arm64"
@@ -18,10 +18,13 @@
     "game_version_code": 1005017,
     "patcher_version_code": 21,
     "standard_package": "com.community.am2r",
-    "dual_package": "com.community.am2rdual"
+    "dual_package": "com.community.am2rdual",
+    "version": "1.6.2",
+    "title_version": "V1.6.2",
+    "release_tag": "v1.6.2"
   },
   "linux": {
-    "download": "AM2ARM-Autopatcher-1.6.2-linux-arm64.zip",
+    "download": "AM2ARM-Autopatcher-1.6.3-linux-arm64.zip",
     "verified_platforms": [
       "Original RG DS stock Linux 1.1-261008",
       "RG DS ROCKNIX Standard",
@@ -59,7 +62,7 @@
           1280,
           720
         ],
-        "status": "Firmware libraries checked; hardware confirmation pending"
+        "status": "Standard gameplay reported on spruceOS at 3× and 16:9. The updated display and exit controls await hardware confirmation."
       },
       "flip": {
         "board": "MY355",
@@ -70,7 +73,10 @@
         "status": "Community tested"
       }
     },
-    "compatibility": "README.md#compatibility"
+    "compatibility": "README.md#compatibility",
+    "version": "1.6.3",
+    "title_version": "V1.6.3",
+    "hardware_evidence_version": "1.6.2 and earlier"
   },
   "original_input": "Original Windows AM2R 1.1 ZIP",
   "complete_game_in_download": false

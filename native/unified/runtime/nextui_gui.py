@@ -33,14 +33,30 @@ class StandardWindow(handheld_gui.HandheldWindow):
 def main():
     root = tk.Tk()
     root.overrideredirect(True)
+    auto = os.environ.get('AM2ARM_FIRST_RUN') == '1'
+    if (os.environ.get('AM2ARM_DISPLAY_NOTICE') == 'westonpack'
+            and not (auto and os.environ.get('AM2ARM_FETCH_DISPLAY') == '1')):
+        from weston_graphics import SETUP_MESSAGE
+        window = StandardWindow(root, size=display_size())
+        root.wait_visibility()
+        window.finish_intro()
+        window.notice = handheld_gui.Notice(root, 'DISPLAY SETUP', SETUP_MESSAGE, window.close)
+        root.mainloop()
+        return 2
+    if auto:
+        from first_run import Library
+        from first_run_gui import PlayWindow
+        window = PlayWindow(root, Library.from_environment(), True, display_size())
+        root.mainloop()
+        return 0 if window.play else 2
     card = Path(os.environ.get('SDCARD_PATH', '/mnt/SDCARD'))
     output = card/'AM2ARM/games'
     if (output/'AM2ARM Standard').exists() or (output/'AM2ARM Standard.sh').exists():
-        output = output/'1.6.2'
+        output = output/'1.6.3'
     StandardWindow(root, output=output, size=display_size(), install_func=prepare_game,
                 menu_name=os.environ.get('AM2ARM_MENU_NAME', 'Apps'))
     root.mainloop()
 
 
 if __name__ == '__main__':
-    main()
+    raise SystemExit(main())

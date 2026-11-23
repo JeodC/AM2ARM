@@ -1,4 +1,4 @@
-AM2ARM 1.6.2 - native ARM64 Linux integration
+AM2ARM 1.6.3 - native ARM64 Linux integration
 
 This package supplies the matching native launcher/display source and GL4ES
 changes for AM2ARM Standard and Dual Screen on compatible ARM64 Wayland firmware.

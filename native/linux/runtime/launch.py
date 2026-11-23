@@ -23,6 +23,17 @@ def display_session(environment):
     env['WAYLAND_DISPLAY'] = env.get('WAYLAND_DISPLAY') or 'wayland-0'
     return env
 
+def prepare_display_config(config, edition, single_panel):
+    if config.exists():
+        return
+    if edition == 'standard' and single_panel:
+        # The game selects the aspect and scale once its real drawable exists.
+        config.write_text('[Screen]\nNano=0\n')
+    else:
+        config.write_text('[Screen]\nFullscreen=0\nScale=2\nWidescreen=0\nAspectRatio=0\nNano=0\n'
+                          '[DualScreen]\nDeviceProfile=1\nSwapScreens=0\n')
+
+
 def firmware_audio(environment):
     server = environment.get('PULSE_SERVER')
     if not server:
@@ -205,12 +216,7 @@ def run(settings):
     bind_save_directory(Path.home() / '.config' / settings['game_name'], options)
     env['AM2ARM_SAVE_DIR'] = str(options.resolve())
     env['AM2ARM_BROWSE_DIR'] = str(next((p for p in (Path('/storage/roms'), Path('/roms'), Path('/mnt/mmc')) if p.is_dir()), ROOT.parent))
-    config = options / 'config.ini'
-    if not config.exists():
-        # Native output already chooses upper gameplay and lower HUD. Preserve
-        # all choices after the first launch, including Nano and screen routing.
-        config.write_text('[Screen]\nFullscreen=0\nScale=2\nWidescreen=0\nAspectRatio=0\nNano=0\n'
-                          '[DualScreen]\nDeviceProfile=1\nSwapScreens=0\n')
+    prepare_display_config(options/'config.ini', settings['edition'], env.get('AM2ARM_SINGLE_SCREEN') == '1')
     prepare_controller_database(options, controller_mappings())
     env['LD_LIBRARY_PATH'] = str(RUNTIME / 'lib')
     touch = Path('/sys/class/anbernic_misc/tpctrl')

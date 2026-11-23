@@ -354,7 +354,7 @@ ini_close();
 // NOT Dymanic Version Number
 global.fontVersion = font_add_sprite_ext(sVersionFont, "V.0123456789b", true, 1);
 
-global.am2r_version = "V1.6.2";
+global.am2r_version = "V1.6.3";
 if (os_type == os_linux) window_set_caption("AM2ARM DS");
 global.optionalMusicInstalled = false; // musItemAmb2 + musTester are OPTIONAL streamed tracks the community
 // patch pipeline never ships (absent from the HQ music set AND the reference install). Our imported assets

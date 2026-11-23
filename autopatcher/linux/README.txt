@@ -1,4 +1,4 @@
-AM2ARM 1.6.2 — Linux Autopatcher source
+AM2ARM 1.6.3 — Linux Autopatcher source
 
 From the repository root, prepare the restoration bundle using docs/README.md.
 Use your original Windows AM2R 1.1 ZIP to restore the interface artwork,

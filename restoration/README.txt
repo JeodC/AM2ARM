@@ -1,4 +1,4 @@
-AM2ARM 1.6.2 source restoration
+AM2ARM 1.6.3 source restoration
 
 Use Project Restore Tool 0.3.0 and this checkout's six-project catalog on
 a development PC with Python 3.11 or newer and xdelta3 on PATH. Keep your

@@ -1,7 +1,11 @@
-// The handheld launcher presents a fullscreen Wayland surface while
-// the runner uses a separate X11 window for input and sizing.
+// The handheld owns the panel. The runner uses a separate X11 window for input.
 global.native_display_fixed = os_type == os_linux
-    && environment_get_variable("LIBGL_NATIVE_WAYLAND") == "1";
+    && (environment_get_variable("LIBGL_NATIVE_WAYLAND") == "1"
+        || environment_get_variable("AM2ARM_STOCK_DISPLAY") == "1");
+handheld_single_screen = global.native_display_fixed
+    && (environment_get_variable("AM2ARM_SINGLE_SCREEN") == "1"
+        || environment_get_variable("AM2ARM_TRIMUI_DEVICE") != "");
+quit_chord_since = -1;
 
 nano_render_hud_key = [];
 nano_render_map_revision = 0;
@@ -366,7 +370,7 @@ ini_close();
 // NOT Dymanic Version Number
 global.fontVersion = font_add_sprite_ext(sVersionFont, "V.0123456789b", true, 1);
 
-global.am2r_version = "V1.6.2";
+global.am2r_version = "V1.6.3";
 if (os_type == os_linux) window_set_caption("AM2ARM");
 global.optionalMusicInstalled = false; // musItemAmb2 + musTester are OPTIONAL streamed tracks the community
 // patch pipeline never ships (absent from the HQ music set AND the reference install). Our imported assets

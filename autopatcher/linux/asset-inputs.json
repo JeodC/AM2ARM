@@ -3,7 +3,7 @@
   "edition": "autopatcher",
   "platform": "linux",
   "project_kind": "autopatcher",
-  "snapshot": "v1.6.2",
+  "snapshot": "v1.6.3",
   "project_file": "linux_patcher.py",
   "bundle_path": "patcher-assets",
   "bundle_sha256": "3c3e532b2aa3cc755b8fcd012c24bf535dc2b232ce189725ad6d046581ceed63",
@@ -16,7 +16,7 @@
     {
       "path": "README.txt",
       "size": 1267,
-      "sha256": "c264fd1402ad9f59262c14f574aa32705f507310aa9a34239113261273f070bd"
+      "sha256": "0c63a102f1f6e665b2bb860088ce2e5f81c7d4fd82f79775e4ca9d1337e0c55b"
     },
     {
       "path": "RUNNING.txt",
@@ -50,8 +50,8 @@
     },
     {
       "path": "handheld_gui.py",
-      "size": 23398,
-      "sha256": "9c273e16f5da59ebd90fd6b7ce98bf1657ff1e32f3e03d20e20207b0b809655f"
+      "size": 23958,
+      "sha256": "f1ea6d2ec17c4b7425c12df74d4965502c00180400fd66488e7dbee4f4d3ec3c"
     },
     {
       "path": "handheld_input.py",
@@ -65,8 +65,8 @@
     },
     {
       "path": "handheld_platform.py",
-      "size": 2512,
-      "sha256": "6879cb28a1279c40375e30840c6d54d774e68c6c67f8ad62737a0860c3647c79"
+      "size": 4450,
+      "sha256": "ee5b8dc30b2c92d219758080db502eb3e68bc3df83f2f5f10fdb7ae76295412a"
     },
     {
       "path": "handheld_sound.py",
@@ -240,8 +240,8 @@
     },
     {
       "path": "make_patch_data.py",
-      "size": 9577,
-      "sha256": "dce9aaea20768e8eb0037181f5eb1c7987816e79f636346a063cf48ba3b104a2"
+      "size": 10891,
+      "sha256": "eecac926c48dd41091a7323b41d6094a8883b04b470b5829902957a4d2ae4420"
     },
     {
       "path": "patch_core.py",
@@ -275,8 +275,8 @@
     },
     {
       "path": "test_handheld_platform.py",
-      "size": 2163,
-      "sha256": "7441e799c13a1bf916f2bf1d56c2d33b91356243a12de321305aa12c593a33a6"
+      "size": 2155,
+      "sha256": "937b11212a6978d96a3f541303f5b0d2d6d7461f1446e1e2098f9eeba42967a5"
     },
     {
       "path": "test_handheld_sound.py",
@@ -287,6 +287,11 @@
       "path": "test_install.py",
       "size": 4530,
       "sha256": "841e1fb04e1fa390f0f89c7f7a45c21f722b16717ac3f44c0daab2d1e00453b5"
+    },
+    {
+      "path": "test_patch_manifest.py",
+      "size": 1201,
+      "sha256": "3ac4c432c7fa6eb8ab500af8860cf483949e6fb354832b9031013081c93dcd80"
     },
     {
       "path": "test_temporary_storage.py",
@@ -324,38 +329,38 @@
   "generated_inputs": [
     {
       "path": "patch-bundle/dual/assembly.json",
-      "size": 783,
-      "sha256": "0f455e0a7a6d81eb48c0f9419dc183e76f36e72a13fac76f63f0be2209deacc0",
+      "size": 35581,
+      "sha256": "4a5467d8bb706c0c062bf9baea441b657f9f32966e9ccaa78abfb65885c306b5",
       "build_from": "make_patch_data.py"
     },
     {
       "path": "patch-bundle/dual/game_data.xdelta",
-      "size": 33085836,
-      "sha256": "6f858553b8e35f1742f8927df405945b61fb358f87c112a646dbc07b2bb8d99a",
+      "size": 33085708,
+      "sha256": "ec234e3e92e6c217ea0481c8f50e815803760c9123adaaee65c903277390bd21",
       "build_from": "make_patch_data.py"
     },
     {
       "path": "patch-bundle/dual/wrapper.bin",
-      "size": 258285122,
-      "sha256": "eab405782dea58f7963b646aec5d8a882d8df5b46be50dd1b4746b9f09492f54",
+      "size": 258261527,
+      "sha256": "8a5bb899b06da707113759fc19c7ec39f8a7a3e5908b148f156d29c5bfed38dc",
       "build_from": "make_patch_data.py"
     },
     {
       "path": "patch-bundle/standard/assembly.json",
-      "size": 780,
-      "sha256": "06f615e5e8555a621ffd355f106ff6c1322d3bccd377c06ce7e4ebc55011686e",
+      "size": 35448,
+      "sha256": "f8a994c9271ed2dda29bc6a33c12611afff8f64a9e7084162a82e80afce748d0",
       "build_from": "make_patch_data.py"
     },
     {
       "path": "patch-bundle/standard/game_data.xdelta",
-      "size": 33061720,
-      "sha256": "6b062bd8fb14f67e90a0ba4f268a72e638234b5b843d3d3bbde80ba1ec23ade7",
+      "size": 33062166,
+      "sha256": "d777a69098b568db73b86804ba8d258c3d762a3fcd5c455bdf4872614640fa8f",
       "build_from": "make_patch_data.py"
     },
     {
       "path": "patch-bundle/standard/wrapper.bin",
-      "size": 257946338,
-      "sha256": "c66dd15c0a23ce0e2aa3807adb9b731906fa18bd638ec9f025ec945d17a20cbe",
+      "size": 257927485,
+      "sha256": "614afd9f640de8a6df5f9c04e5e1833461016e5968572253d14bfdbb9fe5894b",
       "build_from": "make_patch_data.py"
     }
   ],

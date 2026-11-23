@@ -1,13 +1,21 @@
-AM2ARM Linux handheld launchers
+AM2ARM Linux launcher
 
-The ARM64 installer and its patch data live in AM2ARM/patcher on the game card.
-AM2ARM/launch.sh and the Python modules and scripts in runtime/ select the
-firmware display session. menu_entries.py creates the menu shortcuts. All
-shortcuts share the same installer. The selected edition is reconstructed
-from the player's original Windows AM2R 1.1 ZIP.
+The standalone download contains one am2arm-launcher folder. Its Ports,
+Apps and Tools shortcuts start the same launcher in auto mode. See
+README-card.txt for the card instructions.
 
-Supported Ports systems use their existing Wayland session. For the supported
-direct-display handhelds, the installer uses the firmware's SDL2 video driver.
+runtime/first_run.py locates an original Windows ZIP and checks installed
+editions against the bundled release version. first_run_gui.py uses the
+controller-enabled handheld installer. The existing patcher verifies the
+original game data and the final archive. Both paths start the selected
+game when preparation finishes. Older installations and their saves are
+kept in place. New games live under AM2ARM-data/games/<version>.
+
+On supported Ports systems, route.py checks the compositor with a Wayland
+round trip. It passes the working socket to session.sh for both setup and play.
+The game starts from its own launcher with the firmware's audio and controller
+environment. On supported direct-display handhelds, the installer uses the
+firmware's SDL2 video driver.
 On the Miyoo Flip V2 and TrimUI Smart Pro S with KMSDRM, the Standard game uses
 a GL4ES adapter backed by the firmware's SDL2 window and EGL context. The
 firmware owns the hardware graphics libraries. See runtime/compat_display.py
@@ -34,17 +42,22 @@ Run the launcher tests from the repository root:
   PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=native/unified/runtime:autopatcher/linux \
     python3 -m unittest discover -s native/unified/tests
 
-Assembling a card ZIP
+Assembling the launcher
 
-Extract the current Linux release to a temporary directory. It provides the
-ARM64 runtime, installer assets and decoder. Use a fresh extracted copy without
-saves or logs. Replace the patcher's edition patches with your own generated
-patches as needed. package_sd.py combines the patcher, runtime, menu launchers
-and source files from this directory into one card ZIP. Run from the repo root:
+For launcher-only changes, extract the verified standalone 1.6.3 ZIP. Use
+its am2arm-launcher/AM2ARM directory as BASE and its patcher/patch-bundle
+as the edition input. For a new game build, generate the edition patches
+with make_patch_data.py.
+Each new assembly.json records the size and SHA-256 of installed files.
+From the repository root:
 
-  python3 native/unified/package_sd.py <extract>/AM2ARM/patcher \
-    <extract>/AM2ARM <output.zip>
+  python3 native/unified/package_sd.py "$BASE/patcher" "$BASE" \
+    AM2ARM-Autopatcher-1.6.3-linux-arm64.zip --patcher-source autopatcher/linux \
+    --patch-bundle "$BASE/patcher/patch-bundle" --version 1.6.3
 
-To build app-local components from source, see dependencies/README.txt and the
-native build instructions above. Supply the resulting binaries in the same
-runtime layout. Original game assets are reconstructed from the player's ZIP.
+See menus/dependencies/README.md for the included components, notices and
+source archives. The standalone installer can also retrieve the pinned
+Westonpack image from its upstream host. See README-card.txt for offline
+placement. Firmware-menu shortcuts enable this first-launch download.
+Only the player-supplied donor and the edition patch together reconstruct
+a playable game.

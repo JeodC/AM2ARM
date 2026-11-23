@@ -8,6 +8,18 @@ if (fadedone >= 1 && room != rm_transition && room != rm_subscreen && room != it
 if (!init) {
     if (os_type == os_linux) {
         linux_keys();
+        if (handheld_single_screen) {
+            // Use the controller's physical controls even if the player remaps pause.
+            var _pad = global.opjoyid;
+            var _held = window_has_focus() && gamepad_is_connected(_pad)
+                && gamepad_button_check(_pad, gp_start) && gamepad_button_check(_pad, gp_select);
+            if (!_held) quit_chord_since = -1;
+            else if (quit_chord_since < 0) quit_chord_since = current_time;
+            else if (current_time - quit_chord_since >= 1000) {
+                game_end();
+                exit;
+            }
+        }
     } else if (os_type == os_android) {
         touch_keys();
     } else { // windows, any other weird platforms
@@ -80,8 +92,12 @@ var _display_window_height = window_get_height();
 // Android and native handheld output fit the selected view into the
 // fixed drawable. Desktop windows retain their adjustable scale.
 if (os_type == os_android || global.native_display_fixed) {
-    display_scale = android_display_scale_for_window(320 + widescreen_space, 240,
-        _display_window_width, _display_window_height);
+    if (handheld_single_screen) {
+        display_scale = min(_display_window_width / (320 + widescreen_space), _display_window_height / 240);
+    } else {
+        display_scale = android_display_scale_for_window(320 + widescreen_space, 240,
+            _display_window_width, _display_window_height);
+    }
     displayx = (_display_window_width - (320 + widescreen_space) * display_scale) / 2;
     displayy = (_display_window_height - 240 * display_scale) / 2;
 } else {

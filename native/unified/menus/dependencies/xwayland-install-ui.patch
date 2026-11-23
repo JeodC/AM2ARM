@@ -1,0 +1,44 @@
+--- a/hw/xwayland/xwayland-output.c
++++ b/hw/xwayland/xwayland-output.c
+@@ -183,6 +183,11 @@
+ update_screen_size(struct xwl_output *xwl_output, int width, int height)
+ {
+     struct xwl_screen *xwl_screen = xwl_output->xwl_screen;
++
++    if (!xwl_screen->rootless && getenv("AM2R_PATCHER_FULLSCREEN")) {
++        width = 640;
++        height = 480;
++    }
+ 
+     if (xwl_screen->root_clip_mode == ROOT_CLIP_FULL)
+         SetRootClip(xwl_screen->screen, ROOT_CLIP_NONE);
+--- a/hw/xwayland/xwayland-window.c
++++ b/hw/xwayland/xwayland-window.c
+@@ -42,6 +42,7 @@
+ #include "xwayland-window.h"
+ #include "xwayland-window-buffers.h"
+ #include "xwayland-shm.h"
++#include "xwayland-output.h"
+ 
+ #include "viewporter-client-protocol.h"
+ #include "xdg-shell-client-protocol.h"
+@@ -481,7 +482,18 @@
+         xdg_surface_add_listener(xwl_window->xdg_surface,
+                                  &xdg_surface_listener, xwl_window);
+ 
+-        xdg_surface_get_toplevel(xwl_window->xdg_surface);
++        struct xdg_toplevel *xdg_top =
++            xdg_surface_get_toplevel(xwl_window->xdg_surface);
++        if (getenv("AM2R_PATCHER_FULLSCREEN")) {
++            struct xwl_output *output, *chosen = NULL;
++            xorg_list_for_each_entry(output, &xwl_screen->output_list, link) {
++                if (!chosen || output->x > chosen->x)
++                    chosen = output;
++            }
++            xdg_toplevel_set_title(xdg_top, "AM2R Linux Autopatcher");
++            xdg_toplevel_set_app_id(xdg_top, "am2r-linux-autopatcher");
++            xdg_toplevel_set_fullscreen(xdg_top, chosen ? chosen->output : NULL);
++        }
+ 
+         wl_surface_commit(xwl_window->surface);
+ 

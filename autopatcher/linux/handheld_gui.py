@@ -51,7 +51,7 @@ class HandheldWindow:
         self.canvas.pack(fill='both', expand=True)
         self.background = Backdrop(self.canvas, assets)
         self.labels = []
-        self.subtitle = self.text('AUTOPATCHER  1.6.2', 162, self.font)
+        self.subtitle = self.text('AUTOPATCHER  1.6.3', 162, self.font)
         self.standard = self.button('STANDARD', lambda: self.select_edition('standard'), 194)
         self.dual = self.button('DUAL SCREEN', lambda: self.select_edition('dual'), 228)
         self.help = self.text('', 266, self.font, '#bfbfbf')
@@ -221,17 +221,17 @@ class HandheldWindow:
                 self.focus_index = 4
             self.layout()
 
-    def begin(self):
+    def begin(self, check_existing=False):
         if self.busy:
             return
-        if self.source is None:
+        if self.source is None and not check_existing:
             self.browse(False)
             return
         self.busy = True
         for button in self.buttons:
             button.configure(state='disabled')
         self.progress_value = None
-        self.status.set('Checking your original game…')
+        self.status.set('Checking installed files…' if check_existing else 'Checking your original game…')
         source, output, edition = self.source, self.output, self.edition
         def work():
             try:
@@ -301,6 +301,10 @@ class HandheldWindow:
             for button in self.buttons:
                 button.configure(state='normal')
             success = message[0] == 'done'
+            if success:
+                self.installed(message[1], message[2])
+                if self.closed:
+                    return
             self.status.set((f'Ready: {message[1].name}\nExit to the {self.menu_name} menu to play.')
                             if success else 'Installation stopped.\nYour existing games are unchanged.')
             detail = (f'Open {message[1].name} from {self.menu_name}.\n\n'
@@ -309,9 +313,7 @@ class HandheldWindow:
                       'Installed in:\n' + str(message[1])) if success else message[1]
             self.notice = Notice(self.root, 'INSTALLATION COMPLETE' if success else 'INSTALLATION STOPPED',
                                  detail, self.dismiss_notice)
-            if message[0] == 'done':
-                print('Prepared:', str(message[1]), 'SHA-256:', message[2], flush=True)
-            else:
+            if not success:
                 print('Preparation failed:', message[1], flush=True)
         if latest:
             _, done, total, text = latest
@@ -320,6 +322,9 @@ class HandheldWindow:
         if self.busy or latest:
             self.draw_progress()
         self.poll_id = self.root.after(50, self.poll)
+
+    def installed(self, game, digest):
+        print('Prepared:', str(game), 'SHA-256:', digest, flush=True)
 
     def dismiss_notice(self):
         self.notice = None
@@ -500,9 +505,15 @@ def main():
         except ValueError:
             parser.error('--size must be WIDTHxHEIGHT, at least 640x480 and at most 3840x2160')
     root = tk.Tk()
+    if os.environ.get('AM2ARM_FIRST_RUN') == '1':
+        from first_run import Library
+        from first_run_gui import PlayWindow
+        window = PlayWindow(root, Library.from_environment(), os.environ.get('AM2ARM_SINGLE_SCREEN') == '1', size)
+        root.mainloop()
+        return 0 if window.play else 2
     HandheldWindow(root, args.out, size)
     root.mainloop()
 
 
 if __name__ == '__main__':
-    main()
+    raise SystemExit(main())

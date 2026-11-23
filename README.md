@@ -5,26 +5,33 @@ Rebuild AM2R for **ARM64 Android or Linux** from your own original Windows
 the interactive map on supported two-screen devices.
 
 AM2ARM is based on **AM2R Community Updates 1.5.5**. The title screen displays
-the port version **V1.6.2**.
+**V1.6.3** on Linux and **V1.6.2** on Android.
 
 ## Downloads
 
 | Platform | Download |
 | --- | --- |
 | ARM64 Android | [AM2ARM-Autopatcher-1.6.2.apk](https://github.com/PatchDev-AM2ARM/AM2ARM/releases/download/v1.6.2/AM2ARM-Autopatcher-1.6.2.apk) |
-| Supported ARM64 Linux handhelds | [AM2ARM-Autopatcher-1.6.2-linux-arm64.zip](https://github.com/PatchDev-AM2ARM/AM2ARM/releases/download/v1.6.2/AM2ARM-Autopatcher-1.6.2-linux-arm64.zip) |
+| Supported ARM64 Linux handhelds (prerelease) | [AM2ARM-Autopatcher-1.6.3-linux-arm64.zip](https://github.com/PatchDev-AM2ARM/AM2ARM/releases/download/v1.6.3/AM2ARM-Autopatcher-1.6.3-linux-arm64.zip) |
 
 Keep your original 2016 **AM2R_11.zip** zipped. Each Autopatcher reconstructs
-and verifies the selected edition locally. The Linux installer works offline
-with physical buttons. A touchscreen is needed for the Dual Screen map.
+and verifies the selected edition locally. The Linux installer works with
+physical buttons. A touchscreen is needed for the Dual Screen map.
 
-## What's new in 1.6.2
+## Linux 1.6.3 prerelease
+
+Extract the Linux download to your game card, add your original ZIP and open
+**AM2ARM** from the handheld menu. The same entry installs the game on first
+launch and opens it on later launches. Standard is selected on recognized
+single-screen devices. Supported two-screen devices offer both editions.
+
+## What's new in 1.6.3
 
 - One Linux download covers supported Ports, stock TrimUI, NextUI and spruceOS
   setups. The firmware menu starts the same installer and patch data.
 - Miyoo Flip V2 (RK3566 / MY355) has a working Standard display path. TrimUI
   Smart Pro S (TG5050) has its own 1280 × 720 profile for its firmware's SDL2
-  and Mali graphics libraries. An on-device check is pending for Smart Pro S.
+  and Mali graphics libraries.
 - The GameMaker source for both editions and platforms is now in the repository
   alongside the Autopatcher and native display code. The development guide
   explains how to restore the omitted assets.
@@ -56,33 +63,35 @@ uninstalling deletes its private saves. Package IDs and signing are preserved.
 
 ## Install on Linux
 
-Check [compatibility](#compatibility) and leave **at least 3 GB free** on the
-game card after copying. The same Linux ZIP serves every setup in this table.
+Use your original Windows **AM2R_11.zip** and allow **3 GB free** on the game card
+after copying. Check the [handheld compatibility list](#compatibility).
 
-1. Extract **AM2ARM-Autopatcher-1.6.2-linux-arm64.zip** on your computer.
-2. **A. Card reader** — power off the handheld and open its game-data card on
-   the computer. **B. USB transfer** — if the firmware offers file transfer,
-   leave the card in the handheld and copy through its data port. Close the
-   installer and game while copying. [USB transfer options](#usb-transfer-without-removing-the-card)
-3. Copy the files to the location for your firmware.
+1. Open the writable game card or ROM library on your computer, using a card
+   reader or [USB file transfer](#usb-transfer-without-removing-the-card).
+   On ROCKNIX, use `games-internal/roms` on the system card, `roms` on a
+   separate games card, or the `games-roms` network share. On NextUI,
+   stock TrimUI and spruceOS, use the top level of the game card.
+   Extract the entire **AM2ARM-Autopatcher-1.6.3-linux-arm64.zip** there.
+2. Copy **AM2R_11.zip** beside the extracted folders. Keep it zipped.
+3. Open **AM2ARM** on the handheld. It appears in **Tools** on NextUI, **Apps**
+   on stock TrimUI or spruceOS, and **Ports** on supported Ports systems.
+   The launcher finds the ZIP, verifies it, installs the game and starts it.
+   Open the same entry next time to play.
 
-   | Handheld menu | What to copy |
-   | --- | --- |
-   | **Ports** on RG DS or G350 ROCKNIX | Open the existing Ports directory. Put the extracted **AM2ARM/** folder and **ports/AM2ARM Autopatcher.sh** beside each other inside it. ROCKNIX commonly uses `games-internal/roms/ports` on its system card or `roms/ports` on a games card. |
-   | **Apps** on stock TrimUI | Merge **AM2ARM/** and **Apps/** into the game-card root. |
-   | **Tools** on NextUI | Merge **AM2ARM/** and **Tools/** into the game-card root. |
-   | **Apps** on spruceOS | Merge **AM2ARM/** and **App/** (singular) into the game-card root. |
-   | **Ports** on Miyoo Flip V2 / MY355 | Copy **AM2ARM/** to the game-card root. Copy the included **Roms/ports/** launcher into the existing Ports directory, keeping the card's capitalization. For a Tools frontend use the included **Tools/my355/** entry. |
+On a supported two-screen handheld, choose **Standard** or **Dual Screen** once.
+**AM2ARM Editions** in Ports lets you change it later. If the launcher asks for
+the ZIP, use the D-pad and A to select it. If ROCKNIX still shows its previous
+Ports list, choose **Start → Game Settings → Update Gamelists**. For a
+case-sensitive card with a capital **Roms** directory, extracting the whole
+download inside **Roms** also places the entry in Ports.
 
-4. Put your own **AM2R_11.zip** in **AM2ARM/patcher/input/**. Safely eject the
-   card or leave USB transfer mode before starting.
-5. Open **AM2ARM Autopatcher** in the menu above. Choose your ZIP and select
-   **INSTALL**. Use the D-pad, Confirm and Back. Keep the default installation
-   folder on a fresh install. **FOLDER → [USE THIS FOLDER]** selects a different
-   destination. Direct-display handhelds offer Standard.
-6. Exit after **INSTALLATION COMPLETE**, then open **AM2ARM Standard** or
-   **AM2ARM Dual Screen** in the same menu. If the game is missing on ROCKNIX,
-   open **Start → Game Settings → Update Gamelists**.
+The standalone launcher runs directly from the firmware menu. If a display
+needs Westonpack, such as a fresh TrimUI Brick on NextUI or stock, setup
+reuses a verified local copy or downloads it once (53 MiB) and checks it.
+For an offline install on those devices, copy the official
+`weston_pkg_0.2.squashfs` beside `AM2R_11.zip` before opening AM2ARM.
+Supported Wayland and native KMS displays can install offline with the
+original game ZIP alone. [Westonpack offline download](https://github.com/PortsMaster/PortMaster-New/releases/download/2025-07-24_0745/weston_pkg_0.2.squashfs)
 
 ### USB transfer without removing the card
 
@@ -109,18 +118,19 @@ On the **G350**, USB networking was verified with **ROCKNIX**.
 
 ### Updates and startup problems
 
-Before updating a game, export your progress through **Options → Data → Back
-Up Saves**. Close the game and back up its state. On Ports, install into an
-empty destination that your menu can see. Keep its matching launcher with the
-game folder and restore your backup if needed. On TrimUI, merge the new **AM2ARM/**
-and menu folders and rebuild Standard. An existing installation is preserved.
+Use **Options → Data → Back Up Saves** before updating. Open **AM2ARM** after
+copying the new launcher. It reuses a complete copy of the matching version
+in a recognized location and installs a different version alongside it.
+New games and the edition choice live in **AM2ARM-data** in the game library.
 
-For startup problems, copy **AM2ARM/logs/compatibility.txt** from the card.
-On Ports the installer also writes **AM2ARM/patcher/compatibility.txt** and
-logs under **AM2ARM/patcher/state/**. Include your model, firmware and the
-last screen you saw. Keep your original ZIP, full game and saves private.
+For startup problems, include the model, firmware, last screen you saw and
+**am2arm-launcher/AM2ARM/logs/compatibility.txt**. Ports also records installer
+details in **am2arm-launcher/AM2ARM/patcher/state/**. Keep your original ZIP,
+full game and saves private.
 
 ## Compatibility
+
+The Linux hardware results below cover 1.6.2 and earlier builds.
 
 | Platform | Device / setup | Verified scope |
 | --- | --- | --- |
@@ -135,10 +145,9 @@ last screen you saw. Keep your original ZIP, full game and saves private.
 | Linux | TrimUI Brick, stock menu 1.0.6 | Fresh-card installation, fullscreen gameplay, music, controls and damage vibration |
 | Linux | Miyoo Flip V2, RK3566 / MY355, BaseOS 1.3.0 | Standard confirmed by a community tester |
 
-**TrimUI Smart Pro S** uses a separate TG5050 profile. Its 1280 × 720 installer
-layout and the graphics libraries in TrimUI firmware 1.0.1 have been checked.
-A physical launch on the tester's spruceOS installation is pending. The
-**original Smart Pro** has a separate TG5040 profile and also awaits hardware
+**TrimUI Smart Pro S** uses a separate TG5050 profile. Standard gameplay was
+reported on spruceOS at 3× and 16:9. The latest display and exit changes
+await a hardware check. The **original Smart Pro** has a separate TG5040 profile and also awaits hardware
 confirmation. Brick Pro and the 32-bit Miyoo Mini Flip use different hardware.
 
 The stock Brick check used the stock menu on a Brick with a CrossMix 1.3.9
@@ -152,12 +161,24 @@ device's graphics drivers and firmware in place. Stock G350 BATLEXPOS is
 outside the supported setups in this release. R36S, RG DS Plus and newer
 ARM64 RG35XX variants still need their own firmware checks. The original
 Cortex-A9 RG35XX runs 32-bit ARM and cannot run this ARM64 package.
+On the RG351P, the current launcher needs a running Wayland session. An
+RG351P firmware without one has no supported display route in this release.
+The G350 on AmberELEC and the G350 and Brick on KNULLI also need a running
+Wayland session to launch AM2ARM from Ports.
 
 ## Controls and display
 
 **Standard** provides gameplay on a single screen. Android supports touch and
 controllers; Linux uses physical controls. Aspect Ratio offers **4:3 / 16:9 /
 3:2** without stretching. During play, a change applies at the next room transition.
+
+On supported single-screen Linux handhelds, Standard picks the best-fitting
+aspect ratio on first launch. You can still choose another ratio in Display
+Options. The handheld already fills its panel, so the desktop Fullscreen
+switch is hidden. To exit to the handheld menu, save at a station and hold
+**Start + Select** together for one second. On a Smart Pro S running spruceOS,
+you can also use the physical Menu button if its tap or hold action is set to
+**Exit game** in the firmware.
 
 Android Standard's **Touch Control Scale**, **Control Spacing** and **Diagonal
 Aim Size** are independent. Enlarging diagonal arrows shrinks the joystick
@@ -194,8 +215,9 @@ Ports keeps raw saves in `state/config/AM2RStandardLinux/` or
 game's state directory and keeps its previous save location on an update.
 NextUI uses the firmware's home directory, usually
 `.userdata/tg5040/.config/AM2RStandardLinux/` on Brick. On spruceOS and
-direct-display Ports the preset location is
-`AM2ARM/state/home/.config/AM2RStandardLinux/`. Close the game before copying
+direct-display Ports, new installations use
+`AM2ARM-data/home/.config/AM2RStandardLinux/`. Upgrades reuse an existing
+`AM2ARM/state/home/.config/AM2RStandardLinux/` when present. Close the game before copying
 raw state and keep `config.ini` separate between platforms.
 
 ### Android folder synchronization

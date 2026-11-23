@@ -1,46 +1,53 @@
-AM2ARM 1.6.2 — Linux Autopatcher
+AM2ARM 1.6.3 for ARM64 Linux
 
-You need an ARM64 handheld with supported firmware, your original Windows
-AM2R_11.zip, and at least 3 GB free on the game card after copying the files.
+1. Open the game library on your computer, with a card reader or USB file
+   transfer. On ROCKNIX use games-internal/roms on the system card, roms on
+   a separate games card, or the games-roms network share. On NextUI,
+   stock TrimUI and spruceOS use the top level of the game card. Extract the
+   contents of this ZIP directly there and merge folders when prompted.
+2. Copy your original Windows AM2R_11.zip to that same location. Keep it zipped.
+   Allow 3 GB of free space after copying the files.
+3. Open AM2ARM on the handheld. Look in Tools on NextUI, Apps on TrimUI stock
+   and spruceOS, or Ports on a system with a Ports menu. The first launch
+   prepares the game and starts it. Open the same entry next time to play.
 
-1. Close the game. Use a card reader or the firmware's USB file-transfer mode.
-   Extract this download on your computer. Keep your AM2R_11.zip zipped.
-2. Copy the AM2ARM folder and the menu entry for your firmware.
+Standard starts automatically on recognized single-screen devices. With two
+screens, choose Standard or Dual Screen once. AM2ARM Editions in Ports lets
+you change your choice later. If the installer asks for the original ZIP,
+select it with the D-pad and A. This also works with a renamed backup.
 
-   Ports (RG DS, G350 on ROCKNIX)
-     Open your existing games/Ports directory. Copy AM2ARM there along with
-     AM2ARM Autopatcher.sh from the download's ports folder. Both belong at
-     the same level. On ROCKNIX the Ports folder is usually roms/ports or
-     games-internal/roms/ports on the data partition.
+On a single-screen handheld, Standard fits the picture to your screen.
+To choose another aspect ratio, open Options > Display. To exit to the
+handheld menu, save at a station and hold Start + Select for one second.
+On a Smart Pro S with spruceOS, the Menu button also works if its tap or
+hold action is set to Exit game in the firmware.
 
-   TrimUI stock Apps, NextUI Tools or spruceOS Apps
-     Merge AM2ARM into the root of the game card. For stock TrimUI copy Apps
-     there too. For NextUI copy Tools, and for spruceOS copy App (singular).
-     Leave existing games and saves in place.
+The launcher runs directly from your handheld menu. A fresh TrimUI Brick on
+NextUI or stock and some other displays need Westonpack. AM2ARM uses a
+verified copy already on the card, or downloads and verifies it once
+(53 MiB). To prepare an offline card for one of these devices, download the
+file below on your computer and put weston_pkg_0.2.squashfs beside AM2R_11.zip.
+Keep both files intact. Wayland and native KMS displays can install offline
+with the original game ZIP alone. Gameplay works offline on all supported
+displays.
 
-   Miyoo Flip V2, MY355 BaseOS
-     Copy AM2ARM to the game-card root. Put the launcher from Roms/ports in
-     the card's existing Roms/ports folder.
+https://github.com/PortsMaster/PortMaster-New/releases/download/2025-07-24_0745/weston_pkg_0.2.squashfs
 
-3. Put your own AM2R_11.zip in AM2ARM/patcher/input. Safely eject the card or
-   finish USB transfer. Open AM2ARM Autopatcher in Ports, Apps or Tools.
-4. Choose the ZIP and select INSTALL. The D-pad and confirm/back operate the
-   installer. Direct-display handhelds install Standard. On dual-display
-   supported Ports firmware you can select Dual Screen.
-5. After INSTALLATION COMPLETE, exit and open AM2ARM Standard or AM2ARM Dual
-   Screen. Refresh the list if needed. On ROCKNIX select Start, Game Settings,
-   Update Gamelists.
+If the entry is missing, refresh the game list. On ROCKNIX, open Start >
+Game Settings > Update Gamelists. On a case-sensitive card with a capital
+Roms directory, extract the whole ZIP inside that directory for the Ports entry.
 
-Updating an existing game
-Use Options > Data > Back Up Saves first. Keep your previous installation and
-install into an empty destination. Restore through Options > Data if needed.
-For Ports, the game and its matching .sh entry belong in the same directory.
-A custom output directory must be visible to the handheld's game menu.
+Already playing? A complete installation of the same version in a recognized
+location opens directly. A different version is installed alongside it. Back
+up saves through Options > Data before changing versions. The launcher stores
+new games and your edition choice in AM2ARM-data. Keep your original ZIP.
 
-Troubleshooting
-The card's AM2ARM/logs/compatibility.txt records the selected display route.
-For Ports, also check AM2ARM/patcher/compatibility.txt and AM2ARM/patcher/state.
-Send the model, firmware version and relevant logs if setup fails. Keep your
-original ZIP, reconstructed game and saves private.
-
+For help with a supported ARM64 handheld, include your model, firmware and
+am2arm-launcher/AM2ARM/logs/compatibility.txt. On direct-display firmware the same
+logs folder contains the installer and game logs.
 https://github.com/PatchDev-AM2ARM/AM2ARM
+
+Thanks to Jeod for suggesting first-launch patching and sharing the LADXHD
+and AM2R PortMaster launchers as references.
+https://github.com/JeodC/RHH-Ports/tree/main/ports/released/zelda-ladxhd
+https://github.com/JeodC/RHH-Ports/tree/main/ports/released/gamemakerengine/am2r

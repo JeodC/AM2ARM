@@ -90,3 +90,15 @@ function standard_aspect_apply(_ratio) {
     widescreen_space = standard_aspect_width(_ratio) - 320;
     if (!widescreen) __view_set(e__VW.Visible, 1, false);
 }
+
+/// Choose the supported view that fills the most panel area without stretching.
+function standard_panel_aspect(_width, _height) {
+    var _best = 0, _largest = 0;
+    for (var _id = 0; _id < 3; ++_id) {
+        var _view = standard_aspect_width(_id);
+        var _scale = min(_width / _view, _height / 240);
+        var _area = _view * _scale * _scale;
+        if (_area > _largest) { _best = _id; _largest = _area; }
+    }
+    return _best;
+}

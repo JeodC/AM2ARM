@@ -32,6 +32,14 @@ function load_gameoptions() {
 	global.sensitivitymode = 0;
 	global.widescreen_enabled = 1;
     global.opaspectratio = 1;
+    if (oControl.handheld_single_screen) {
+        var _width = display_get_width(), _height = display_get_height();
+        if (_width > 0 && _height > 0) {
+            global.opaspectratio = standard_panel_aspect(_width, _height);
+            global.widescreen_enabled = global.opaspectratio != 0;
+            global.opscale = clamp(floor(min(_width / standard_aspect_width(global.opaspectratio), _height / 240)), 1, 4);
+        }
+    }
     with (oControl) standard_aspect_apply(global.opaspectratio);
 	global.oppixelperfect = 0;
 	oControl.mod_insanitymode = 0;
@@ -48,7 +56,11 @@ function load_gameoptions() {
 	    ini_open("config.ini");
 	    // Load display, HUD and audio preferences.
 	    global.opfullscreen = ini_read_real("Screen", "Fullscreen", 0);
-	    global.opscale = ini_read_real("Screen", "Scale", 0);
+	    if (oControl.handheld_single_screen && global.opfullscreen) {
+	        global.opfullscreen = 0;
+	        ini_write_real("Screen", "Fullscreen", 0);
+	    }
+	    global.opscale = ini_read_real("Screen", "Scale", global.opscale);
 	    global.opvsync = ini_read_real("Screen", "VSync", 0);
 	    global.nano_enabled = ini_read_real("Screen", "Nano", 0) == 1;
 	    global.oporientation = clamp(round(ini_read_real("Screen", "Orientation", 0)), 0, 2);
@@ -162,9 +174,10 @@ function load_gameoptions() {
 	    global.sensitivitymode = ini_read_real("Screen", "SensitivityMode", 0);
     
 	    // Widescreen toggle
-	    var _legacy_wide = ini_read_real("Screen", "Widescreen", 1);
+	    var _legacy_wide = ini_read_real("Screen", "Widescreen", global.widescreen_enabled);
+        var _default_ratio = ini_key_exists("Screen", "Widescreen") ? -1 : global.opaspectratio;
         global.opaspectratio = standard_aspect_validate(
-            ini_read_real("Screen", "AspectRatio", -1), _legacy_wide);
+            ini_read_real("Screen", "AspectRatio", _default_ratio), _legacy_wide);
         global.widescreen_enabled = global.opaspectratio != 0;
         with (oControl) standard_aspect_apply(global.opaspectratio);
 

@@ -1,9 +1,9 @@
-Building AM2ARM 1.6.2 — ARM64 Linux Standard
+Building AM2ARM 1.6.3 — ARM64 Linux Standard
 
 Restore the matching media with the repository restorer and your original
 AM2R 1.1 ZIP as described in README.txt. This is a complete independent Linux
 project, with no Android-source overlay step. Open AM2RStandardLinux.yyp; its name
-preserves the native engine's save-folder identity. The title is V1.6.2.
+preserves the native engine's save-folder identity. The title is V1.6.3.
 
 Use an authorized GameMaker Beta IDE 2026.100.0.1083/runtime 2026.100.0.1046
 installation and the native ARM64 YYC integration in

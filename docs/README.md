@@ -1,6 +1,6 @@
-# Building from the 1.6.2 source
+# Building from the 1.6.3 source
 
-Get the repository at tag **v1.6.2**. A Git checkout and GitHub's source ZIP contain the same editable projects. For the ZIP, extract it and open the directory containing `game`, `autopatcher` and `restoration`. The commands below run from that directory.
+Get the repository at tag **v1.6.3**. A Git checkout and GitHub's source ZIP contain the same editable projects. For the ZIP, extract it and open the directory containing `game`, `autopatcher` and `restoration`. The commands below run from that directory. This tag builds Linux 1.6.3 and Android 1.6.2.
 
 | Project | Folder | Entry point |
 | --- | --- | --- |
@@ -13,7 +13,7 @@ Get the repository at tag **v1.6.2**. A Git checkout and GitHub's source ZIP con
 
 ## Restore the missing project inputs
 
-Install Python 3.11 or newer and xdelta3 on your development computer. Keep your own original Windows `AM2R_11.zip` and the **AM2ARM-Source-Restore-1.6.1.zip** download. The 1.6.2 catalog is in this checkout. It reuses the same binary patches as 1.6.1. Place the checkout on a filesystem that supports hard links, such as NTFS or ext4. Once you have those inputs, the following commands work offline. [Download the matching patch pack from v1.6.1](https://github.com/PatchDev-AM2ARM/AM2ARM/releases/download/v1.6.1/AM2ARM-Source-Restore-1.6.1.zip).
+Install Python 3.11 or newer and xdelta3 on your development computer. Keep your own original Windows `AM2R_11.zip` and the **AM2ARM-Source-Restore-1.6.1.zip** download. The 1.6.3 catalog is in this checkout. It reuses the same binary patches as 1.6.1. Place the checkout on a filesystem that supports hard links, such as NTFS or ext4. Once you have those inputs, the following commands work offline. [Download the matching patch pack from v1.6.1](https://github.com/PatchDev-AM2ARM/AM2ARM/releases/download/v1.6.1/AM2ARM-Source-Restore-1.6.1.zip).
 
 1. Prepare the bundle once. Pass the downloaded ZIP itself.
 

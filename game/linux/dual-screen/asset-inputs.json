@@ -3,7 +3,7 @@
   "edition": "dual-screen",
   "platform": "linux",
   "project_file": "AM2RDualLinux.yyp",
-  "snapshot": "v1.6.2",
+  "snapshot": "v1.6.3",
   "bundle_sha256": "f07f07892bda0ccf1e37da25ef674cda4b12061d4937031c28a9a3ec4e757859",
   "source_files": [
     {
@@ -29,7 +29,7 @@
     {
       "path": "BUILDING.txt",
       "size": 2497,
-      "sha256": "60ed03ce9c25fd7920519cb247cd03dec9da7e1f601ce6663bd2b105e645dafc"
+      "sha256": "9062a4d43da34cd957fda0e530cde8cd31990e33b0420fe9761e7b150a18da20"
     },
     {
       "path": "CODE-STYLE.txt",
@@ -54,7 +54,7 @@
     {
       "path": "README.txt",
       "size": 852,
-      "sha256": "0fe10cdd6a81d00cc6397f4fcc2d4054b971f730059d5853d3860c2e514d300a"
+      "sha256": "b0269e1bffd79d0dd3236fbebc618812b903323b2087632ff528c46010b3c7d2"
     },
     {
       "path": "SOURCE-MAP.txt",
@@ -4734,7 +4734,7 @@
     {
       "path": "objects/oControl/Create_0.gml",
       "size": 161287,
-      "sha256": "15c834f4c26f43fd7d61fd627c492be9e84399d5d3dca64bc4ea9d0b4b86f1d4"
+      "sha256": "8da43e125d62d284c02000bd84399eddbc2003870094d51df8f9c38bd4ff392a"
     },
     {
       "path": "objects/oControl/Draw_0.gml",
@@ -20944,7 +20944,7 @@
     {
       "path": "options/linux/options_linux.yy",
       "size": 960,
-      "sha256": "4903cbf021d70e4a67d43dd66ae3e7b0788d366697d04e5cc9635ae1f175e10e"
+      "sha256": "10b442e944d16b5cf52e96342f30df398964de903b49a45ca5d12815f57b700b"
     },
     {
       "path": "options/mac/options_mac.yy",

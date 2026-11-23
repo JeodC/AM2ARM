@@ -15,12 +15,12 @@
   "option_linux_maintainer_email": "",
   "option_linux_resize_window": false,
   "option_linux_scale": 0,
-  "option_linux_short_desc": "AM2ARM 1.6.2",
+  "option_linux_short_desc": "AM2ARM 1.6.3",
   "option_linux_splash_screen": "${base_options_dir}/linux/splash/splash.png",
   "option_linux_start_fullscreen": false,
   "option_linux_sync": true,
   "option_linux_texture_page": "2048x2048",
-  "option_linux_version": "1.6.2.0",
+  "option_linux_version": "1.6.3.0",
   "resourceType": "GMLinuxOptions",
   "resourceVersion": "2.0"
 }

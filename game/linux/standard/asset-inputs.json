@@ -3,7 +3,7 @@
   "edition": "standard",
   "platform": "linux",
   "project_file": "AM2RStandardLinux.yyp",
-  "snapshot": "v1.6.2",
+  "snapshot": "v1.6.3",
   "bundle_sha256": "f07f07892bda0ccf1e37da25ef674cda4b12061d4937031c28a9a3ec4e757859",
   "source_files": [
     {
@@ -24,7 +24,7 @@
     {
       "path": "BUILDING.txt",
       "size": 2498,
-      "sha256": "042651bd01f2730912abc8aa797018c786d1aeb234561a6bf4b17dadc93d88c4"
+      "sha256": "f5faf26d8886d376f1181fd5df193ca10d7f438a034202eb12d6b697567daf43"
     },
     {
       "path": "CODE-STYLE.txt",
@@ -49,7 +49,7 @@
     {
       "path": "README.txt",
       "size": 851,
-      "sha256": "9183fcc8df54adfc69a46cb48ef2c76397ca909fd1f88096b8a4b246a91aa2f0"
+      "sha256": "28b99516ee21412dbc8ec2611c04a66d6caf58d4444804c4ad1fe22584bd8725"
     },
     {
       "path": "SOURCE-MAP.txt",
@@ -4693,8 +4693,8 @@
     },
     {
       "path": "objects/oControl/Create_0.gml",
-      "size": 161289,
-      "sha256": "b964d492343e69172470cdb5a23cec4d94ca7d5f9d033be2befef9ad3d48f5dc"
+      "size": 161515,
+      "sha256": "bced0e3202c29fe1ad427748072c6be553669948bcf4666880a4801c2fa0baf7"
     },
     {
       "path": "objects/oControl/Draw_0.gml",
@@ -4808,8 +4808,8 @@
     },
     {
       "path": "objects/oControl/Step_0.gml",
-      "size": 8064,
-      "sha256": "5a098569c3ad80521892d0fbe282f86067433cc475f59b838ea7544f6b1e1fa6"
+      "size": 8830,
+      "sha256": "6f0eada89ff508224110d4b71d9ca87031f4293677311c248eee10242d3c9735"
     },
     {
       "path": "objects/oControl/Step_1.gml",
@@ -20899,7 +20899,7 @@
     {
       "path": "options/linux/options_linux.yy",
       "size": 961,
-      "sha256": "655292be74c24f67a574913aaf9b64a44fc3e17e29198a8388b246bb5a0f08d5"
+      "sha256": "cf96a02f5c09b994f7567ddf0861504a473147dbb5ba9916bcae493df24bf854"
     },
     {
       "path": "options/mac/options_mac.yy",
@@ -54593,8 +54593,8 @@
     },
     {
       "path": "scripts/load_gameoptions/load_gameoptions.gml",
-      "size": 11271,
-      "sha256": "22a3db77a9f2fd366efc1fd0287abf52158c941eeaf34c3c579ac16f5aaa8c58"
+      "size": 12016,
+      "sha256": "f896feeb5c38310fcc96210c4989d3754719963f8fa95eb7ec5c14b3631ef201"
     },
     {
       "path": "scripts/load_gameoptions/load_gameoptions.yy",
@@ -56853,8 +56853,8 @@
     },
     {
       "path": "scripts/set_widescreen/set_widescreen.gml",
-      "size": 3915,
-      "sha256": "594e0100c3330024ea5f9799a5c302b4ca39051fa3836d7063b1a51850211f80"
+      "size": 4361,
+      "sha256": "c88e9075bd82712959f4c3848293b670dc642affa4015550b498faed71fc7f8a"
     },
     {
       "path": "scripts/set_widescreen/set_widescreen.yy",
