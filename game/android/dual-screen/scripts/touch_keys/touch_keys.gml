@@ -54,7 +54,11 @@ function touch_keys() {
 	// Virtual keycodes
 	if (gamepad_is_supported()) {
 	    if (gamepad_is_connected(global.opjoyid) && global.joydetected && !global.compatibilitymode) {    
-	        if (global.opxjoyvib && !global.android_app) gamepad_set_vibration(global.opjoyid, global.vibL, global.vibR);
+	        // The motors keep their last strength, so send 0 when vibration is off.
+	        if (!global.android_app) {
+	            var _drill = (sfx_isplaying(sndDrillLoop) && global.ingame) ? 0.1 : 0;
+	            gamepad_set_vibration(global.opjoyid, global.opxjoyvib * max(global.vibL, _drill), global.opxjoyvib * max(global.vibR, _drill));
+	        }
 	        xjoyx = gamepad_axis_value(global.opjoyid, gp_axislh);
 	        xjoyy = gamepad_axis_value(global.opjoyid, gp_axislv);
 	        if (is_past_deadzone(xjoyx, xjoyy, 1)) {
