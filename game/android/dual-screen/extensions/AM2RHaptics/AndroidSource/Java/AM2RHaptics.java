@@ -10,11 +10,12 @@ import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.os.VibratorManager;
 import android.util.Log;
+import android.view.InputDevice;
 
 import com.yoyogames.runner.RunnerJNILib;
 
 /**
- * Device haptics + gamepad hot-plug detection for the AM2R Android port.
+ * Controller and device haptics + gamepad hot-plug detection for the AM2R Android port.
  *
  * The GMS 1.4 game used the Immersion UHL SDK, whose functions were removed in
  * GameMaker 2026. The GML code still passes the original Immersion effect ids
@@ -59,7 +60,7 @@ public class AM2RHaptics extends ExtensionBase implements InputManager.InputDevi
         return mode;
     }
 
-    private Vibrator mVibrator = null;
+    private volatile Vibrator mVibrator = null;
     private int mSustainEffect = -1;
     private long mSustainUntil = 0;
 
@@ -100,6 +101,7 @@ public class AM2RHaptics extends ExtensionBase implements InputManager.InputDevi
     public void onInputDeviceAdded(int deviceId)
     {
         Log.i("yoyo", "AM2RHaptics :: input device added (id " + deviceId + "), re-enumerating gamepads");
+        mVibrator = null;
         RunnerJNILib.onGamepadChange();
     }
 
@@ -107,6 +109,7 @@ public class AM2RHaptics extends ExtensionBase implements InputManager.InputDevi
     public void onInputDeviceRemoved(int deviceId)
     {
         Log.i("yoyo", "AM2RHaptics :: input device removed (id " + deviceId + "), re-enumerating gamepads");
+        mVibrator = null;
         RunnerJNILib.onGamepadChange();
     }
 
@@ -116,8 +119,21 @@ public class AM2RHaptics extends ExtensionBase implements InputManager.InputDevi
         RunnerJNILib.onGamepadChange();
     }
 
+    // The runner's gamepad_set_vibration does nothing on Android, so the controller's motor is used here.
+    private static Vibrator controllerVibrator()
+    {
+        for (int id : InputDevice.getDeviceIds()) {
+            InputDevice device = InputDevice.getDevice(id);
+            if (device == null || (device.getSources() & InputDevice.SOURCE_GAMEPAD) != InputDevice.SOURCE_GAMEPAD) continue;
+            Vibrator v = Build.VERSION.SDK_INT >= 31 ? device.getVibratorManager().getDefaultVibrator() : device.getVibrator();
+            if (v != null && v.hasVibrator()) return v;
+        }
+        return null;
+    }
+
     private Vibrator getVibrator()
     {
+        if (mVibrator == null) mVibrator = controllerVibrator();
         // Cache the device vibrator through the service available on this Android version.
         if (mVibrator == null) {
             Context ctx = RunnerActivity.CurrentActivity;

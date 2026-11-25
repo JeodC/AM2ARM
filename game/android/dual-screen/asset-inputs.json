@@ -128,8 +128,8 @@
     },
     {
       "path": "extensions/AM2RHaptics/AndroidSource/Java/AM2RHaptics.java",
-      "size": 8802,
-      "sha256": "598ae4fe0b7efcd628c81c5c7ad211c1240fbdff14ccdf264e01144ef0011ecd"
+      "size": 9598,
+      "sha256": "8d3f1a510c8350ee25330c1f66b16752bf2721f65f52545de95c6fd09a5ab7b2"
     },
     {
       "path": "extensions/AM2RSaveTransfer/AM2RSaveTransfer.ext",
