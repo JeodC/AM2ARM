@@ -44,6 +44,21 @@ import com.yoyogames.runner.RunnerJNILib;
  */
 public class AM2RHaptics extends ExtensionBase implements InputManager.InputDeviceListener
 {
+    // Change orientation through the runner so its input/rotation mask stays in sync.
+    public double Android_Orientation(double value) {
+        final int mode = Math.max(0, Math.min(2, (int) Math.round(value)));
+        mMainHandler.post(new Runnable() {
+            @Override public void run() {
+                if (RunnerActivity.CurrentActivity == null) return;
+                boolean landscape = mode != 1;
+                boolean portrait = mode != 0;
+                RunnerActivity.CurrentActivity.RestrictOrientation(
+                    landscape, portrait, landscape, portrait, false);
+            }
+        });
+        return mode;
+    }
+
     private Vibrator mVibrator = null;
     private int mSustainEffect = -1;
     private long mSustainUntil = 0;
