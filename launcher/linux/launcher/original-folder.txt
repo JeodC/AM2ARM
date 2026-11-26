@@ -1,0 +1,3 @@
+Put your own Windows AM2R 1.1 ZIP in this folder and leave it zipped.
+For example, AM2R_11.zip belongs next to this README.txt. You can keep
+the ZIP's original filename. Then open AM2ARM on your handheld.

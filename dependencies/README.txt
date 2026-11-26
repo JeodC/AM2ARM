@@ -47,3 +47,10 @@ The standalone Linux installer uses the Mozilla root certificate bundle from
 certifi 2026.11.20 for HTTPS. The bundle and its license are in
 native/unified/runtime/certificates.
 https://pypi.org/project/certifi/2026.11.20/
+
+The dArkOS G350 audio bundle uses Debian 13 ARM64 PulseAudio 17.0+dfsg1-2
+and ORC 0.4.41-1. The darkos-audio directory contains their complete Debian
+source packages. From that directory run sha256sum -c SHA256SUMS, then
+dpkg-source -x on each .dsc to extract its source and Debian build rules.
+The launcher's binary-package pins and reproduction instructions are in
+launcher/linux/darkos_audio_bundle.py and launcher/linux/README.md.

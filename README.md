@@ -1,4 +1,4 @@
-# AM2ARM — Autopatcher
+# AM2ARM
 
 Rebuild AM2R for **ARM64 Android or Linux** from your own original Windows
 **AM2R 1.1 ZIP**. Standard plays on one screen. Dual Screen puts gameplay above
@@ -11,34 +11,18 @@ AM2ARM is based on **AM2R Community Updates 1.5.5**. The title screen displays
 
 | Platform | Download |
 | --- | --- |
-| ARM64 Android | [AM2ARM-Autopatcher-1.6.2.apk](https://github.com/PatchDev-AM2ARM/AM2ARM/releases/download/v1.6.2/AM2ARM-Autopatcher-1.6.2.apk) |
-| Supported ARM64 Linux handhelds with PortMaster | [am2arm.zip](https://github.com/PatchDev-AM2ARM/AM2ARM/releases/download/v1.6.3/am2arm.zip) |
-| ARM64 Linux standalone (stock TrimUI, NextUI and other supported firmware) | [AM2ARM-Autopatcher-1.6.3-linux-arm64.zip](https://github.com/PatchDev-AM2ARM/AM2ARM/releases/download/v1.6.3/AM2ARM-Autopatcher-1.6.3-linux-arm64.zip) |
+| ARM64 Linux handhelds | [AM2ARM Launcher 1.6.3 · Beta 1 (ZIP)](https://github.com/PatchDev-AM2ARM/AM2ARM/releases/download/v1.6.3/AM2ARM-Launcher-1.6.3-beta.1-linux-arm64.zip) |
+| ARM64 Android | [AM2ARM Autopatcher 1.6.2 (APK)](https://github.com/PatchDev-AM2ARM/AM2ARM/releases/download/v1.6.2/AM2ARM-Autopatcher-1.6.2.apk) |
 
-Keep your original 2016 **AM2R_11.zip** zipped. Each Autopatcher reconstructs
-and verifies the selected edition locally. The Linux installer works with
-physical buttons. A touchscreen is needed for the Dual Screen map.
+Both downloads rebuild the selected edition locally from your own original Windows AM2R 1.1 ZIP. Linux setup works offline with physical buttons. The Dual Screen map uses touch. [Linux install instructions](#install-on-linux) · [Android install instructions](#install-on-android) · [All releases](https://github.com/PatchDev-AM2ARM/AM2ARM/releases)
 
-## Linux 1.6.3 prerelease
+## What's new in the Linux launcher beta
 
-Choose one Linux download. Both install the same game from your original ZIP.
-With PortMaster, use its **autoinstall** folder. With the standalone download,
-copy its folders to the card and open **AM2ARM** from your firmware menu.
-The same entry installs on first launch and plays on later launches.
-Single-screen devices select Standard. Supported two-screen devices offer both editions.
+- Open **AM2ARM** from the handheld menu to install, play or switch editions. Choose **Standard** or **Dual Screen** on first launch. Next time the last edition starts automatically. Hold **D-pad Up** while opening AM2ARM to switch.
+- Put your original ZIP in **AM2ARM/** on every supported firmware. The launcher opens a file picker if it needs help finding a valid copy.
+- Standard supports the BATLEXP G350 on dArkOS and the TrimUI Brick on muOS. Brick display support is included for offline setup.
 
-## What's new in 1.6.3
-
-- PortMaster can install AM2ARM from a single ZIP. The standalone download
-  also provides shortcuts for stock TrimUI, NextUI and spruceOS.
-- Standard supports the BATLEXP G350 on the AmberELEC RG351MP image,
-  including game audio and returning to Ports.
-- Miyoo Flip V2 (RK3566 / MY355) has a working Standard display path. TrimUI
-  Smart Pro S (TG5050) has its own 1280 × 720 profile for its firmware's SDL2
-  and Mali graphics libraries.
-- The GameMaker source for both editions and platforms is now in the repository
-  alongside the Autopatcher and native display code. The development guide
-  explains how to restore the omitted assets.
+The launcher installs the 1.6.3 game. See the [Linux prerelease notes](https://github.com/PatchDev-AM2ARM/AM2ARM/releases/tag/v1.6.3).
 
 ## Install on Android
 
@@ -67,69 +51,29 @@ uninstalling deletes its private saves. Package IDs and signing are preserved.
 
 ## Install on Linux
 
-Use your original Windows **AM2R_11.zip** and allow **3 GB free** on the game card
-after copying. Check the [handheld compatibility list](#compatibility).
+You need the **AM2ARM Launcher ZIP**, your own original **Windows AM2R 1.1 ZIP**, and **3 GB free** on the game card after copying.
 
-Use a card reader or [USB file transfer](#usb-transfer-without-removing-the-card)
-to open the destination for your firmware.
+1. Extract the **launcher ZIP** on your computer. Open the folder containing `AM2ARM-READ-ME.txt`. Inside it, place your **still-zipped game** in `AM2ARM/`. For example, `AM2ARM/AM2R_11.zip` works on every supported firmware.
+2. Copy the **contents of the folder containing the readme** into the game library below. Merge the folders when prompted. Use a card reader or [USB file transfer](#usb-transfer-without-removing-the-card). On a two-card handheld, use the games card.
+3. Open **AM2ARM** from the handheld menu. Use the D-pad to highlight an edition and press **A**. **Install** checks your ZIP, installs the edition and starts it on a supported display. **Play** opens a complete edition already on the card. If the picker opens, select your original with **A** or press **B** to return.
+4. Next time, open **AM2ARM** to go straight into the last edition you played. To switch editions, hold **D-pad Up** as the launcher opens. Removing `AM2ARM-data/edition.txt` also reopens the menu. Keep your original ZIP for repairs or to add the other edition.
 
-### With PortMaster
-
-1. Copy **am2arm.zip**, still zipped, into **ports/autoinstall/** in the game
-   library used by PortMaster. Create the autoinstall folder if needed.
-2. Place your original **AM2R_11.zip** beside the **ports** folder.
-3. Open **PortMaster** once, then return to **Ports → AM2ARM**. The first launch
-   patches and starts the game. **AM2ARM Editions** lets you switch editions or
-   repair an installation. Refresh your firmware's Ports list if required.
-
-The [PortMaster installation guide](https://portmaster.games/installation/installing-ports/)
-lists the autoinstall location for each firmware. For a display that needs
-Westonpack, the offline setup instructions below also apply.
-
-### Standalone
-
-| Firmware | Where to copy the files | Where to open AM2ARM |
+| Firmware | Copy the extracted contents here | Open AM2ARM from |
 | --- | --- | --- |
+| Stock Anbernic RG DS Linux | Top of **ROMS**, after the first boot | Ports |
 | ROCKNIX | `games-internal/roms` on the system card, `roms` on a separate games card, or the `games-roms` network share | Ports |
-| AmberELEC on G350 | Top of the initialized **GAMES** volume | Ports |
-| NextUI on supported devices | Top level of the game card, where `Tools` lives | Tools |
-| Stock TrimUI or spruceOS on supported devices | Top level of the game card | Apps |
-| Other supported Ports firmware | The ROM library containing the `ports` folder | Ports |
+| AmberELEC | Top of **GAMES**, after the first boot | Ports |
+| dArkOS (BATLEXP G350) | Top of **EASYROMS**, after first boot | Ports |
+| muOS (TrimUI Brick) | Top of the games card after **Install** | Explore Content → Ports |
+| KNULLI | **SHARE** → `roms`, after the first boot | Ports |
+| NextUI | Top of the games card, alongside `Tools` | Tools |
+| Stock TrimUI or spruceOS | Top of the games card | Apps |
 
-1. Extract **AM2ARM-Autopatcher-1.6.3-linux-arm64.zip** on your computer.
-   If extraction creates a folder named **AM2ARM-Autopatcher-1.6.3-linux-arm64**,
-   open it. You should see **am2arm-launcher**, **ports**, **Tools**, **Apps**
-   and **App** together.
-2. Copy **everything inside** to the destination above. Merge the folders if
-   prompted. Put your original **AM2R_11.zip** beside **am2arm-launcher** and
-   keep it zipped.
-3. Open **AM2ARM** in the handheld menu listed above. It finds your ZIP,
-   verifies it, installs the game and starts it. Open the same entry to play again.
+On the tested muOS exFAT card, copying the archive contents is sufficient. On a case-sensitive ext4 card, copy `roms/ports/AM2ARM.sh` into `ROMS/Ports/`.
 
-On ROCKNIX, you can check the placement by looking for these three paths in
-your ROM library.
+For example, the KNULLI card should contain `SHARE/roms/AM2ARM/AM2R_11.zip` and `SHARE/roms/ports/AM2ARM.sh`. On ROCKNIX, check that `ports/AM2ARM.sh` and `am2arm-launcher/launch.sh` are in the same game library. Refresh **Start → Game Settings → Update Gamelists** if the entry is missing.
 
-```text
-AM2R_11.zip
-am2arm-launcher/launch.sh
-ports/AM2ARM.sh
-```
-
-If the entry is missing, open `ports` and check that `AM2ARM.sh` is directly
-inside. Then choose **Start → Game Settings → Update Gamelists** on the handheld.
-
-On a supported two-screen handheld, choose **Standard** or **Dual Screen** once.
-**AM2ARM Editions** in Ports lets you change it later. If the launcher asks for
-the ZIP, use the D-pad and A to select it. On Ports firmware that uses a
-capital **Roms** directory, open **Roms** as the destination before copying.
-
-The standalone launcher runs directly from the firmware menu. If a display
-needs Westonpack, such as a fresh TrimUI Brick on NextUI or stock, setup
-reuses a verified local copy or downloads it once (53 MiB) and checks it.
-For an offline install on those devices, copy the official
-`weston_pkg_0.2.squashfs` beside `AM2R_11.zip` before opening AM2ARM.
-Supported Wayland and native KMS displays can install offline with the
-original game ZIP alone. [Westonpack offline download](https://github.com/PortsMaster/PortMaster-New/releases/download/2025-07-24_0745/weston_pkg_0.2.squashfs)
+**Standard** uses one screen. **Dual Screen** needs two usable outputs and touch for the map. A single-output display driver offers **Install Dual Screen** for use on another setup. Choose **Standard** to install and play locally.
 
 ### USB transfer without removing the card
 
@@ -156,20 +100,13 @@ On the **G350**, USB networking was verified with **ROCKNIX**.
 
 ### Updates and startup problems
 
-Use **Options → Data → Back Up Saves** before updating. Open **AM2ARM** after
-copying the new launcher. It reuses a complete copy of the matching version
-in a recognized location and installs a different version alongside it.
-New games and the edition choice live in **AM2ARM-data** in the game library.
+Back up your saves through **Options → Data**. Copy the new launcher into the same game library and merge its folders. Open **AM2ARM**. It reuses complete matching 1.6.3 installations in recognized locations. Hold **D-pad Up** during launch to select an edition again. New installations and the selected edition live in `AM2ARM-data/`. Keep that folder and your existing game and save folders when updating.
 
-For startup problems, include your model, firmware, installation method and
-last screen you saw. The compatibility log is **AM2ARM/logs/compatibility.txt**
-inside **ports/am2arm/** for PortMaster or **am2arm-launcher/** for standalone.
-Keep your original ZIP, full game and saves private.
+For startup problems, include your handheld, firmware version, edition, and the last screen you saw. The launcher log on the game card is `am2arm-launcher/AM2ARM/logs/compatibility.txt`. Review it for personal paths before sharing. Keep your original game ZIP and saves private. [Report a problem](https://github.com/PatchDev-AM2ARM/AM2ARM/issues)
 
 ## Compatibility
 
-The G350 AmberELEC result is from 1.6.3. The other Linux rows record
-hardware checks from 1.6.2 and earlier.
+Beta 1 was checked on a physical G350 with dArkOS and a physical Brick with muOS. The checks covered discovery of the original ZIP, Standard installation, picture, sound, controls and direct relaunch. The other rows describe earlier launcher or game checks on the listed firmware.
 
 | Platform | Device / setup | Verified scope |
 | --- | --- | --- |
@@ -180,8 +117,11 @@ hardware checks from 1.6.2 and earlier.
 | Linux | Original RG DS, stock Linux 1.1-261008 | Fresh installation, Standard and Dual Screen, controls, sound, touch and Standard vibration |
 | Linux | RG DS, ROCKNIX 20261101 | Installer and Standard; Dual Screen on this firmware unverified |
 | Linux | BATLEXP G350, ROCKNIX | Installer, Standard, save transfer and aspect-ratio checks |
-| Linux | BATLEXP G350, AmberELEC RG351MP prerelease 20261019_1835 | 1.6.3 Standalone, automatic Standard installation, title music and in-game exit back to Ports |
-| Linux | TrimUI Brick, NextUI 20261013-0 | Installer, Standard startup/gameplay, full-screen display, music output and printed A/B/X/Y mapping |
+| Linux | BATLEXP G350, dArkOS v11172026 | Beta 1, fresh offline Standard installation and direct relaunch from Ports |
+| Linux | BATLEXP G350, AmberELEC RG351MP prerelease 20261019_1835 | Earlier launcher, automatic ZIP detection, Standard installation, controls and relaunch from Ports |
+| Linux | TrimUI Brick, KNULLI | Standard first install, title music, printed face and shoulder buttons, exit to Ports and relaunch during launcher development |
+| Linux | TrimUI Brick, muOS 2606.0 Andromeda (exFAT) | Beta 1, fresh offline Standard installation and direct relaunch from Explore Content → Ports |
+| Linux | TrimUI Brick, NextUI v6.15.0 | Earlier launcher, automatic ZIP detection, Standard installation, controls and relaunch from Tools |
 | Linux | TrimUI Brick, stock menu 1.0.6 | Fresh-card installation, fullscreen gameplay, music, controls and damage vibration |
 | Linux | Miyoo Flip V2, RK3566 / MY355, BaseOS 1.3.0 | Standard confirmed by a community tester |
 
@@ -195,7 +135,7 @@ marker. Damage vibration was verified there. A physical NextUI vibration check
 is still pending. Previous RG DS, G350 and Brick checks are listed above for
 their tested firmware and features.
 
-The Ports route uses the firmware's existing Wayland session. The supported
+Supported Ports firmware can use an existing Wayland session. The supported
 direct-display profiles use the handheld's own graphics libraries. Keep the
 device's graphics drivers and firmware in place. Stock G350 BATLEXPOS is
 outside the supported setups in this release. R36S, RG DS Plus and newer
@@ -204,7 +144,7 @@ Cortex-A9 RG35XX runs 32-bit ARM and cannot run this ARM64 package.
 On AmberELEC, the G350 and RG351P can select the firmware's KMSDRM display
 when Wayland is unavailable. The RG351P firmware libraries were checked on
 prerelease 20261019_1835. A physical RG351P run is still pending.
-The G350 and Brick on KNULLI still need a running Wayland session.
+KNULLI on the Brick also supports the firmware’s direct display. G350 on KNULLI still needs a separate hardware check.
 
 ## Controls and display
 
@@ -277,7 +217,7 @@ The desktop game does not read these sync ZIPs; use portable backups with it.
 ## Development
 
 The repository contains the Standard and Dual Screen GameMaker projects for
-Android and Linux, the Autopatcher source, and the native Linux integration.
+Android and Linux, the Android Autopatcher, the Linux launcher and patcher source, and the native Linux integration.
 Original media and signing material are omitted. Use your own original AM2R
 1.1 ZIP to restore the missing inputs locally. The development guide lists
 the matching restore files, toolchain and build steps. [Development guide](docs/README.md)
@@ -289,6 +229,8 @@ model, firmware/OS, edition, Nano setting and steps to reproduce it. For Linux
 startup failures include `compatibility.txt` and relevant state logs. Review logs
 for personal paths before sharing. Do not attach the original ZIP or a complete
 game package. Reports from stronger devices also help with compatibility.
+
+Thanks to Jeod for sharing the LADXHD and AM2R first-launch examples, and to BinaryCounter and the GL4ES contributors for the display libraries used on the Brick. [LADXHD](https://github.com/JeodC/RHH-Ports/tree/main/ports/released/zelda-ladxhd) · [AM2R launch example](https://github.com/JeodC/RHH-Ports/tree/main/ports/released/gamemakerengine/am2r) · [Runtime credits](native/unified/menus/dependencies/README.md)
 
 AM2R and Community Updates retain their original credits. This is a community
 port, not a Nintendo release. [LICENSE](LICENSE) covers the patcher code;

@@ -1,0 +1,62 @@
+AM2ARM Launcher for ARM64 Linux — Beta 1
+Game version 1.6.3
+
+1. Extract the launcher ZIP on your computer. Open the AM2ARM folder
+   beside this readme and put your own Windows AM2R 1.1 ZIP inside it.
+   Keep the game ZIP zipped. For example, AM2ARM/AM2R_11.zip works on
+   every supported device. You can keep the ZIP's existing filename.
+2. Go back to the folder containing this readme. Copy its contents directly
+   into the game library, merging with the folders already there.
+   On a two-card handheld, use the games card.
+   Use a card reader or your firmware's file transfer and keep 3 GB free
+   after copying.
+
+   Where to copy the extracted contents
+     Stock Anbernic RG DS       Top level of ROMS after first boot
+     KNULLI                     SHARE volume > roms after first boot
+     NextUI, stock TrimUI,      Top level of the games card
+       spruceOS
+     AmberELEC                  Top level of GAMES after first boot
+     dArkOS (BATLEXP G350)      Top level of EASYROMS after first boot
+     muOS (TrimUI Brick)        Top level of the games card after Install
+     ROCKNIX                    games-internal/roms on the system card, roms
+                                on a games card, or the games-roms share
+
+   For example, on a KNULLI card you will see roms/AM2ARM/AM2R_11.zip
+   and roms/ports/AM2ARM.sh on SHARE.
+3. Open AM2ARM from Ports, Tools (NextUI) or Apps (stock TrimUI and spruceOS).
+   On muOS, open Explore Content > Ports. The Brick was checked on exFAT.
+   On case-sensitive ext4, copy roms/ports/AM2ARM.sh into ROMS/Ports/.
+   Choose Standard or Dual Screen with the D-pad and A. Both are available
+   on your first visit. Standard uses one screen. Dual Screen puts gameplay
+   on one display and the map on the other. The launcher highlights a
+   suggestion. Choose Install to patch that edition from your ZIP.
+   Play opens an edition already installed on the card.
+   On firmware with a one-output display driver, you can install Dual
+   Screen for another setup and play Standard on the handheld.
+   If the launcher needs help finding your ZIP, the file picker opens.
+   Choose the original with the D-pad and A. B returns to the edition menu.
+4. Open AM2ARM again to go straight into the last edition you played.
+   To switch editions, hold D-pad Up as AM2ARM opens. You can also
+   remove AM2ARM-data/edition.txt from the card to reopen the menu.
+   Keep your original ZIP for repairs or to install the other edition.
+
+If the entry is missing on ROCKNIX, check that ports/AM2ARM.sh and
+am2arm-launcher/launch.sh are in the same game library, then open Start >
+Game Settings > Update Gamelists.
+
+The launcher includes the display files for the TrimUI Brick. The launcher
+ZIP and your own Windows AM2R 1.1 ZIP are enough for offline installation.
+If a display file is missing or damaged, extract the launcher ZIP again.
+
+New installs and your edition choice are in AM2ARM-data. A complete 1.6.3
+installation in a recognized location opens directly. Back up saves through
+Options > Data before changing versions. To exit, save, then hold Start +
+Select for one second. To report a problem, include your model, firmware
+and am2arm-launcher/AM2ARM/logs/compatibility.txt.
+https://github.com/PatchDev-AM2ARM/AM2ARM
+
+Thanks to Jeod for suggesting first-launch patching and sharing the LADXHD
+and AM2R PortMaster launchers.
+https://github.com/JeodC/RHH-Ports/tree/main/ports/released/zelda-ladxhd
+https://github.com/JeodC/RHH-Ports/tree/main/ports/released/gamemakerengine/am2r

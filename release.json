@@ -24,14 +24,16 @@
     "release_tag": "v1.6.2"
   },
   "linux": {
-    "download": "AM2ARM-Autopatcher-1.6.3-linux-arm64.zip",
-    "portmaster_download": "am2arm.zip",
+    "download": "AM2ARM-Launcher-1.6.3-beta.1-linux-arm64.zip",
     "verified_platforms": [
+      "BATLEXP G350 dArkOS v11172026 Standard (launcher Beta 1)",
+      "TrimUI Brick muOS 2606.0 Andromeda exFAT Standard (launcher Beta 1)",
       "Original RG DS stock Linux 1.1-261008",
+      "TrimUI Brick KNULLI Standard (launcher development build)",
       "RG DS ROCKNIX Standard",
       "G350 ROCKNIX Standard",
-      "G350 AmberELEC RG351MP prerelease 20261019_1835 Standard (1.6.3 standalone)",
-      "TrimUI Brick NextUI 20261013-0 Standard",
+      "G350 AmberELEC RG351MP prerelease 20261019_1835 Standard (earlier 1.6.3 launcher)",
+      "TrimUI Brick NextUI v6.15.0 Standard (earlier 1.6.3 launcher)",
       "TrimUI Brick stock menu 1.0.6 Standard (internal CrossMix 1.3.9 marker)",
       "Miyoo Flip V2 RK3566 / MY355 BaseOS 1.3.0 Standard (community confirmation)"
     ],
@@ -48,7 +50,7 @@
           640,
           480
         ],
-        "status": "Standard tested on AmberELEC RG351MP prerelease 20261019_1835"
+        "status": "Standard checked on dArkOS v11172026 and AmberELEC RG351MP prerelease 20261019_1835."
       },
       "rg351p": {
         "size": [
@@ -62,7 +64,7 @@
           1024,
           768
         ],
-        "status": "Stock and NextUI tested"
+        "status": "Standard checked on muOS 2606.0 Andromeda with exFAT. Earlier game or launcher checks cover stock, NextUI and KNULLI."
       },
       "smartpro": {
         "board": "TG5040",
@@ -92,7 +94,16 @@
     "compatibility": "README.md#compatibility",
     "version": "1.6.3",
     "title_version": "V1.6.3",
-    "hardware_evidence_version": "1.6.3 on G350 AmberELEC, 1.6.2 and earlier for the other verified platforms"
+    "hardware_evidence_version": "Beta 1 Standard was checked on the dArkOS G350 and the muOS Brick for original ZIP discovery, installation, gameplay output, sound, controls and direct relaunch. Other hardware rows record earlier launcher or game checks.",
+    "release_tag": "v1.6.3",
+    "source_tag": "v1.6.3-launcher-beta.1",
+    "launcher": "AM2ARM Launcher",
+    "launcher_beta": 1,
+    "original_zip_folder": "AM2ARM/",
+    "source": "launcher/linux",
+    "dependencies": "native/unified/menus/dependencies/README.md",
+    "download_sha256": "3f7e0ccb00f1b64955b62899421832dd1c5980a937143b65f98eca8a178a695a",
+    "download_bytes": 631736812
   },
   "original_input": "Original Windows AM2R 1.1 ZIP",
   "complete_game_in_download": false
